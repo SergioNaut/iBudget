@@ -3,8 +3,11 @@ iOS app for budget tracking.
 
 # Team (Group 6)
 Chris-Brien Glaze
+
 Pratik Gurung
+
 Salem Bolaji Kosemani
+
 Sergio Mauwad Golbert
 
 # Features
