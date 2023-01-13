@@ -12,6 +12,7 @@ Sergio Mauwad Golbert
 - Add, update and remove Budget
 - Add, update and remove Incomes
 - Add, update and remove Expenses (with description)
+- Dashboard with expense metrics
 - Predefined Categories with predefined icons
 - Add new categories (With different icon options)
 - Share expense
