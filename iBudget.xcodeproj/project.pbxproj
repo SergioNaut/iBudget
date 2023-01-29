@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C4E91FB2985FEEB00085EDC /* IBudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91F92985FEEB00085EDC /* IBudgetModel.xcdatamodeld */; };
+		1C4E91FE2985FFD200085EDC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */; };
+		1C4E92002986126D00085EDC /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91FF2986126D00085EDC /* UIExtensions.swift */; };
 		30258ED1297BB7A200C8C50F /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30258ED0297BB7A200C8C50F /* DashboardController.swift */; };
 		7885DEB329746DF000B6BEF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885DEB229746DF000B6BEF9 /* AppDelegate.swift */; };
 		7885DEB529746DF000B6BEF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885DEB429746DF000B6BEF9 /* SceneDelegate.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C4E91FA2985FEEB00085EDC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1C4E91FF2986126D00085EDC /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		30258ED0297BB7A200C8C50F /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		7885DEAF29746DF000B6BEF9 /* iBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7885DEB229746DF000B6BEF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C4E91FC2985FFB300085EDC /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		7885DEA629746DEF00B6BEF9 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +72,7 @@
 		7885DEB129746DF000B6BEF9 /* iBudget */ = {
 			isa = PBXGroup;
 			children = (
+				1C4E91FC2985FFB300085EDC /* CoreData */,
 				7885DEB229746DF000B6BEF9 /* AppDelegate.swift */,
 				7885DEB429746DF000B6BEF9 /* SceneDelegate.swift */,
 				30258ED0297BB7A200C8C50F /* DashboardController.swift */,
@@ -66,6 +81,8 @@
 				7885DEBB29746DF000B6BEF9 /* Assets.xcassets */,
 				7885DEBD29746DF000B6BEF9 /* LaunchScreen.storyboard */,
 				7885DEC029746DF000B6BEF9 /* Info.plist */,
+				1C4E91F92985FEEB00085EDC /* IBudgetModel.xcdatamodeld */,
+				1C4E91FF2986126D00085EDC /* UIExtensions.swift */,
 			);
 			path = iBudget;
 			sourceTree = "<group>";
@@ -143,8 +160,11 @@
 			files = (
 				30258ED1297BB7A200C8C50F /* DashboardController.swift in Sources */,
 				7885DEB729746DF000B6BEF9 /* ViewController.swift in Sources */,
+				1C4E92002986126D00085EDC /* UIExtensions.swift in Sources */,
+				1C4E91FB2985FEEB00085EDC /* IBudgetModel.xcdatamodeld in Sources */,
 				7885DEB329746DF000B6BEF9 /* AppDelegate.swift in Sources */,
 				7885DEB529746DF000B6BEF9 /* SceneDelegate.swift in Sources */,
+				1C4E91FE2985FFD200085EDC /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +380,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1C4E91F92985FEEB00085EDC /* IBudgetModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1C4E91FA2985FEEB00085EDC /* Model.xcdatamodel */,
+			);
+			currentVersion = 1C4E91FA2985FEEB00085EDC /* Model.xcdatamodel */;
+			path = IBudgetModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7885DEA729746DEF00B6BEF9 /* Project object */;
 }
