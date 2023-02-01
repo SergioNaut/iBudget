@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserInfo()
-        //saveDefault()
+        saveDefault()
         // Do any additional setup after loading the view.
         
     }
@@ -32,21 +32,22 @@ class ViewController: UIViewController {
            
        
         
-//        //Get users fullname
-//        let fullname = txtFullname.text!
-//
-//        //Get users income
-//        let income = NSDecimalNumber(string: txtIncome.text!)
-//
-//        //Get users budget
-//        let budget = NSDecimalNumber(string: txtBudget.text!)
-//
-//        let userinfo = UserInfo(context: getContext())
-//        userinfo.fullName = fullname
-//        userinfo.income =  income
-//        userinfo.id = UUID()
-//        userinfo.budget = budget
-//        self.saveAll()
+        //Get users fullname
+        let fullname = txtFullname.text!
+
+        //Get users income
+        let income = NSDecimalNumber(string: txtIncome.text!)
+
+        //Get users budget
+        let budget = NSDecimalNumber(string: txtBudget.text!)
+
+        let userinfo = UserInfo(context: getContext())
+        userinfo.fullName = fullname
+        userinfo.income =  income
+        userinfo.id = UUID()
+        userinfo.budget = budget
+        UserDefaults().setValue(fullname, forKey: "fullame")
+        self.saveAll()
         
         performSegue(withIdentifier: "dashboard", sender: self)
         
@@ -73,12 +74,14 @@ class ViewController: UIViewController {
                 let exp = Expenses(context: getContext())
                 exp.name = "Watermelon"
                 exp.categoryId = id
+                exp.categoryName = "Food"
                 exp.amount = 10.23
                 exp.created = Date()
         
                 let exp4 = Expenses(context: getContext())
                 exp4.name = "Bread"
                 exp4.categoryId = id
+                exp4.categoryName = "Food"
                 exp4.amount = 8.99
                 exp4.created = Date()
         
@@ -92,11 +95,13 @@ class ViewController: UIViewController {
                 let exp2 = Expenses(context: getContext())
                 exp2.name = "Hydro Electricity"
                 exp2.categoryId = id
+                exp2.categoryName = "Utilities"
                 exp2.amount = 45.12
                 exp2.created = Date()
         
                 let exp3 = Expenses(context: getContext())
                 exp3.name = "Water"
+                exp3.categoryName = "Utilities"
                 exp3.categoryId = id
                 exp3.amount = 78.03
                 exp3.created = Date()
@@ -107,7 +112,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "dashboard" {
-            let destinationVC = segue.destination as? DashboardViewController
+            _ = segue.destination as? DashboardViewController
            // destinationVC?.weatherResponse = weatherResponse
         }
     }
@@ -115,17 +120,17 @@ class ViewController: UIViewController {
     
     func getUserInfo(){
         
-        let request: NSFetchRequest<Expenses> = Expenses.fetchRequest ()
-        do {
-            let exps = try getContext().fetch(request)
-             
-            for exp in exps{
-                print(exp.name!)
-            }
-             
-        } catch {
-            print ("error fetching data: \(error)")
-        }
+//        let request: NSFetchRequest<Expenses> = Expenses.fetchRequest ()
+//        do {
+//            let exps = try getContext().fetch(request)
+//
+//            for exp in exps{
+//                print(exp.name!)
+//            }
+//
+//        } catch {
+//            print ("error fetching data: \(error)")
+//        }
         
         
         
