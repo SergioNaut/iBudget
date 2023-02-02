@@ -27,8 +27,14 @@ class DashboardViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        self.tableView.rowHeight = 65
+
         // Do any additional setup after loading the view.
         loadValues()
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80.0;//Choose your custom row height
     }
     
     func loadValues() {
@@ -130,7 +136,7 @@ extension DashboardViewController: UITableViewDataSource {
         cell.categoryImage.image = UIImage(named: "food")
         
         cell.categoryName.text = groupedCategoryList[indexPath.row].categoryName
-        cell.totalPrice.text = "\(groupedCategoryList[indexPath.row].amount)"
+        cell.totalPrice.text = "\( String(format: "$%.2f",  groupedCategoryList[indexPath.row].amount ) )"
         return cell
     }
 

@@ -64,6 +64,7 @@ class ViewController: UIViewController {
     
     
     func saveDefault(){
+        
                 let category = Categories(context: getContext())
                 category.name = "Food"
                 category.type = 1
