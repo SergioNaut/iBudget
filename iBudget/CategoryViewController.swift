@@ -15,6 +15,8 @@ class CategoryViewController: UIViewController {
     private var categoriesArray: [Categories] = []
     private let addCategorySegue = "addCategoryScreen"
     
+    //var newCategory = CategoryValues.init(name: "newCategory", iconName: "sparkle")
+    
     @IBAction func addCategoryButtonTapped(_ sender: UIButton) {
         
         performSegue(withIdentifier: addCategorySegue, sender: self)
@@ -47,14 +49,39 @@ class CategoryViewController: UIViewController {
     }
 
     func loadCategories(){
+        //TODO: Use to load original categories for the first time
+        if(categoriesArray.isEmpty)
+        {
+            let category = Categories(context: getContext())
+            category.name = "Food"
+            //Set type as 0 because they are the predefined categories
+            category.type = 0
+            var id = UUID()
+            category.id = id
+            //TODO: Change icons
+            category.icon = "cloud"
+            categoriesArray.append(category)
+        //TODO: Add more values
+        //TODO: Save to system
+        }
+    }
+    
+    public func saveCategory(newCategoryName: String, newCategoryIconName: String){
         let category = Categories(context: getContext())
-        category.name = "Food"
+        category.name = newCategoryName
         category.type = 1
         var id = UUID()
         category.id = id
-        category.icon = "cloud"
+        category.icon = newCategoryIconName
         categoriesArray.append(category)
+        //TODO: Save to system
+        categoriesTableView.reloadData()
     }
+}
+
+struct CategoryValues {
+    let name: String
+    let iconName: String
 }
 
 //Extension for TableView
