@@ -59,7 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */,
-				3AFF5A1C298B01BA006D2B7A /* AddCategoryViewController.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -85,6 +84,7 @@
 			children = (
 				1C4E91FC2985FFB300085EDC /* CoreData */,
 				7885DEB229746DF000B6BEF9 /* AppDelegate.swift */,
+				3AFF5A1C298B01BA006D2B7A /* AddCategoryViewController.swift */,
 				7885DEB429746DF000B6BEF9 /* SceneDelegate.swift */,
 				30258ED0297BB7A200C8C50F /* DashboardController.swift */,
 				30F4E40D29890555007A2158 /* ExpenseViewController.swift */,
