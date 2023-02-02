@@ -30,8 +30,14 @@ class ViewController: UIViewController {
     
     @IBAction func saveUserInfo(_ sender: Any) {
            
-       
         
+        DispatchQueue.main.async {
+        
+            self.txtFullname.backgroundColor = UIColor.white
+            self.txtIncome.backgroundColor = UIColor.white
+            self.txtBudget.backgroundColor = UIColor.white
+            
+        }
         //Get users fullname
         let fullname = txtFullname.text!
 
@@ -41,6 +47,26 @@ class ViewController: UIViewController {
         //Get users budget
         let budget = NSDecimalNumber(string: txtBudget.text!)
 
+       
+        
+        if(fullname == ""){
+            showMsg(txtField: txtFullname,msg: "Please enter your fullname")
+            return
+        }else if (Float(truncating: income) < 1){
+            showMsg(txtField: txtIncome,msg: "Please enter your total monthly income")
+            return
+        }else if (Float(truncating: budget) < 1){
+            showMsg(txtField: txtBudget,msg: "Please enter your total monthly budget")
+            return
+        }
+//        }else if (Float(truncating: budget) >  Float(truncating: income) ){
+//            showMsg(txtField: txtBudget,msg: "Budget should be less or same as your income")
+//            return
+//        }
+//
+         
+        
+        
         let userinfo = UserInfo(context: getContext())
         userinfo.fullName = fullname
         userinfo.income =  income
@@ -54,6 +80,24 @@ class ViewController: UIViewController {
  
     }
     
+    func showMsg(txtField : UITextField, msg: String)
+    {
+        
+        // Create a new alert
+        let dialogMessage = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+        // Present alert to user
+        dialogMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+             // print("Handle Ok logic here")
+              }))
+        self.present(dialogMessage, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            txtField.becomeFirstResponder()
+            txtField.backgroundColor = UIColor.red.withAlphaComponent(0.6)
+        }
+       
+    }
+    
+    
     
     func getContext()->NSManagedObjectContext{
          
@@ -63,7 +107,11 @@ class ViewController: UIViewController {
     }
     
     
+    
+    
+    
     func saveDefault(){
+        
                 let category = Categories(context: getContext())
                 category.name = "Food"
                 category.type = 1
