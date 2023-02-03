@@ -10,6 +10,7 @@
 		1C4E91FB2985FEEB00085EDC /* IBudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91F92985FEEB00085EDC /* IBudgetModel.xcdatamodeld */; };
 		1C4E91FE2985FFD200085EDC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */; };
 		1C4E92002986126D00085EDC /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91FF2986126D00085EDC /* UIExtensions.swift */; };
+		1C4E921E298C98D900085EDC /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E921D298C98D900085EDC /* CustomTabBarController.swift */; };
 		30258ED1297BB7A200C8C50F /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30258ED0297BB7A200C8C50F /* DashboardController.swift */; };
 		30D05B2C2989EB510016308C /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D05B2B2989EB510016308C /* DashboardCell.swift */; };
 		30F4E40E29890555007A2158 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4E40D29890555007A2158 /* ExpenseViewController.swift */; };
@@ -28,6 +29,7 @@
 		1C4E91FA2985FEEB00085EDC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1C4E91FF2986126D00085EDC /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		1C4E921D298C98D900085EDC /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		30258ED0297BB7A200C8C50F /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		30D05B2B2989EB510016308C /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		30F4E40D29890555007A2158 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				7885DEB229746DF000B6BEF9 /* AppDelegate.swift */,
 				3AFF5A1C298B01BA006D2B7A /* AddCategoryViewController.swift */,
 				7885DEB429746DF000B6BEF9 /* SceneDelegate.swift */,
+				1C4E921D298C98D900085EDC /* CustomTabBarController.swift */,
 				30258ED0297BB7A200C8C50F /* DashboardController.swift */,
 				30F4E40D29890555007A2158 /* ExpenseViewController.swift */,
 				30F4E40F29890588007A2158 /* CategoryViewController.swift */,
@@ -183,6 +186,7 @@
 				7885DEB529746DF000B6BEF9 /* SceneDelegate.swift in Sources */,
 				3AFF5A1D298B01BA006D2B7A /* AddCategoryViewController.swift in Sources */,
 				30D05B2C2989EB510016308C /* DashboardCell.swift in Sources */,
+				1C4E921E298C98D900085EDC /* CustomTabBarController.swift in Sources */,
 				30F4E41029890588007A2158 /* CategoryViewController.swift in Sources */,
 				1C4E91FE2985FFD200085EDC /* CoreDataStack.swift in Sources */,
 			);

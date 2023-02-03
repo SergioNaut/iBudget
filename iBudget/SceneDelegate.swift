@@ -17,6 +17,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         
+        if( UserDefaults().string(forKey: "fullame") != nil){
+            
+            let customTB = storyboard.instantiateViewController(identifier: "CustomTabBarController") as! CustomTabBarController
+            window?.rootViewController = customTB
+            window?.makeKeyAndVisible()
+            
+        }else{
+            let onboardVC = storyboard.instantiateViewController(withIdentifier: "userOnboarding")
+            window?.rootViewController = onboardVC
+            window?.makeKeyAndVisible()
+            
+        }
+      
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -48,7 +64,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
 
     }
-
+    
+    func setRootViewController(_ vc: UIViewController) {
+         if let window = self.window {
+              // if we are logging in, pass the userId
+              if let _ = vc as? CustomTabBarController {
+                   //customTb.usersname = userId
+              }
+             
+                  window.rootViewController = vc
+              
+         }
+    }
 
 }
 

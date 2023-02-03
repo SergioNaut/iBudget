@@ -75,10 +75,26 @@ class ViewController: UIViewController {
         UserDefaults().setValue(fullname, forKey: "fullame")
         self.saveAll()
         
-        performSegue(withIdentifier: "dashboard", sender: self)
+        //performSegue(withIdentifier: "dashboard", sender: self)
         
+        navigateToMainView()
+      
  
     }
+    
+    
+    
+    
+    func navigateToMainView(){
+        
+        let vc: UIViewController? = nil
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainTabBarController = storyboard.instantiateViewController(identifier: "CustomTabBarController") as! CustomTabBarController
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController  )
+    }
+    
+    
     
     func showMsg(txtField : UITextField, msg: String)
     {
@@ -159,10 +175,10 @@ class ViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "dashboard" {
-            _ = segue.destination as? DashboardViewController
-           // destinationVC?.weatherResponse = weatherResponse
-        }
+//        if segue.identifier == "dashboard" {
+//            _ = segue.destination as? DashboardViewController
+//           // destinationVC?.weatherResponse = weatherResponse
+//        }
     }
     
     
@@ -192,10 +208,11 @@ class ViewController: UIViewController {
                     UserDefaults().setValue(user.fullName, forKey: "fullame")
                 }
                 
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "dashboard", sender: self)
-                }
-                
+//                DispatchQueue.main.async {
+//                    self.navigateToMainView()
+//                    //self.performSegue(withIdentifier: "dashboard", sender: self)
+//                }
+//
             }
             
 
@@ -205,6 +222,8 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func saveCategory(_ sender: Any) {
+    }
     
     func saveAll(){
         
