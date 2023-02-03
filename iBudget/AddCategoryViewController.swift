@@ -16,40 +16,56 @@ class AddCategoryViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func bookButtonTouched(_ sender: Any) {
-        choosenIconName = "book"
-    }
+//    @IBAction func saveButtonTouched(_ sender: Any) {
+//        print(categotyNameTextField.hasText)
+//        if(categotyNameTextField.hasText)
+//        {
+//            if let presenter = presentingViewController as? CategoryViewController{
+//                //TODO: Not working?
+//                presenter.saveCategory(newCategoryName: categotyNameTextField.text ?? "New Category", newCategoryIconName: choosenIconName)
+//                print("saved")
+//            }
+//            //TODO: dismiss does not work correctly
+//            self.navigationController?.popToRootViewController(animated: true)
+//
+//        }
+//    }
     
-    @IBAction func bikeButtonTouched(_ sender: Any) {
-        choosenIconName = "bicycle"
-    }
+    @IBAction func buttonTouched(_ sender: UIButton) {
     
-    @IBAction func movieButtonTouched(_ sender: Any) {
-        choosenIconName = "play"
-    }
-    
-     @IBAction func controllerButtonTouched(_ sender: Any) {
-         choosenIconName = "gamecontroller"
-     }
-    
-    @IBAction func cartButtonTouched(_ sender: Any) {
-        choosenIconName = "cart"
-    }
-    
-    @IBAction func travelButtonTouched(_ sender: Any) {
-        choosenIconName = "case"
-    }
-    
-    @IBAction func saveButtonTouched(_ sender: Any) {
-        if(categotyNameTextField.hasText)
-        {
-            if let presenter = presentingViewController as? CategoryViewController{
-                presenter.saveCategory(newCategoryName: categotyNameTextField.text ?? "New Category", newCategoryIconName: choosenIconName)
-            }
-            //TODO: dismiss does not work correctly
-            dismiss(animated: true)
+        switch sender.tag {
+        case 1:
+            choosenIconName = "book"
+        case 2:
+            choosenIconName = "bicycle"
+        case 3:
+            choosenIconName = "play"
+        case 4:
+            choosenIconName = "gamecontroller"
+        case 5:
+            choosenIconName = "cart"
+        case 6:
+            choosenIconName = "case"
+        case 0:
+            print(categotyNameTextField.hasText)
+            if(categotyNameTextField.hasText)
+            {
+                if let presenter = presentingViewController as? CategoryViewController{
+                    //TODO: Not working?
+                    presenter.saveCategory(newCategoryName: categotyNameTextField.text ?? "New Category", newCategoryIconName: choosenIconName)
+                    print("saved")
+                }
+                //TODO: dismiss does not work correctly
+                self.navigationController?.popToRootViewController(animated: true)
+                }
+        default:
+            break
         }
     }
+}
+    
+    
+    
     /*
      // MARK: - Navigation
 
@@ -60,4 +76,3 @@ class AddCategoryViewController: UIViewController {
     }
     */
 
-}

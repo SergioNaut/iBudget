@@ -59,11 +59,58 @@ class CategoryViewController: UIViewController {
             var id = UUID()
             category.id = id
             //TODO: Change icons
-            category.icon = "cloud"
+            category.icon = "fork.knife"
             categoriesArray.append(category)
+            
+            let category2 = Categories(context: getContext())
+            category2.name = "Housing"
+            //Set type as 0 because they are the predefined categories
+            category2.type = 0
+            id = UUID()
+            category2.id = id
+            //TODO: Change icons
+            category2.icon = "house"
+            categoriesArray.append(category2)
+            
+            let category3 = Categories(context: getContext())
+            category3.name = "Transportation"
+            //Set type as 0 because they are the predefined categories
+            category3.type = 0
+            id = UUID()
+            category3.id = id
+            //TODO: Change icons
+            category3.icon = "car"
+            categoriesArray.append(category3)
+            
+            let category4 = Categories(context: getContext())
+            category4.name = "Utilities"
+            //Set type as 0 because they are the predefined categories
+            category4.type = 0
+            id = UUID()
+            category4.id = id
+            //TODO: Change icons
+            category4.icon = "wrench.and.screwdriver"
+            categoriesArray.append(category4)
+            
+            let category5 = Categories(context: getContext())
+            category5.name = "Medical"
+            //Set type as 0 because they are the predefined categories
+            category5.type = 0
+            id = UUID()
+            category5.id = id
+            //TODO: Change icons
+            category5.icon = "cross"
+            categoriesArray.append(category5)
+            
+            
         //TODO: Add more values
         //TODO: Save to system
         }
+        else {
+            //Else add categories from app storage
+            print("Test")
+        }
+        
     }
     
     public func saveCategory(newCategoryName: String, newCategoryIconName: String){
