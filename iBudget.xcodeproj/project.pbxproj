@@ -23,6 +23,8 @@
 		7885DEBA29746DF000B6BEF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7885DEB829746DF000B6BEF9 /* Main.storyboard */; };
 		7885DEBC29746DF000B6BEF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7885DEBB29746DF000B6BEF9 /* Assets.xcassets */; };
 		7885DEBF29746DF000B6BEF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7885DEBD29746DF000B6BEF9 /* LaunchScreen.storyboard */; };
+		78F67F5C298EBFFF005F2906 /* AddExpenseViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67F5B298EBFFF005F2906 /* AddExpenseViewControlller.swift */; };
+		78F67F5E298EC03A005F2906 /* categoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67F5D298EC03A005F2906 /* categoryList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		7885DEBB29746DF000B6BEF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7885DEBE29746DF000B6BEF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7885DEC029746DF000B6BEF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78F67F5B298EBFFF005F2906 /* AddExpenseViewControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseViewControlller.swift; sourceTree = "<group>"; };
+		78F67F5D298EC03A005F2906 /* categoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				30258ED0297BB7A200C8C50F /* DashboardController.swift */,
 				30F4E40D29890555007A2158 /* ExpenseViewController.swift */,
 				30F4E40F29890588007A2158 /* CategoryViewController.swift */,
+				78F67F5B298EBFFF005F2906 /* AddExpenseViewControlller.swift */,
+				78F67F5D298EC03A005F2906 /* categoryList.swift */,
 				30F4E4112989059F007A2158 /* SettingViewController.swift */,
 				7885DEB629746DF000B6BEF9 /* ViewController.swift */,
 				7885DEB829746DF000B6BEF9 /* Main.storyboard */,
@@ -178,6 +184,8 @@
 			files = (
 				30258ED1297BB7A200C8C50F /* DashboardController.swift in Sources */,
 				7885DEB729746DF000B6BEF9 /* ViewController.swift in Sources */,
+				78F67F5E298EC03A005F2906 /* categoryList.swift in Sources */,
+				78F67F5C298EBFFF005F2906 /* AddExpenseViewControlller.swift in Sources */,
 				1C4E92002986126D00085EDC /* UIExtensions.swift in Sources */,
 				1C4E91FB2985FEEB00085EDC /* IBudgetModel.xcdatamodeld in Sources */,
 				7885DEB329746DF000B6BEF9 /* AppDelegate.swift in Sources */,
