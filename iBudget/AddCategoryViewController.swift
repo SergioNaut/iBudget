@@ -54,7 +54,7 @@ class AddCategoryViewController: UIViewController {
                 saveCategory(newCategoryName: categotyNameTextField.text ?? "New Category", newCategoryIconName: choosenIconName)
                 
                 //TODO: dismiss does not work correctly
-                self.navigationController?.popToRootViewController(animated: true)
+                dismiss(animated: true)
             }
         default:
             break

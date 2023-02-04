@@ -51,6 +51,26 @@ class CategoryViewController: UIViewController {
     func loadCategories(){
         //TODO: Use to load original categories for the first time
         
+        let request1: NSFetchRequest<Categories> = Categories.fetchRequest()
+            do {
+                let items = try getContext().fetch(request1)
+    
+                for item in items{
+                    let category0 = Categories(context: getContext())
+                    category0.name = item.name
+                    category0.type = item.type
+                    category0.id = item.id
+                    category0.icon = item.icon
+                    
+                    categoriesArray.append(category0)
+                }
+                categoriesTableView.reloadData()
+                
+    
+            } catch {
+                print ("error fetching data: \(error)")
+            }
+        
         //TODO: First add categories from data storage, then, if empty, add the basic categories.
         if(categoriesArray.isEmpty)
         {
