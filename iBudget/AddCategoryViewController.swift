@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddCategoryViewController: UIViewController {
 
@@ -50,17 +51,45 @@ class AddCategoryViewController: UIViewController {
             print(categotyNameTextField.hasText)
             if(categotyNameTextField.hasText)
             {
-                if let presenter = presentingViewController as? CategoryViewController{
-                    //TODO: Not working?
-                    presenter.saveCategory(newCategoryName: categotyNameTextField.text ?? "New Category", newCategoryIconName: choosenIconName)
-                    print("saved")
-                }
+                saveCategory(newCategoryName: categotyNameTextField.text ?? "New Category", newCategoryIconName: choosenIconName)
+                
                 //TODO: dismiss does not work correctly
                 self.navigationController?.popToRootViewController(animated: true)
-                }
+            }
         default:
             break
         }
+    }
+    
+    public func saveCategory(newCategoryName: String, newCategoryIconName: String){
+        
+        //TODO: Function should check if there's already a category with this name
+        
+        let category = Categories(context: getContext())
+        category.name = newCategoryName
+        category.type = 1
+        var id = UUID()
+        category.id = id
+        category.icon = newCategoryIconName
+        
+        self.saveAll()
+    }
+    
+    func getContext()->NSManagedObjectContext{
+         
+        let context  = AppDelegate.sharedAppDelegate.coreDataStack.getCoreDataContext()!
+        
+        return context
+    }
+    
+    func saveAll(){
+        
+        AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+         
+        print("Saved")
+        //getUserInfo()
+        print("Loaded")
+
     }
 }
     

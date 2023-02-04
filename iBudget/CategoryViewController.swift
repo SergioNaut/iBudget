@@ -50,6 +50,8 @@ class CategoryViewController: UIViewController {
 
     func loadCategories(){
         //TODO: Use to load original categories for the first time
+        
+        //TODO: First add categories from data storage, then, if empty, add the basic categories.
         if(categoriesArray.isEmpty)
         {
             let category = Categories(context: getContext())
@@ -102,26 +104,11 @@ class CategoryViewController: UIViewController {
             category5.icon = "cross"
             categoriesArray.append(category5)
             
-            
-        //TODO: Add more values
-        //TODO: Save to system
+            self.saveAll()
         }
-        else {
-            //Else add categories from app storage
-            print("Test")
-        }
-        
     }
     
-    public func saveCategory(newCategoryName: String, newCategoryIconName: String){
-        let category = Categories(context: getContext())
-        category.name = newCategoryName
-        category.type = 1
-        var id = UUID()
-        category.id = id
-        category.icon = newCategoryIconName
-        categoriesArray.append(category)
-        //TODO: Save to system
+    override func viewDidAppear(_ animated: Bool) {
         categoriesTableView.reloadData()
     }
 }
