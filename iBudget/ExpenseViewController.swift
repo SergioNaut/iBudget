@@ -13,6 +13,7 @@ class ExpenseViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var expenses : [Expenses] = []
+    private var categoriesArray: [Categories] = []
     
     override func viewDidLoad() {
         tableView.dataSource = self
@@ -36,14 +37,26 @@ class ExpenseViewController: UIViewController {
     func loadExpenses() {
         expenses = []
         let ExpRequest: NSFetchRequest<Expenses> = Expenses.fetchRequest ()
+        let request: NSFetchRequest<Categories> = Categories.fetchRequest ()
         do {
             let exps = try getContext().fetch(ExpRequest)
             expenses.append(contentsOf: exps)
+            
+           
+            
             tableView.reloadData()
             
         } catch {
             print ("error fetching data: \(error)")
         }
+        
+        do{
+            let categories = try getContext().fetch(request)
+            categoriesArray.append(contentsOf: categories)
+        }
+             catch {
+                print ("error fetching data: \(error)")
+            }
     }
     
 }
@@ -59,7 +72,7 @@ extension ExpenseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
-        cell.categoryImage.image = UIImage(named: "food")
+        cell.categoryImage.image = UIImage(systemName: categoriesArray[indexPath.row].icon!)
         
         cell.categoryName.text = expenses[indexPath.row].name
         cell.totalPrice.text = "\( String(format: "$%.2f",  expenses[indexPath.row].amount ) )"

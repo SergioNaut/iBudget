@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserInfo()
-        saveDefault()
+        //saveDefault()
         // Do any additional setup after loading the view.
         
     }
@@ -72,7 +72,53 @@ class ViewController: UIViewController {
         userinfo.income =  income
         userinfo.id = UUID()
         userinfo.budget = budget
-        UserDefaults().setValue(fullname, forKey: "fullame")
+        UserDefaults().setValue(fullname, forKey: "fullname")
+        
+        let category = Categories(context: getContext())
+        category.name = "Food"
+        //Set type as 0 because they are the predefined categories
+        category.type = 0
+        var id = UUID()
+        category.id = id
+        //TODO: Change icons
+        category.icon = "fork.knife"
+        
+        let category2 = Categories(context: getContext())
+        category2.name = "Housing"
+        //Set type as 0 because they are the predefined categories
+        category2.type = 0
+        id = UUID()
+        category2.id = id
+        //TODO: Change icons
+        category2.icon = "house"
+        
+        let category3 = Categories(context: getContext())
+        category3.name = "Transportation"
+        //Set type as 0 because they are the predefined categories
+        category3.type = 0
+        id = UUID()
+        category3.id = id
+        //TODO: Change icons
+        category3.icon = "car"
+        
+        let category4 = Categories(context: getContext())
+        category4.name = "Utilities"
+        //Set type as 0 because they are the predefined categories
+        category4.type = 0
+        id = UUID()
+        category4.id = id
+        //TODO: Change icons
+        category4.icon = "wrench.and.screwdriver"
+        
+        let category5 = Categories(context: getContext())
+        category5.name = "Medical"
+        //Set type as 0 because they are the predefined categories
+        category5.type = 0
+        id = UUID()
+        category5.id = id
+        //TODO: Change icons
+        category5.icon = "cross"
+        
         self.saveAll()
         
         //performSegue(withIdentifier: "dashboard", sender: self)

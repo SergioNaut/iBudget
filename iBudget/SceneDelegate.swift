@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,19 +21,37 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
          
-        if( UserDefaults().string(forKey: "fullame") != nil){
+        if( UserDefaults().string(forKey: "fullname") != nil){
             
             let customTB = storyboard.instantiateViewController(identifier: "CustomTabBarController") as! CustomTabBarController
             window?.rootViewController = customTB
             window?.makeKeyAndVisible()
             
         }else{
+            
             let onboardVC = storyboard.instantiateViewController(withIdentifier: "userOnboarding")
             window?.rootViewController = onboardVC
             window?.makeKeyAndVisible()
             
         }
       
+    }
+    
+    func getContext()->NSManagedObjectContext{
+         
+        let context  = AppDelegate.sharedAppDelegate.coreDataStack.getCoreDataContext()!
+        
+        return context
+    }
+    
+    func saveAll(){
+        
+        AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+         
+        print("Saved")
+        //getUserInfo()
+        print("Loaded")
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

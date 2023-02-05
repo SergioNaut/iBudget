@@ -53,8 +53,7 @@ class AddCategoryViewController: UIViewController {
             {
                 saveCategory(newCategoryName: categotyNameTextField.text ?? "New Category", newCategoryIconName: choosenIconName)
                 
-                //TODO: dismiss does not work correctly
-                dismiss(animated: true)
+                self.dismiss(animated: true)
             }
         default:
             break
@@ -65,14 +64,14 @@ class AddCategoryViewController: UIViewController {
         
         //TODO: Function should check if there's already a category with this name
         
-        let category = Categories(context: getContext())
-        category.name = newCategoryName
-        category.type = 1
+        let cat = Categories(context: getContext())
+        cat.name = newCategoryName
+        cat.type = 1
         var id = UUID()
-        category.id = id
-        category.icon = newCategoryIconName
+        cat.id = id
+        cat.icon = newCategoryIconName
         
-        self.saveAll()
+        AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
     }
     
     func getContext()->NSManagedObjectContext{
@@ -80,16 +79,6 @@ class AddCategoryViewController: UIViewController {
         let context  = AppDelegate.sharedAppDelegate.coreDataStack.getCoreDataContext()!
         
         return context
-    }
-    
-    func saveAll(){
-        
-        AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
-         
-        print("Saved")
-        //getUserInfo()
-        print("Loaded")
-
     }
 }
     

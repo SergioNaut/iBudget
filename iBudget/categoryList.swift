@@ -43,8 +43,7 @@ class categoryList : UITableViewController  {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        let cellImg = UIImage(named: "food")?.resized(to: CGSize(width: 30, height: 30))
+        let cellImg = UIImage(systemName: categoriesArray[indexPath.row].icon!)?.resized(to: CGSize(width: 30, height: 30))
         cell.imageView?.image = cellImg
         cell.textLabel?.text = categoriesArray[indexPath.row].name
         return cell
