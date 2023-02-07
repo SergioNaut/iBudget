@@ -62,17 +62,17 @@ class AddCategoryViewController: UIViewController {
         unsetBackground(selectedCat: sender.tag,skipAll: false)
         
         switch sender.tag {
-        case 1:
+        case 11:
             choosenIconName = "book"
-        case 2:
+        case 12:
             choosenIconName = "bicycle"
-        case 3:
+        case 13:
             choosenIconName = "play"
-        case 4:
+        case 14:
             choosenIconName = "gamecontroller"
-        case 5:
+        case 15:
             choosenIconName = "cart"
-        case 6:
+        case 16:
             choosenIconName = "case"
         case 0:
             //print(categotyNameTextField.hasText)
@@ -97,7 +97,7 @@ class AddCategoryViewController: UIViewController {
         let cat = Categories(context: getContext())
         cat.name = newCategoryName
         cat.type = 1
-        var id = UUID()
+        let id = UUID()
         cat.id = id
         cat.icon = newCategoryIconName
         
