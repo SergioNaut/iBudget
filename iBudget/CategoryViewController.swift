@@ -81,8 +81,9 @@ extension CategoryViewController: UITableViewDataSource{
         var content = cell.defaultContentConfiguration()
         content.text = item.name
         //Display an image in the item
-        content.image = UIImage(systemName: item.icon ?? "sparkles")
-        
+        content.image = UIImage(systemName: item.icon ?? "sparkles")?.withTintColor(UIColor.systemIndigo)
+         cell.imageView?.image = cell.imageView?.image?.withTintColor(UIColor.systemIndigo)
+
         cell.contentConfiguration = content
         
         return cell

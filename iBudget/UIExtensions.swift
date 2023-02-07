@@ -17,6 +17,18 @@ extension UIImage {
     return UIGraphicsGetImageFromCurrentImageContext()
   }
 }
+ 
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
 
 @IBDesignable extension UIView {
     @IBInspectable var cornerRadius: CGFloat {

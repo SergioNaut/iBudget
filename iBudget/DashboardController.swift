@@ -19,12 +19,18 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var totalBudgetFromCard: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    private var categoriesArray : [Categories] = []
     private var groupedCategoryList: [Expenses] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        
+        tableView.rowHeight = 80
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.rowHeight = 65
@@ -38,6 +44,18 @@ class DashboardViewController: UIViewController {
     }
     
     func loadValues() {
+        
+        let cat_request: NSFetchRequest<Categories> = Categories.fetchRequest ()
+        do{
+            let categories = try getContext().fetch(cat_request)
+            categoriesArray.append(contentsOf: categories)
+            print(categoriesArray[0].icon)
+        }
+        catch {
+            print ("error fetching data: \(error)")
+        }
+        
+        
         
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest ()
             do {
@@ -133,8 +151,18 @@ extension DashboardViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
-        cell.categoryImage.image = UIImage(named: "food")
         
+        let ExpCategoryName = groupedCategoryList[indexPath.row].categoryName!
+        
+     
+        
+        let categoryElem  = categoriesArray.first { $0.name! == ExpCategoryName }
+        
+       
+        
+     
+           
+        cell.categoryImage.image = UIImage(systemName: (categoryElem?.icon)!)
         cell.categoryName.text = groupedCategoryList[indexPath.row].categoryName
         cell.totalPrice.text = "\( String(format: "$%.2f",  groupedCategoryList[indexPath.row].amount ) )"
         return cell

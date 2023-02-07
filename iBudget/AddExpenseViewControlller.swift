@@ -21,7 +21,8 @@ class AddExpenseViewControlller : UIViewController{
     
     override func viewDidLoad() {
         //presentModal()
-        
+        self.hideKeyboardWhenTappedAround()
+
     }
     
     @IBAction func startEdit(_ sender: Any) {

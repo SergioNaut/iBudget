@@ -21,7 +21,8 @@ class ViewController: UIViewController {
         getUserInfo()
         //saveDefault()
         // Do any additional setup after loading the view.
-        
+        self.hideKeyboardWhenTappedAround()
+
     }
 
     @IBOutlet weak var txtBudget: UITextField!
@@ -172,53 +173,55 @@ class ViewController: UIViewController {
     
     
     
-    func saveDefault(){
-        
-                let category = Categories(context: getContext())
-                category.name = "Food"
-                category.type = 1
-                var id = UUID()
-                category.id = id
-        
-        
-                let exp = Expenses(context: getContext())
-                exp.name = "Watermelon"
-                exp.categoryId = id
-                exp.categoryName = "Food"
-                exp.amount = 10.23
-                exp.created = Date()
-        
-                let exp4 = Expenses(context: getContext())
-                exp4.name = "Bread"
-                exp4.categoryId = id
-                exp4.categoryName = "Food"
-                exp4.amount = 8.99
-                exp4.created = Date()
-        
-        
-                let category2 = Categories(context: getContext())
-                category2.name = "Utilities"
-                category2.type = 1
-                id = UUID()
-                category2.id = id
-        
-                let exp2 = Expenses(context: getContext())
-                exp2.name = "Hydro Electricity"
-                exp2.categoryId = id
-                exp2.categoryName = "Utilities"
-                exp2.amount = 45.12
-                exp2.created = Date()
-        
-                let exp3 = Expenses(context: getContext())
-                exp3.name = "Water"
-                exp3.categoryName = "Utilities"
-                exp3.categoryId = id
-                exp3.amount = 78.03
-                exp3.created = Date()
-                
-                self.saveAll()
-    }
-    
+//    func saveDefault(){
+//        
+//                let category = Categories(context: getContext())
+//                category.name = "Food"
+//                category.icon = "fork.knife"
+//        
+//                category.type = 1
+//                var id = UUID()
+//                category.id = id
+//        
+//        
+//                let exp = Expenses(context: getContext())
+//                exp.name = "Watermelon"
+//                exp.categoryId = id
+//                exp.categoryName = "Food"
+//                exp.amount = 10.23
+//                exp.created = Date()
+//        
+//                let exp4 = Expenses(context: getContext())
+//                exp4.name = "Bread"
+//                exp4.categoryId = id
+//                exp4.categoryName = "Food"
+//                exp4.amount = 8.99
+//                exp4.created = Date()
+//        
+//        
+//                let category2 = Categories(context: getContext())
+//                category2.name = "Utilities"
+//                category2.type = 1
+//                id = UUID()
+//                category2.id = id
+//        
+//                let exp2 = Expenses(context: getContext())
+//                exp2.name = "Hydro Electricity"
+//                exp2.categoryId = id
+//                exp2.categoryName = "Utilities"
+//                exp2.amount = 45.12
+//                exp2.created = Date()
+//        
+//                let exp3 = Expenses(context: getContext())
+//                exp3.name = "Water"
+//                exp3.categoryName = "Utilities"
+//                exp3.categoryId = id
+//                exp3.amount = 78.03
+//                exp3.created = Date()
+//                
+//                self.saveAll()
+//    }
+//    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "dashboard" {

@@ -10,12 +10,15 @@ import CoreData
 
 class AddCategoryViewController: UIViewController {
 
+    @IBOutlet weak var catIcon: UIImageView!
     @IBOutlet weak var categotyNameTextField: UITextField!
     private var choosenIconName = "sparkles"
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        unsetBackground(selectedCat:0,skipAll: true)
         // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
+
     }
 //    @IBAction func saveButtonTouched(_ sender: Any) {
 //        print(categotyNameTextField.hasText)
@@ -32,8 +35,32 @@ class AddCategoryViewController: UIViewController {
 //        }
 //    }
     
+    
+    func unsetBackground(selectedCat : Int, skipAll: Bool) {
+             
+       let tags = [11,12,13,14,15,16]
+        for _tag in tags {
+            if(_tag != selectedCat)
+            {
+                DispatchQueue.main.async {
+                    
+                    self.view.viewWithTag(_tag)?.tintColor  = UIColor.darkGray
+                }
+            }else{
+                if(!skipAll)
+                {
+                    DispatchQueue.main.async {
+                        self.view.viewWithTag(_tag)?.tintColor  = UIColor.systemIndigo
+                    }
+                }
+            }
+        }
+    }
+    
     @IBAction func buttonTouched(_ sender: UIButton) {
     
+        unsetBackground(selectedCat: sender.tag,skipAll: false)
+        
         switch sender.tag {
         case 1:
             choosenIconName = "book"
@@ -48,7 +75,7 @@ class AddCategoryViewController: UIViewController {
         case 6:
             choosenIconName = "case"
         case 0:
-            print(categotyNameTextField.hasText)
+            //print(categotyNameTextField.hasText)
             if(categotyNameTextField.hasText)
             {
                 saveCategory(newCategoryName: categotyNameTextField.text ?? "New Category", newCategoryIconName: choosenIconName)
@@ -60,6 +87,9 @@ class AddCategoryViewController: UIViewController {
         }
     }
     
+    @IBAction func closeForm(_ sender: Any) {
+        dismiss(animated: true)
+    }
     public func saveCategory(newCategoryName: String, newCategoryIconName: String){
         
         //TODO: Function should check if there's already a category with this name

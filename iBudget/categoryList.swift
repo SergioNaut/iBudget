@@ -20,6 +20,7 @@ class categoryList : UITableViewController  {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.title = "Select Category"
         tableView.reloadData()
+        tableView.separatorStyle = .none
     }
     
     func loadValues() {
@@ -43,8 +44,10 @@ class categoryList : UITableViewController  {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let cellImg = UIImage(systemName: categoriesArray[indexPath.row].icon!)?.resized(to: CGSize(width: 30, height: 30))
+        let cellImg = UIImage(systemName: categoriesArray[indexPath.row].icon!)?.resized(to: CGSize(width: 34, height: 34))
+        cell.imageView?.contentMode = .scaleAspectFit;
         cell.imageView?.image = cellImg
+        cell.imageView?.image = cell.imageView?.image?.withTintColor(UIColor.systemIndigo)
         cell.textLabel?.text = categoriesArray[indexPath.row].name
         return cell
     }
