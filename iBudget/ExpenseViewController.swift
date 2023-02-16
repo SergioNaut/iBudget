@@ -14,6 +14,8 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var expenses : [Expenses] = []
     private var categoriesArray: [Categories] = []
+    var isEdit: Bool = false
+    var selectedExpense: Expenses!
     
     override func viewDidLoad() {
         tableView.dataSource = self
@@ -28,10 +30,17 @@ class ExpenseViewController: UIViewController {
         loadExpenses()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addExpense" {
+            let destinationVC = segue.destination as? AddExpenseViewControlller
+            destinationVC?.isEdit = isEdit
+            destinationVC?.editExpenseItem = selectedExpense
+        }
+    }
+    
     
     //get connection
     func getContext()->NSManagedObjectContext{
-        
         let context  = AppDelegate.sharedAppDelegate.coreDataStack.getCoreDataContext()!
         return context
     }
@@ -75,8 +84,6 @@ extension ExpenseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
         
-        
-        
         cell.categoryImage.image = UIImage(systemName: categoriesArray[indexPath.row].icon!)
         
         let  ExpCategoryName = expenses[indexPath.row].categoryName
@@ -87,6 +94,23 @@ extension ExpenseViewController: UITableViewDataSource {
         cell.categoryName.text = expenses[indexPath.row].name
         cell.totalPrice.text = "\( String(format: "$%.2f",  expenses[indexPath.row].amount ) )"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view,actionPerformed:
+        (Bool) -> ()) in
+            self.isEdit = true
+            self.selectedExpense = self.expenses[indexPath.row]
+            self.performSegue(withIdentifier: "addExpense", sender: nil)
+            self.isEdit = false
+            actionPerformed(true)
+        }
+        return UISwipeActionsConfiguration(actions: [edit])
     }
 
 }
