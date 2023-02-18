@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import ChartProgressBar
 
 
 
@@ -18,7 +19,10 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var remainingBudget: UILabel!
     @IBOutlet weak var totalBudgetFromCard: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var chart: ChartProgressBar!
+    @IBOutlet weak var viewAllButton: UIButton!
     
+    var data: [BarData] = []
     
     private var categoriesArray : [Categories] = []
     private var groupedCategoryList: [Expenses] = []
@@ -27,7 +31,29 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
       
         tableView.rowHeight = 80
-       
+        viewAllButton.titleLabel?.font = UIFont(name: "Avenir Medium", size: 14)
+        
+        data.append(BarData.init(barTitle: "Jan", barValue: 1.4, pinText: "140$"))
+        data.append(BarData.init(barTitle: "Feb", barValue: 9.0, pinText: "900$"))
+        data.append(BarData.init(barTitle: "Mar", barValue: 3.1, pinText: "310$"))
+        data.append(BarData.init(barTitle: "Apr", barValue: 4.8, pinText: "480$"))
+        data.append(BarData.init(barTitle: "May", barValue: 6.6, pinText: "660$"))
+        data.append(BarData.init(barTitle: "Jun", barValue: 7.4, pinText: "740$"))
+        data.append(BarData.init(barTitle: "Jul", barValue: 5.5, pinText: "550$"))
+
+        chart.data = data
+        chart.barsCanBeClick = true
+        chart.maxValue = 10.0
+        chart.progressColor =  UIColor(hex: "#FE7685ff")!
+        chart.barTitleColor = UIColor(hex: "#212121ff")!
+        chart.barTitleSelectedColor = UIColor(hex: "#FE7685ff")!
+        chart.barTitleFont = UIFont(name: "Avenir Medium", size: 12)
+        chart.pinMarginBottom = 15
+        chart.pinWidth = 70
+        chart.pinHeight = 29
+        chart.pinTxtSize = 17
+        chart.delegate = self
+        chart.build()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,6 +65,11 @@ class DashboardViewController: UIViewController {
         loadValues()
     }
     
+    @IBAction func onViewAllPressed(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 1
+    }
+    
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 80.0;//Choose your custom row height
     }
@@ -49,7 +80,6 @@ class DashboardViewController: UIViewController {
         do{
             let categories = try getContext().fetch(cat_request)
             categoriesArray.append(contentsOf: categories)
-            print(categoriesArray[0].icon)
         }
         catch {
             print ("error fetching data: \(error)")
@@ -65,7 +95,7 @@ class DashboardViewController: UIViewController {
                     userName.text = "Hi, \(exp.fullName ?? "-")"
                     totalBudget.text = "$ \(exp.budget ?? 0)"
                     totalIncome.text = "$ \(exp.income ?? 0)"
-                    totalBudgetFromCard.text = "$ \(exp.budget ?? 0)"
+//                    totalBudgetFromCard.text = "$ \(exp.budget ?? 0)"
                 }
     
             } catch {
@@ -149,6 +179,10 @@ extension DashboardViewController: UITableViewDataSource {
         return groupedCategoryList.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
         
@@ -158,10 +192,6 @@ extension DashboardViewController: UITableViewDataSource {
         
         let categoryElem  = categoriesArray.first { $0.name! == ExpCategoryName }
         
-       
-        
-     
-           
         cell.categoryImage.image = UIImage(systemName: (categoryElem?.icon)!)
         cell.categoryName.text = groupedCategoryList[indexPath.row].categoryName
         cell.totalPrice.text = "\( String(format: "$%.2f",  groupedCategoryList[indexPath.row].amount ) )"
@@ -172,6 +202,12 @@ extension DashboardViewController: UITableViewDataSource {
 
 extension DashboardViewController: UITableViewDelegate {
     
+}
+
+extension DashboardViewController: ChartProgressBarDelegate {
+    func ChartProgressBar(_ chartProgressBar: ChartProgressBar, didSelectRowAt rowIndex: Int) {
+        print(rowIndex)
+    }
 }
 
 struct ExpenseStruct {
