@@ -20,6 +20,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var totalBudgetFromCard: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var chart: ChartProgressBar!
+    @IBOutlet weak var viewAllButton: UIButton!
     
     var data: [BarData] = []
     
@@ -30,40 +31,29 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
       
         tableView.rowHeight = 80
+        viewAllButton.titleLabel?.font = UIFont(name: "Avenir Medium", size: 14)
         
-
-               data.append(BarData.init(barTitle: "Jan", barValue: 1.4, pinText: "1.4$"))
-               data.append(BarData.init(barTitle: "Feb", barValue: 10, pinText: "10$"))
-               data.append(BarData.init(barTitle: "Mar", barValue: 3.1, pinText: "3.1$"))
-               data.append(BarData.init(barTitle: "Apr", barValue: 4.8, pinText: "4.8$"))
-               data.append(BarData.init(barTitle: "May", barValue: 6.6, pinText: "6.6$"))
-               data.append(BarData.init(barTitle: "Jun", barValue: 7.4, pinText: "7.4$"))
-               data.append(BarData.init(barTitle: "Jul", barValue: 5.5, pinText: "5.5$"))
+        data.append(BarData.init(barTitle: "Jan", barValue: 1.4, pinText: "140$"))
+        data.append(BarData.init(barTitle: "Feb", barValue: 9.0, pinText: "900$"))
+        data.append(BarData.init(barTitle: "Mar", barValue: 3.1, pinText: "310$"))
+        data.append(BarData.init(barTitle: "Apr", barValue: 4.8, pinText: "480$"))
+        data.append(BarData.init(barTitle: "May", barValue: 6.6, pinText: "660$"))
+        data.append(BarData.init(barTitle: "Jun", barValue: 7.4, pinText: "740$"))
+        data.append(BarData.init(barTitle: "Jul", barValue: 5.5, pinText: "550$"))
 
         chart.data = data
-                chart.barsCanBeClick = true
-                chart.maxValue = 10.0
-                chart.emptyColor = UIColor.clear
-                chart.barWidth = 7
-//                chart.progressColor = UIColor.init(hexString: "99ffffff")
-//                chart.progressClickColor = UIColor.init(hexString: "F2912C")
-//                chart.pinBackgroundColor = UIColor.init(hexString: "E2335E")
-//                chart.pinTxtColor = UIColor.init(hexString: "ffffff")
-//                chart.barTitleColor = UIColor.init(hexString: "B6BDD5")
-//                chart.barTitleSelectedColor = UIColor.init(hexString: "FFFFFF")
-                chart.pinMarginBottom = 15
-                chart.pinWidth = 70
-                chart.pinHeight = 29
-                chart.pinTxtSize = 17
-                chart.delegate = self
-                chart.build()
-            
-                chart.disableBar(at: 3)
-            
-            let when = DispatchTime.now() + 6 // change 2 to desired number of seconds
-                DispatchQueue.main.asyncAfter(deadline: when) {
-                    self.chart.enableBar(at: 3)
-                }
+        chart.barsCanBeClick = true
+        chart.maxValue = 10.0
+        chart.progressColor =  UIColor(hex: "#FE7685ff")!
+        chart.barTitleColor = UIColor(hex: "#212121ff")!
+        chart.barTitleSelectedColor = UIColor(hex: "#FE7685ff")!
+        chart.barTitleFont = UIFont(name: "Avenir Medium", size: 12)
+        chart.pinMarginBottom = 15
+        chart.pinWidth = 70
+        chart.pinHeight = 29
+        chart.pinTxtSize = 17
+        chart.delegate = self
+        chart.build()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -105,7 +95,7 @@ class DashboardViewController: UIViewController {
                     userName.text = "Hi, \(exp.fullName ?? "-")"
                     totalBudget.text = "$ \(exp.budget ?? 0)"
                     totalIncome.text = "$ \(exp.income ?? 0)"
-                    totalBudgetFromCard.text = "$ \(exp.budget ?? 0)"
+//                    totalBudgetFromCard.text = "$ \(exp.budget ?? 0)"
                 }
     
             } catch {
