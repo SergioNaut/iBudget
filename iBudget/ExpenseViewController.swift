@@ -69,7 +69,20 @@ class ExpenseViewController: UIViewController {
                 print ("error fetching data: \(error)")
             }
     }
-    
+    func deleteExpenses(contextIndx : Int) {
+        
+        
+        
+            
+           
+            
+              getContext().delete(expenses[contextIndx])
+            print("Success")
+            
+        
+ 
+        
+    }
 }
 
 
@@ -119,7 +132,17 @@ extension ExpenseViewController: UITableViewDataSource {
         edit.backgroundColor = .systemTeal
         return UISwipeActionsConfiguration(actions: [edit])
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+          if editingStyle == .delete {
+              deleteExpenses(contextIndx: indexPath.row)
+              // Delete the user-selected item from the context
+                  
 
+              expenses.remove(at: indexPath.row)
+              AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+              tableView.deleteRows(at: [indexPath], with: .fade)
+          }
+      }
 }
 
  
