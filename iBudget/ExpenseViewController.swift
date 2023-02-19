@@ -91,6 +91,12 @@ extension ExpenseViewController: UITableViewDataSource {
         
         cell.categoryImage.image = UIImage(systemName: categoryElem!.icon!)
         
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "E MMM d, YYYY"
+        
+        let date = dateFormatterGet.string(from: expenses[indexPath.row].created!)
+        
+        cell.createdTimeStamp.text = date //+ (expenses[indexPath.row].created?.formatted())!
         cell.categoryName.text = expenses[indexPath.row].name
         cell.totalPrice.text = "\( String(format: "$%.2f",  expenses[indexPath.row].amount ) )"
         return cell
@@ -110,6 +116,7 @@ extension ExpenseViewController: UITableViewDataSource {
             self.isEdit = false
             actionPerformed(true)
         }
+        edit.backgroundColor = .systemTeal
         return UISwipeActionsConfiguration(actions: [edit])
     }
 
