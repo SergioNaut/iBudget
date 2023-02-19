@@ -44,11 +44,17 @@ class categoryList : UITableViewController  {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let cellImg = UIImage(systemName: categoriesArray[indexPath.row].icon!)?.resized(to: CGSize(width: 34, height: 34))
-        cell.imageView?.contentMode = .scaleAspectFit;
-        cell.imageView?.image = cellImg
-        cell.imageView?.image = cell.imageView?.image?.withTintColor(UIColor.systemIndigo)
+        let cellImg = UIImage(systemName: categoriesArray[indexPath.row].icon!)!.withTintColor(UIColor(hex: "#494949ff")!)
+        //(UIColor(hex: "#F7F8FCff")!)
+        .resized(to: CGSize(width: 28, height: 24))
+        
+       // cell.imageView?.image?.withTintColor(.purple).withTintColor(.systemIndigo, renderingMode: .alwaysTemplate)
+        cell.imageView?.cornerRadius = 8
+        cell.imageView?.image = cellImg//!.withTintColor(.systemIndigo)
+        cell.imageView?.backgroundColor =  UIColor(hex: "#F7F8FCff")!
         cell.textLabel?.text = categoriesArray[indexPath.row].name
+        cell.imageView?.contentMode = .scaleAspectFit;
+      
         return cell
     }
     
@@ -73,3 +79,7 @@ class categoryList : UITableViewController  {
        
     }
 }
+
+
+
+ 

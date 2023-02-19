@@ -12,4 +12,8 @@ class DashboardCell : UITableViewCell {
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var totalPrice: UILabel!
     @IBOutlet weak var categoryImage: UIImageView!
+    
+    @IBOutlet weak var createdTimeStamp: UILabel!
+    
+    
 }

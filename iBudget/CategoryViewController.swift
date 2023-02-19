@@ -14,13 +14,29 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var categoriesTableView: UITableView!
     private var categoriesArray: [Categories] = []
     private let addCategorySegue = "addCategoryScreen"
-    
+    let readOnlyCategories = ["food","housing","transportation","utilities","medical"]
+    var CanActionPerformed = true
     //var newCategory = CategoryValues.init(name: "newCategory", iconName: "sparkle")
+    
+    var isEdit: Bool = false
+    var selectedCategory: Categories!
+    
     
     @IBAction func addCategoryButtonTapped(_ sender: UIButton) {
         
-       //performSegue(withIdentifier: addCategorySegue, sender: self)
+       performSegue(withIdentifier: "addCategory", sender: self)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addCategory" {
+            let destinationVC = segue.destination as? AddCategoryViewController
+            destinationVC?.isEdit = isEdit
+            destinationVC?.editCategoryItem = selectedCategory
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +44,7 @@ class CategoryViewController: UIViewController {
         categoriesTableView.dataSource = self
         
         //Uncomment later when categories need to be clickable
-        //categoriesTableView.delegate = self
+        categoriesTableView.delegate = self
     }
     
     func getContext()->NSManagedObjectContext{
@@ -67,27 +83,62 @@ struct CategoryValues {
 }
 
 //Extension for TableView
-extension CategoryViewController: UITableViewDataSource{
+extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //returns table size
         return categoriesArray.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+   
+   
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        //TODO: dont allow edit of system categories
+        let item = categoriesArray[indexPath.row]
+        let catName  = (item.name?.lowercased())!
+        print(catName)
+        if readOnlyCategories.contains(catName) {
+            CanActionPerformed = false
+            return UISwipeActionsConfiguration(actions: [])
+        }else {
+            CanActionPerformed = true
+           
+        }
+            let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view,actionPerformed:
+                                                                                (Bool) -> ()) in
+                self.isEdit = true
+                self.selectedCategory = self.categoriesArray[indexPath.row]
+                self.performSegue(withIdentifier: "addCategory", sender: nil)
+                self.isEdit = false
+                actionPerformed(self.CanActionPerformed)
+            }
+            
+            edit.backgroundColor = .systemTeal
+            return UISwipeActionsConfiguration(actions: [edit])
+        
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! categoryCell
         //pega o item correto para essa row
         let item = categoriesArray[indexPath.row]
-        
-        var content = cell.defaultContentConfiguration()
-        content.text = item.name
-        //Display an image in the item
-        content.image = UIImage(systemName: item.icon ?? "sparkles")?.withTintColor(UIColor.systemIndigo)
-         cell.imageView?.image = cell.imageView?.image?.withTintColor(UIColor.systemIndigo)
-
-        cell.contentConfiguration = content
-        
+        cell.categoryName.text = item.name
+        cell.icon.image = UIImage(systemName: item.icon ?? "sparkles")?.withTintColor(UIColor.systemIndigo)
         return cell
     }
 }
 
 //For second sprint -- Make table items clickable and editable
+
+
+class categoryCell : UITableViewCell {
+    
+    @IBOutlet weak var icon :UIImageView!
+    @IBOutlet weak var categoryName: UILabel!
+    
+}

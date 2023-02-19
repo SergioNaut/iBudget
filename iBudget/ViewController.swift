@@ -197,9 +197,9 @@ class ViewController: UIViewController {
         
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
          
-        print("Saved")
+        //print("Saved")
         //getUserInfo()
-        print("Loaded")
+        //print("Loaded")
 
  
     }
