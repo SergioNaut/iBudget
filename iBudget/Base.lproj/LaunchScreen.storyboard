@@ -15,22 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iBudget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkz-G8-hVO">
-                                <rect key="frame" x="108" y="304" width="159.5" height="59"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="43"/>
-                                <color key="textColor" red="0.26672631499999999" green="0.27848166229999999" blue="0.32966250180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gx" translatesAutoresizingMaskIntoConstraints="NO" id="Szl-3u-oDs">
-                                <rect key="frame" x="59" y="129" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Szl-3u-oDs">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="X5Z-F4-kjB"/>
+                                    <constraint firstAttribute="height" constant="200" id="giZ-lL-i0Q"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kkz-G8-hVO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="j6X-H6-uwq"/>
-                            <constraint firstItem="kkz-G8-hVO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="u3Q-a5-wAu"/>
+                            <constraint firstItem="Szl-3u-oDs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="pBL-QI-Trd"/>
+                            <constraint firstItem="Szl-3u-oDs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zKk-23-sP9"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -40,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gx" width="1024" height="1024"/>
+        <image name="logo" width="500" height="500"/>
     </resources>
 </document>
