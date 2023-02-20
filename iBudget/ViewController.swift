@@ -14,12 +14,22 @@ import CoreData
 class ViewController: UIViewController {
 
    
+    @IBOutlet weak var budgetVw: UIView!
+    @IBOutlet weak var fullnameVw: UIView!
 
-
+    @IBOutlet weak var monthlyincomeVw: UIView!
+    
+    var defaultBorderColor : CGColor!
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserInfo()
-        
+        defaultBorderColor = fullnameVw.layer.borderColor
         self.hideKeyboardWhenTappedAround()
 
     }
@@ -31,32 +41,42 @@ class ViewController: UIViewController {
     @IBAction func saveUserInfo(_ sender: Any) {
            
         
-        DispatchQueue.main.async {
-        
-            self.txtFullname.backgroundColor = UIColor.white
-            self.txtIncome.backgroundColor = UIColor.white
-            self.txtBudget.backgroundColor = UIColor.white
-            
-        }
+ 
         //Get users fullname
         let fullname = txtFullname.text!
 
         //Get users income
-        let income = NSDecimalNumber(string: txtIncome.text!)
-
+        let income = NSDecimalNumber(string: txtIncome.text == "" ? "0" : txtIncome.text)
+        let tmp_income = Float(truncating: income)
+        
         //Get users budget
-        let budget = NSDecimalNumber(string: txtBudget.text!)
-
-       
+        let budget = NSDecimalNumber(string: txtBudget.text == "" ? "0" : txtBudget.text)
+        let tmp_budget = Float(truncating: budget)
+         
+        
+        //reset border color
+        fullnameVw.layer.borderWidth = 0
+        monthlyincomeVw.layer.borderWidth = 0
+        budgetVw.layer.borderWidth = 0
         
         if(fullname == ""){
-            showMsg(txtField: txtFullname,msg: "Please enter your fullname")
+            showMsg(title:"Missing Value",txtField: txtFullname,msg: "Please enter your full name.",errorView: fullnameVw)
+           
+          
             return
-        }else if (Float(truncating: income) < 1){
-            showMsg(txtField: txtIncome,msg: "Please enter your total monthly income")
+        }else if tmp_income < 1  {
+            showMsg(title:"Missing Value",txtField: txtIncome,msg: "Please enter your total monthly income. Income must be greater than 0",errorView: monthlyincomeVw)
             return
-        }else if (Float(truncating: budget) < 1){
-            showMsg(txtField: txtBudget,msg: "Please enter your total monthly budget")
+        }else if tmp_income.isNaN {
+            showMsg(title:"Invalid Input",txtField: txtIncome,msg: "Please enter a valid monthly income. This field allows only numbers and decimal point",errorView: monthlyincomeVw)
+            return
+        }
+        else if (tmp_budget < 1 ){
+            showMsg(title:"Missing Value",txtField: txtBudget,msg: "Please enter your total monthly budget. Income must be greater than 0",errorView: budgetVw)
+            return
+        }
+        else if tmp_budget.isNaN {
+            showMsg(title:"Invalid Input",txtField: txtBudget,msg: "Please enter a valid monthly budget. This field allows only numbers and decimal point",errorView: budgetVw)
             return
         }
          
@@ -113,7 +133,61 @@ class ViewController: UIViewController {
         category5.id = id
         //TODO: Change icons
         category5.icon = "cross"
+
+        // add budgets to core data
+        let budget1 = Expenses(context: getContext())
+        budget1.id = UUID()
+        budget1.name = "Food"
+        budget1.categoryId = category.id
+        budget1.categoryName = category.name
+        budget1.amount = 600
+        let calendar = Calendar.current
+        if let lastMonth = calendar.date(byAdding: .month, value: -1, to: Date()){
+            budget1.created = lastMonth
+        }
+
+        let budget2 = Expenses(context: getContext())
+        budget2.id = UUID()
+        budget2.name = "Rent"
+        budget2.categoryId = category2.id
+        budget2.categoryName = category2.name
+        budget2.amount = 900
+        if let last2Month = calendar.date(byAdding: .month, value: -2, to: Date()){
+            budget2.created = last2Month
+        }
+
         
+        let budget3 = Expenses(context: getContext())
+        budget3.id = UUID()
+        budget3.name = "Gas"
+        budget3.categoryId = category3.id
+        budget3.categoryName = category3.name
+        budget3.amount = 800
+        if let last3Month = calendar.date(byAdding: .month, value: -3, to: Date()){
+            budget3.created = last3Month
+        }
+
+
+        let budget4 = Expenses(context: getContext())
+        budget4.id = UUID()
+        budget4.name = "Electricity"
+        budget4.categoryId = category4.id
+        budget4.categoryName = category4.name
+        budget4.amount = 500
+        if let last4Month = calendar.date(byAdding: .month, value: -4, to: Date()){
+            budget4.created = last4Month
+        }
+
+        let budget5 = Expenses(context: getContext())
+        budget5.id = UUID()
+        budget5.name = "Doctor"
+        budget5.categoryId = category5.id
+        budget5.categoryName = category5.name
+        budget5.amount = 300
+        if let last5Month = calendar.date(byAdding: .month, value: -5, to: Date()){
+            budget5.created = last5Month
+        }        
+
         self.saveAll()
        
         navigateToMainView()
@@ -126,7 +200,7 @@ class ViewController: UIViewController {
     
     func navigateToMainView(){
         
-        let vc: UIViewController? = nil
+        let _: UIViewController? = nil
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "CustomTabBarController") as! CustomTabBarController
@@ -135,20 +209,24 @@ class ViewController: UIViewController {
     
     
     
-    func showMsg(txtField : UITextField, msg: String)
+    func showMsg(title: String ,txtField : UITextField, msg: String, errorView : UIView )
     {
+      
         
         // Create a new alert
-        let dialogMessage = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         // Present alert to user
         dialogMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-             // print("Handle Ok logic here")
+            DispatchQueue.main.async {
+               
+                errorView.layer.borderWidth = 1
+                errorView.layer.borderColor = UIColor.red.cgColor
+                txtField.becomeFirstResponder()
+            }
+            
               }))
         self.present(dialogMessage, animated: true, completion: nil)
-        DispatchQueue.main.async {
-            txtField.becomeFirstResponder()
-            txtField.backgroundColor = UIColor.red.withAlphaComponent(0.6)
-        }
+ 
        
     }
     
@@ -197,9 +275,9 @@ class ViewController: UIViewController {
         
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
          
-        print("Saved")
+        //print("Saved")
         //getUserInfo()
-        print("Loaded")
+        //print("Loaded")
 
  
     }

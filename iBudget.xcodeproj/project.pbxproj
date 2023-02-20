@@ -17,6 +17,7 @@
 		30F4E41029890588007A2158 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4E40F29890588007A2158 /* CategoryViewController.swift */; };
 		30F4E4122989059F007A2158 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4E4112989059F007A2158 /* SettingViewController.swift */; };
 		3AFF5A1D298B01BA006D2B7A /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF5A1C298B01BA006D2B7A /* AddCategoryViewController.swift */; };
+		6EC8107CDC617F0E48C51611 /* Pods_iBudget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007DBCBD438EC8CFF9A53D7C /* Pods_iBudget.framework */; };
 		7885DEB329746DF000B6BEF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885DEB229746DF000B6BEF9 /* AppDelegate.swift */; };
 		7885DEB529746DF000B6BEF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885DEB429746DF000B6BEF9 /* SceneDelegate.swift */; };
 		7885DEB729746DF000B6BEF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885DEB629746DF000B6BEF9 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		007DBCBD438EC8CFF9A53D7C /* Pods_iBudget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4E91FA2985FEEB00085EDC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1C4E91FF2986126D00085EDC /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
@@ -37,6 +39,7 @@
 		30F4E40D29890555007A2158 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		30F4E40F29890588007A2158 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		30F4E4112989059F007A2158 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		36358F3C8AC1F8259E506DE4 /* Pods-iBudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBudget.release.xcconfig"; path = "Target Support Files/Pods-iBudget/Pods-iBudget.release.xcconfig"; sourceTree = "<group>"; };
 		3AFF5A1C298B01BA006D2B7A /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		7885DEAF29746DF000B6BEF9 /* iBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7885DEB229746DF000B6BEF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		7885DEC029746DF000B6BEF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78F67F5B298EBFFF005F2906 /* AddExpenseViewControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseViewControlller.swift; sourceTree = "<group>"; };
 		78F67F5D298EC03A005F2906 /* categoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryList.swift; sourceTree = "<group>"; };
+		D3416F7D297BDBE631318EA2 /* Pods-iBudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBudget.debug.xcconfig"; path = "Target Support Files/Pods-iBudget/Pods-iBudget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EC8107CDC617F0E48C51611 /* Pods_iBudget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,8 @@
 			children = (
 				7885DEB129746DF000B6BEF9 /* iBudget */,
 				7885DEB029746DF000B6BEF9 /* Products */,
+				E4308D8331E416236176740F /* Pods */,
+				D87CFC63696A6FDED3CBB8B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,12 +98,12 @@
 				1C4E91FC2985FFB300085EDC /* CoreData */,
 				7885DEB229746DF000B6BEF9 /* AppDelegate.swift */,
 				3AFF5A1C298B01BA006D2B7A /* AddCategoryViewController.swift */,
+				78F67F5B298EBFFF005F2906 /* AddExpenseViewControlller.swift */,
+				30F4E40F29890588007A2158 /* CategoryViewController.swift */,
+				30F4E40D29890555007A2158 /* ExpenseViewController.swift */,
 				7885DEB429746DF000B6BEF9 /* SceneDelegate.swift */,
 				1C4E921D298C98D900085EDC /* CustomTabBarController.swift */,
 				30258ED0297BB7A200C8C50F /* DashboardController.swift */,
-				30F4E40D29890555007A2158 /* ExpenseViewController.swift */,
-				30F4E40F29890588007A2158 /* CategoryViewController.swift */,
-				78F67F5B298EBFFF005F2906 /* AddExpenseViewControlller.swift */,
 				78F67F5D298EC03A005F2906 /* categoryList.swift */,
 				30F4E4112989059F007A2158 /* SettingViewController.swift */,
 				7885DEB629746DF000B6BEF9 /* ViewController.swift */,
@@ -111,6 +118,23 @@
 			path = iBudget;
 			sourceTree = "<group>";
 		};
+		D87CFC63696A6FDED3CBB8B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				007DBCBD438EC8CFF9A53D7C /* Pods_iBudget.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4308D8331E416236176740F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3416F7D297BDBE631318EA2 /* Pods-iBudget.debug.xcconfig */,
+				36358F3C8AC1F8259E506DE4 /* Pods-iBudget.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7885DEC329746DF000B6BEF9 /* Build configuration list for PBXNativeTarget "iBudget" */;
 			buildPhases = (
+				DD658A5DA18470E937D8407D /* [CP] Check Pods Manifest.lock */,
 				7885DEAB29746DF000B6BEF9 /* Sources */,
 				7885DEAC29746DF000B6BEF9 /* Frameworks */,
 				7885DEAD29746DF000B6BEF9 /* Resources */,
+				CA83794DD598E5DC4064BCDA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -176,6 +202,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA83794DD598E5DC4064BCDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD658A5DA18470E937D8407D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iBudget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7885DEAB29746DF000B6BEF9 /* Sources */ = {
@@ -338,26 +406,30 @@
 		};
 		7885DEC429746DF000B6BEF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3416F7D297BDBE631318EA2 /* Pods-iBudget.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9ETV3K5KPJ;
+				DEVELOPMENT_TEAM = S428U5YXJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iBudget/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.salemkosemani.iBudget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iBudgetxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,26 +438,30 @@
 		};
 		7885DEC529746DF000B6BEF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36358F3C8AC1F8259E506DE4 /* Pods-iBudget.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9ETV3K5KPJ;
+				DEVELOPMENT_TEAM = S428U5YXJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iBudget/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.salemkosemani.iBudget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iBudgetxy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
