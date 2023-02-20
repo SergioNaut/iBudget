@@ -68,18 +68,21 @@ class ExpenseViewController: UIViewController {
                 print ("error fetching data: \(error)")
             }
     }
+    
     func deleteExpenses(contextIndx : Int) {
-        
-        
-        
-            
-           
-            
-              getContext().delete(expenses[contextIndx])
-            print("Success")
-            
-        
- 
+         getContext().delete(expenses[contextIndx])
+    }
+    
+    func shareExpense(expenseRecord: Expenses)
+    {
+        let textToShare = "Hello \(UserDefaults().string(forKey: "fullname")!) is sharing this expense with  you: "
+        let expenseDetails = "\(expenseRecord.name ?? "") $\(expenseRecord.amount)"
+        let objectsToShare: [Any] = [textToShare, expenseDetails]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.title = "Share Expense"
+        activityVC.popoverPresentationController?.sourceView = self.view
+        activityVC.popoverPresentationController?.barButtonItem?.title  = "Share Expense" 
+        self.present(activityVC, animated: true, completion: nil)
         
     }
 }
@@ -127,7 +130,17 @@ extension ExpenseViewController: UITableViewDataSource {
             actionPerformed(true)
         }
         edit.backgroundColor = .systemTeal
-        return UISwipeActionsConfiguration(actions: [edit])
+        
+        // share action
+        let share = UIContextualAction(style: .normal, title: "Share") { [weak self] (action, view, completionHandler) in
+            self!.shareExpense(expenseRecord:self!.expenses[indexPath.row])
+            completionHandler(true)
+        }
+        share.backgroundColor = .systemGreen
+        
+        
+        
+        return UISwipeActionsConfiguration(actions: [edit,share])
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
           if editingStyle == .delete {

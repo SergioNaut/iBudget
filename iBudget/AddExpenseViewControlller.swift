@@ -9,7 +9,19 @@ import Foundation
 import UIKit
 import CoreData
 
-class AddExpenseViewControlller : UIViewController{
+class AddExpenseViewControlller : UIViewController, UIActivityItemSource {
+    
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        return "Share Expense"
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        return "Share Expense"
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+        return "Share Expense"
+    }
 
     
     
@@ -20,6 +32,11 @@ class AddExpenseViewControlller : UIViewController{
     @IBOutlet weak var saveButton: UIButton!
     var isEdit: Bool = false
     var editExpenseItem: Expenses!
+    
+    @IBOutlet weak var CategoryVW: UIView!
+
+    @IBOutlet weak var expensenameVW: UIView!
+    @IBOutlet weak var amountVW: UIView!
     
     var categorySelected : Categories!
     
@@ -87,23 +104,90 @@ class AddExpenseViewControlller : UIViewController{
         dismiss(animated: true)
     }
     
+    
+    
+    
     func validateData() {
-        if(!expenseName.hasText || !expenseAmount.hasText || !expenseCategory.hasText)
-        {
-            let alert = UIAlertController(title: "Validation", message: "You need to fill in the category, title and amount to submit.", preferredStyle: UIAlertController.Style.alert)
-
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-            self.present(alert, animated: true, completion: nil)
+         
+        expensenameVW.layer.borderWidth = 0
+        CategoryVW.layer.borderWidth = 0
+        expensenameVW.layer.borderWidth = 0
         
-            return;
+        
+        //Get users expense amount
+        let exp_amount = NSDecimalNumber(string: expenseAmount.text == "" ? "0" : expenseAmount.text)
+        let tmp_amount = Float(truncating: exp_amount)
+        
+        if(!expenseCategory.hasText )
+        {
+            showMsg(title:"Missing Value",txtField: expenseCategory,msg: "Please select the category for this expense",errorView: CategoryVW)
+            return
+        }else if(!expenseName.hasText )
+        {
+            showMsg(title:"Missing Value",txtField: expenseName,msg: "Please enter a name for this expense",errorView: expensenameVW)
+            return
+        }else if(!expenseAmount.hasText )
+        {
+            showMsg(title:"Missing Value",txtField: expenseAmount,msg: "Please enter the total amount for this expense",errorView: amountVW)
+            return
+        }else if tmp_amount < 1  {
+            showMsg(title:"Invalid Input ",txtField: expenseAmount,msg: "Expense amount must be greater than 0 ",errorView: amountVW)
+            return
+        }else if tmp_amount.isNaN {
+            showMsg(title:"Invalid Input",txtField: expenseAmount,msg: "Please enter a valid expense. This field allows only numbers and decimal point",errorView: amountVW)
+            return
         }
+        
+        
+        
+//        let alert = UIAlertController(title: "Validation", message: "You need to fill in the category, title and amount to submit.", preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
+//        return;
+        
+       // || !expenseAmount.hasText || !expenseCategory.hasText
+        
+        
+        
         if(isEdit){
             editExpense()
         }else {
             addExpense()
         }
     }
+    
+    func showMsg(title: String ,txtField : UITextField, msg: String, errorView : UIView )
+    {
+      
+      
+        // Create a new alert
+        let dialogMessage = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        // Present alert to user
+        dialogMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            DispatchQueue.main.async {
+               
+                errorView.layer.borderWidth = 1
+                errorView.layer.borderColor = UIColor.red.cgColor
+               
+                
+                if(txtField != self.expenseCategory) {
+                    txtField.becomeFirstResponder()
+                }else{
+                    txtField.becomeFirstResponder()
+                    self.view.endEditing(true)
+                    //self.dismissKeyboard()
+                }
+                
+            }
+            
+              }))
+        self.present(dialogMessage, animated: true, completion: nil)
+ 
+       
+    }
+    
+    
+    
     
     func editExpense(){
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Expenses")

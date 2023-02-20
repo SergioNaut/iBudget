@@ -101,19 +101,31 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        //TODO: dont allow edit of system categories
-        let item = categoriesArray[indexPath.row]
-        let catName  = (item.name?.lowercased())!
-        print(catName)
-        if readOnlyCategories.contains(catName) {
-            CanActionPerformed = false
-            return UISwipeActionsConfiguration(actions: [])
-        }else {
-            CanActionPerformed = true
-           
-        }
+            //TODO: dont allow edit of system categories
+            let item = categoriesArray[indexPath.row]
+            let catName  = (item.name?.lowercased())!
+             
+//            if readOnlyCategories.contains(catName) {
+//                CanActionPerformed = false
+//                return UISwipeActionsConfiguration(actions: [])
+//            }else {
+//                CanActionPerformed = true
+//
+//            }
+        
+        
             let edit = UIContextualAction(style: .normal, title: "Edit") { (contextualAction, view,actionPerformed:
                                                                                 (Bool) -> ()) in
+                
+                if self.readOnlyCategories.contains(catName) {
+                    let alert = UIAlertController(title: "Edit Error", message: "System generated categories cannot be edited", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                          return
+                        
+                        }))
+                    self.present(alert, animated: true,completion: nil)
+                }
+                
                 self.isEdit = true
                 self.selectedCategory = self.categoriesArray[indexPath.row]
                 self.performSegue(withIdentifier: "addCategory", sender: nil)
@@ -122,6 +134,9 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
             }
             
             edit.backgroundColor = .systemTeal
+            
+       
+         
             return UISwipeActionsConfiguration(actions: [edit])
         
         
@@ -137,13 +152,18 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-          if editingStyle == .delete {
+          
+        
+        
+        
+        
+        if editingStyle == .delete {
               
               let item = categoriesArray[indexPath.row]
               let catName  = (item.name?.lowercased())!
               print(catName)
               if readOnlyCategories.contains(catName) {
-                  let alert = UIAlertController(title: "Delete Error", message: "Basic categories cannot be deleted", preferredStyle: .alert)
+                  let alert = UIAlertController(title: "Delete Error", message: "System generated categories cannot be deleted", preferredStyle: .alert)
                   alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                         return
                       
