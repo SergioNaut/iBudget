@@ -14,12 +14,22 @@ import CoreData
 class ViewController: UIViewController {
 
    
+    @IBOutlet weak var budgetVw: UIView!
+    @IBOutlet weak var fullnameVw: UIView!
 
-
+    @IBOutlet weak var monthlyincomeVw: UIView!
+    
+    var defaultBorderColor : CGColor!
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getUserInfo()
-        
+        defaultBorderColor = fullnameVw.layer.borderColor
         self.hideKeyboardWhenTappedAround()
 
     }
@@ -31,32 +41,42 @@ class ViewController: UIViewController {
     @IBAction func saveUserInfo(_ sender: Any) {
            
         
-//        DispatchQueue.main.async {
-//        
-//            self.txtFullname.backgroundColor = UIColor.green
-//            self.txtIncome.backgroundColor = UIColor.red
-//            self.txtBudget.backgroundColor = UIColor.white
-//            
-//        }
+ 
         //Get users fullname
         let fullname = txtFullname.text!
 
         //Get users income
-        let income = NSDecimalNumber(string: txtIncome.text!)
-
+        let income = NSDecimalNumber(string: txtIncome.text == "" ? "0" : txtIncome.text)
+        let tmp_income = Float(truncating: income)
+        
         //Get users budget
-        let budget = NSDecimalNumber(string: txtBudget.text!)
-
-       
+        let budget = NSDecimalNumber(string: txtBudget.text == "" ? "0" : txtBudget.text)
+        let tmp_budget = Float(truncating: budget)
+         
+        
+        //reset border color
+        fullnameVw.layer.borderWidth = 0
+        monthlyincomeVw.layer.borderWidth = 0
+        budgetVw.layer.borderWidth = 0
         
         if(fullname == ""){
-            showMsg(txtField: txtFullname,msg: "Please enter your fullname")
+            showMsg(title:"Missing Value",txtField: txtFullname,msg: "Please enter your full name.",errorView: fullnameVw)
+           
+          
             return
-        }else if (Float(truncating: income) < 1){
-            showMsg(txtField: txtIncome,msg: "Please enter your total monthly income")
+        }else if tmp_income < 1  {
+            showMsg(title:"Missing Value",txtField: txtIncome,msg: "Please enter your total monthly income. Income must be greater than 0",errorView: monthlyincomeVw)
             return
-        }else if (Float(truncating: budget) < 1){
-            showMsg(txtField: txtBudget,msg: "Please enter your total monthly budget")
+        }else if tmp_income.isNaN {
+            showMsg(title:"Invalid Input",txtField: txtIncome,msg: "Please enter a valid monthly income. This field allows only numbers and decimal point",errorView: monthlyincomeVw)
+            return
+        }
+        else if (tmp_budget < 1 ){
+            showMsg(title:"Missing Value",txtField: txtBudget,msg: "Please enter your total monthly budget. Income must be greater than 0",errorView: budgetVw)
+            return
+        }
+        else if tmp_budget.isNaN {
+            showMsg(title:"Invalid Input",txtField: txtBudget,msg: "Please enter a valid monthly budget. This field allows only numbers and decimal point",errorView: budgetVw)
             return
         }
          
@@ -189,20 +209,24 @@ class ViewController: UIViewController {
     
     
     
-    func showMsg(txtField : UITextField, msg: String)
+    func showMsg(title: String ,txtField : UITextField, msg: String, errorView : UIView )
     {
+      
         
         // Create a new alert
-        let dialogMessage = UIAlertController(title: "Error", message: msg, preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         // Present alert to user
         dialogMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-             // print("Handle Ok logic here")
+            DispatchQueue.main.async {
+               
+                errorView.layer.borderWidth = 1
+                errorView.layer.borderColor = UIColor.red.cgColor
+                txtField.becomeFirstResponder()
+            }
+            
               }))
         self.present(dialogMessage, animated: true, completion: nil)
-//        DispatchQueue.main.async {
-//            txtField.becomeFirstResponder()
-//            txtField.backgroundColor = UIColor.red.withAlphaComponent(0.6)
-//        }
+ 
        
     }
     
