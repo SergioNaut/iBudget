@@ -31,13 +31,13 @@ class ViewController: UIViewController {
     @IBAction func saveUserInfo(_ sender: Any) {
            
         
-        DispatchQueue.main.async {
-        
-            self.txtFullname.backgroundColor = UIColor.white
-            self.txtIncome.backgroundColor = UIColor.white
-            self.txtBudget.backgroundColor = UIColor.white
-            
-        }
+//        DispatchQueue.main.async {
+//        
+//            self.txtFullname.backgroundColor = UIColor.green
+//            self.txtIncome.backgroundColor = UIColor.red
+//            self.txtBudget.backgroundColor = UIColor.white
+//            
+//        }
         //Get users fullname
         let fullname = txtFullname.text!
 
@@ -113,7 +113,61 @@ class ViewController: UIViewController {
         category5.id = id
         //TODO: Change icons
         category5.icon = "cross"
+
+        // add budgets to core data
+        let budget1 = Expenses(context: getContext())
+        budget1.id = UUID()
+        budget1.name = "Food"
+        budget1.categoryId = category.id
+        budget1.categoryName = category.name
+        budget1.amount = 600
+        let calendar = Calendar.current
+        if let lastMonth = calendar.date(byAdding: .month, value: -1, to: Date()){
+            budget1.created = lastMonth
+        }
+
+        let budget2 = Expenses(context: getContext())
+        budget2.id = UUID()
+        budget2.name = "Rent"
+        budget2.categoryId = category2.id
+        budget2.categoryName = category2.name
+        budget2.amount = 900
+        if let last2Month = calendar.date(byAdding: .month, value: -2, to: Date()){
+            budget2.created = last2Month
+        }
+
         
+        let budget3 = Expenses(context: getContext())
+        budget3.id = UUID()
+        budget3.name = "Gas"
+        budget3.categoryId = category3.id
+        budget3.categoryName = category3.name
+        budget3.amount = 800
+        if let last3Month = calendar.date(byAdding: .month, value: -3, to: Date()){
+            budget3.created = last3Month
+        }
+
+
+        let budget4 = Expenses(context: getContext())
+        budget4.id = UUID()
+        budget4.name = "Electricity"
+        budget4.categoryId = category4.id
+        budget4.categoryName = category4.name
+        budget4.amount = 500
+        if let last4Month = calendar.date(byAdding: .month, value: -4, to: Date()){
+            budget4.created = last4Month
+        }
+
+        let budget5 = Expenses(context: getContext())
+        budget5.id = UUID()
+        budget5.name = "Doctor"
+        budget5.categoryId = category5.id
+        budget5.categoryName = category5.name
+        budget5.amount = 300
+        if let last5Month = calendar.date(byAdding: .month, value: -5, to: Date()){
+            budget5.created = last5Month
+        }        
+
         self.saveAll()
        
         navigateToMainView()
@@ -126,7 +180,7 @@ class ViewController: UIViewController {
     
     func navigateToMainView(){
         
-        let vc: UIViewController? = nil
+        let _: UIViewController? = nil
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let mainTabBarController = storyboard.instantiateViewController(identifier: "CustomTabBarController") as! CustomTabBarController
@@ -145,10 +199,10 @@ class ViewController: UIViewController {
              // print("Handle Ok logic here")
               }))
         self.present(dialogMessage, animated: true, completion: nil)
-        DispatchQueue.main.async {
-            txtField.becomeFirstResponder()
-            txtField.backgroundColor = UIColor.red.withAlphaComponent(0.6)
-        }
+//        DispatchQueue.main.async {
+//            txtField.becomeFirstResponder()
+//            txtField.backgroundColor = UIColor.red.withAlphaComponent(0.6)
+//        }
        
     }
     

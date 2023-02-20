@@ -29,6 +29,10 @@ class CustomTabBarController : UITabBarController,UITabBarControllerDelegate{
                     item.setTitleTextAttributes([.font: UIFont(name: "Avenir Medium", size: 12)!], for: .normal)
                 }
             }
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.yellow]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.yellow]
+        self.tabBar.isTranslucent = true
         }
     
     
