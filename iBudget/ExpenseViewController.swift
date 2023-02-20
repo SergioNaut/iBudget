@@ -22,7 +22,6 @@ class ExpenseViewController: UIViewController {
         tableView.delegate = self
         self.tableView.rowHeight = 65
         self.hideKeyboardWhenTappedAround()
-
     }
     
     //load the view each time we are at this screen
@@ -96,9 +95,7 @@ extension ExpenseViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
-        
-        cell.categoryImage.image = UIImage(systemName: categoriesArray[indexPath.row].icon!)
-        
+    
         let  ExpCategoryName = expenses[indexPath.row].categoryName
         let categoryElem  = categoriesArray.first { $0.name! == ExpCategoryName }
         
