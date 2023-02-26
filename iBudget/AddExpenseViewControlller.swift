@@ -8,21 +8,11 @@
 import Foundation
 import UIKit
 import CoreData
+import LinkPresentation
 
-class AddExpenseViewControlller : UIViewController, UIActivityItemSource {
+class AddExpenseViewControlller : UIViewController {
     
-    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
-        return "Share Expense"
-    }
-    
-    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
-        return "Share Expense"
-    }
-    
-    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
-        return "Share Expense"
-    }
-
+     
     
     
     @IBOutlet weak var expenseName: UITextField!
@@ -237,4 +227,6 @@ extension AddExpenseViewControlller  {
         expenseCategory.text = _category.name
     }
 }
+
+ 
 

@@ -23,6 +23,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var viewAllButton: UIButton!
     @IBOutlet weak var last7MonthWindow: UILabel!
     
+    @IBOutlet weak var lblCurrentMonthTotalExpenselabel: UILabel!
     var data: [BarData] = []
     var last7Months: [MonthYear] = []
     var totalSavedBuget: Double = 0
@@ -32,7 +33,7 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        lblCurrentMonthTotalExpenselabel.text =  "Total Expenses " + "(" + ("").getCurrentShortMonth + ")"
         tableView.rowHeight = 60
         viewAllButton.titleLabel?.font = UIFont(name: "Avenir Medium", size: 14)
     }
@@ -57,11 +58,15 @@ class DashboardViewController: UIViewController {
     }
     
     func setBarChart(){
+        var greatestExpense = 0.0
         var disabledMonths : [Int] = []
         data = []
         last7Months.reverse()        
         for month in last7Months {
             let totalAmount = getTotalAmountForMonth(month.month, year: month.year) ?? 0
+            if greatestExpense < totalAmount {
+                greatestExpense = totalAmount
+            }
             let monthName = String(month.month.prefix(3))
             if(totalAmount > 0){
                 data.append(BarData.init(barTitle: monthName, barValue: Float(totalAmount/100), pinText: "$ \(String(format: "%.2f", totalAmount))"))
@@ -70,14 +75,19 @@ class DashboardViewController: UIViewController {
                 data.append(BarData.init(barTitle: monthName, barValue: 0.0, pinText: "$0"))
             }
         }
+        
+        
+        
+        
         chart.data = data
         chart.barsCanBeClick = true
-        chart.maxValue = Float(totalSavedBuget / 100)
+        chart.maxValue = Float( greatestExpense / 100 )
         chart.progressColor =  UIColor(hex: "#FE7685ff")!
         chart.barTitleColor = UIColor(hex: "#212121ff")!
         chart.barTitleSelectedColor = UIColor(hex: "#FE7685ff")!
-        chart.barTitleFont = UIFont(name: "Avenir Medium", size: 12)
+        chart.barTitleFont = UIFont(name: "Avenir Book", size: 12)
         chart.pinMarginBottom = 15
+        chart.pinMarginTop = 50
         chart.pinWidth = 70
         chart.pinHeight = 29
         chart.pinTxtSize = 14
@@ -87,7 +97,13 @@ class DashboardViewController: UIViewController {
     }
     
     func setTotalExpenseAndCalendar(){
+        
         totalIncome.text = data.last?.pinText
+        
+        UserDefaults(suiteName:"com.group8.iBudget.ibudgetedWidget")!.set(totalIncome.text, forKey: "totalExpense")
+        UserDefaults(suiteName:"com.group8.iBudget.ibudgetedWidget")!.set(totalBudget.text, forKey: "Budget")
+        
+        
         let lastDay = getLastDayOfMonth(monthName: last7Months.last!.month) ?? 0
         last7MonthWindow.text = "01 \(last7Months.first?.month.prefix(3) ?? "") - \(lastDay) \(last7Months.last?.month.prefix(3) ?? "")"
     }
