@@ -85,7 +85,7 @@ class AddExpenseViewControlller : UIViewController {
         let exp = Expenses(context: getContext())
         let id = UUID()
         exp.id = id
-        exp.name = expenseName.text
+        exp.name = expenseName.text?.glazeCamelCase
         exp.categoryId = categorySelected.id
         exp.categoryName = categorySelected.name
         exp.amount = Double(  expenseAmount.text! ) ?? 0
@@ -186,7 +186,7 @@ class AddExpenseViewControlller : UIViewController {
         do {
             let results = try getContext().fetch(fetchRequest)
             if let editedExpense = results.first as? Expenses {
-                editedExpense.name = expenseName.text
+                editedExpense.name = expenseName.text?.glazeCamelCase
                 editedExpense.categoryId = categorySelected.id
                 editedExpense.categoryName = categorySelected.name
                 editedExpense.amount = Double(  expenseAmount.text! ) ?? 0

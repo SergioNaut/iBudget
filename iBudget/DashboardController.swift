@@ -23,6 +23,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var viewAllButton: UIButton!
     @IBOutlet weak var last7MonthWindow: UILabel!
     
+    @IBOutlet weak var totalBudgetlabel: UILabel!
     @IBOutlet weak var lblCurrentMonthTotalExpenselabel: UILabel!
     var data: [BarData] = []
     var last7Months: [MonthYear] = []
@@ -34,6 +35,8 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblCurrentMonthTotalExpenselabel.text =  "Total Expenses " + "(" + ("").getCurrentShortMonth + ")"
+       
+        totalBudgetlabel.text = "Total Budget " + "(" + ("").getCurrentShortMonth + ")"
         tableView.rowHeight = 60
         viewAllButton.titleLabel?.font = UIFont(name: "Avenir Medium", size: 14)
     }
