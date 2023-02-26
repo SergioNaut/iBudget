@@ -42,52 +42,52 @@ extension UIViewController {
         }
     }
     
-//    @IBInspectable
-//      var shadowRadius: CGFloat {
-//        get {
-//          return layer.shadowRadius
-//        }
-//        set {
-//          layer.shadowRadius = newValue
-//        }
-//      }
-//      
-//      @IBInspectable
-//      var shadowOpacity: Float {
-//        get {
-//          return layer.shadowOpacity
-//        }
-//        set {
-//          layer.shadowOpacity = newValue
-//        }
-//      }
-//      
-//      @IBInspectable
-//      var shadowOffset: CGSize {
-//        get {
-//          return layer.shadowOffset
-//        }
-//        set {
-//          layer.shadowOffset = newValue
-//        }
-//      }
-//      
-//      @IBInspectable
-//      var shadowColor: UIColor? {
-//        get {
-//          if let color = layer.shadowColor {
-//            return UIColor(cgColor: color)
-//          }
-//          return nil
-//        }
-//        set {
-//          if let color = newValue {
-//            layer.shadowColor = color.cgColor
-//          } else {
-//            layer.shadowColor = nil
-//          }
-//        }
-//      }
+    @IBInspectable
+      var shadowRadius: CGFloat {
+        get {
+          return layer.shadowRadius
+        }
+        set {
+          layer.shadowRadius = newValue
+        }
+      }
+      
+      @IBInspectable
+      var shadowOpacity: Float {
+        get {
+          return layer.shadowOpacity
+        }
+        set {
+          layer.shadowOpacity = newValue
+        }
+      }
+      
+      @IBInspectable
+      var shadowOffset: CGSize {
+        get {
+          return layer.shadowOffset
+        }
+        set {
+          layer.shadowOffset = newValue
+        }
+      }
+      
+      @IBInspectable
+      var shadowColor: UIColor? {
+        get {
+          if let color = layer.shadowColor {
+            return UIColor(cgColor: color)
+          }
+          return nil
+        }
+        set {
+          if let color = newValue {
+            layer.shadowColor = color.cgColor
+          } else {
+            layer.shadowColor = nil
+          }
+        }
+      }
 }
 
 func hexColor(hexString: String) -> UIColor {
@@ -135,4 +135,26 @@ extension UIColor {
         return nil
     }
 }
+
+extension String {
+    var glazeCamelCase: String {
+        // 1
+        
+        let tmpArr = self.split(separator: " ")
+        
+        let words =  tmpArr.map  { $0.prefix(1).capitalized + $0.dropFirst().lowercased() }
+         
+        return words.joined(separator: " ")
+    }
+    
+    
+    var getCurrentShortMonth : String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM"
+        
+        return  dateFormatter.string(from: Date())
+    }
+}
+
 

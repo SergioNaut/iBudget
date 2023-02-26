@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import LinkPresentation
 
 class ExpenseViewController: UIViewController {
     
@@ -17,11 +18,15 @@ class ExpenseViewController: UIViewController {
     var isEdit: Bool = false
     var selectedExpense: Expenses!
     
+    @IBOutlet weak var lblExpenseSubtitle: UILabel!
     override func viewDidLoad() {
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.rowHeight = 65
         self.hideKeyboardWhenTappedAround()
+      
+        lblExpenseSubtitle.text = "All expenses for " + ("").getCurrentShortMonth
+        
     }
     
     //load the view each time we are at this screen
@@ -75,10 +80,31 @@ class ExpenseViewController: UIViewController {
     
     func shareExpense(expenseRecord: Expenses)
     {
-        let textToShare = "Hello \(UserDefaults().string(forKey: "fullname")!) is sharing this expense with  you: "
+        
+        let title = "IBudget (Share Expense)"
+        //let text = "Some Text"
+     
+        
+        
+        let text = "Hello \(UserDefaults().string(forKey: "fullname")!) is sharing this expense with  you: "
+        
+        
         let expenseDetails = "\(expenseRecord.name ?? "") $\(expenseRecord.amount)"
-        let objectsToShare: [Any] = [textToShare, expenseDetails]
-        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
+        // set up activity view controller
+        let textToShare: [Any] = [
+            MyActivityItemSource(title: title, text: text + expenseDetails)
+        ]
+       
+        
+        
+        
+        //let objectsToShare: [Any] = [textToShare, expenseDetails]
+        
+        let activityVC = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        
+        //let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
         activityVC.title = "Share Expense"
         activityVC.popoverPresentationController?.sourceView = self.view
         activityVC.popoverPresentationController?.barButtonItem?.title  = "Share Expense" 
@@ -163,3 +189,37 @@ extension ExpenseViewController: UITableViewDataSource {
 }
 
  
+
+class MyActivityItemSource: NSObject, UIActivityItemSource {
+    var title: String
+    var text: String
+    
+    init(title: String, text: String) {
+        self.title = title
+        self.text = text
+        super.init()
+    }
+    
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        return text
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        return text
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+        return title
+    }
+
+    func activityViewControllerLinkMetadata(_ activityViewController: UIActivityViewController) -> LPLinkMetadata? {
+        let metadata = LPLinkMetadata()
+        metadata.title = title
+        metadata.iconProvider = NSItemProvider(object: UIImage(named: "logo")!)
+        //This is a bit ugly, though I could not find other ways to show text content below title.
+      
+        metadata.url = URL(fileURLWithPath: text)
+        return metadata
+    }
+
+}
