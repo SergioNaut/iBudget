@@ -7,20 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		047FD4C374EE21227DE940AB511BCA51 /* ChartProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E737849F7BAA583E4492BCF5169B13F /* ChartProgressBar.swift */; };
-		2B6D7D36874DF49016B7F7E0074A6CD6 /* BarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C637C7D9AD2BCEACEEC8A810322F908 /* BarData.swift */; };
-		3FCE5F6C4BF7FB469AC7D8DC3917322B /* ChartProgressBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29F39788F3FCED02BF02E25CD41D30A2 /* ChartProgressBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		411979A1BC8187CAD2DDF822972B228B /* Pods-iBudget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6874987821D5EFBA9C22390C4DDC8E /* Pods-iBudget-dummy.m */; };
-		4F61A22BDD21AC3AB4037CB0E978BF73 /* ChartProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7EB7D8C697888E1BBE711DF5362DAF2 /* ChartProgressBar-dummy.m */; };
-		518672D33F8381DA93D8A951BB121748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5F8275BB95682CA80855DA2C572817E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		A17D49768EEFA3D68039848BB2112BB2 /* Pods-iBudget-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E22CD4AE2A40F64835762AE647EB5324 /* Pods-iBudget-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B335775CD8A606E48D66A69455ACCF3B /* ChartProgressBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1DD5470C8D3F066F7A2CBEBFDE514B /* ChartProgressBarDelegate.swift */; };
-		D551BD9DE54B9E5F58FF18D11F7A81AD /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D80C5E9B30D14AD2EA739769ABB8E9 /* Bar.swift */; };
+		0378C0BB7E5E906AF017E4D823BD3D14 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4656EC2BBA3F3D444344AE32D731F3 /* Colors.swift */; };
+		047FD4C374EE21227DE940AB511BCA51 /* ChartProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694C601F1B387A3905F2024B814C41A /* ChartProgressBar.swift */; };
+		16EFCB69858E5FC5C38EC497F65F8111 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE553897DF013E6DB2E07BFC45D8D2 /* DatePickerDialog.swift */; };
+		1EDD9556E9386F4F03B1909181999CD2 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A1AEEB7176C4FBE90D70FC6D8A9C17 /* UIColor+Ext.swift */; };
+		2B6D7D36874DF49016B7F7E0074A6CD6 /* BarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBD548136FABB7BB029332166740E1 /* BarData.swift */; };
+		2EDD43EBD371A293E3C7AC368E0D0D9F /* MonthYearPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94092FC9A75A1AA1237FBF78E99F0B7A /* MonthYearPicker-dummy.m */; };
+		3FCE5F6C4BF7FB469AC7D8DC3917322B /* ChartProgressBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE16B545266A8E05691C8F677F80D6B7 /* ChartProgressBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B937E5D66F277483F1F86FD3A03F616 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		4F61A22BDD21AC3AB4037CB0E978BF73 /* ChartProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C44789EF879A91776432CA0D4837E5 /* ChartProgressBar-dummy.m */; };
+		518672D33F8381DA93D8A951BB121748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		6F7CB932BD20A01C26325651C7995725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		7860FA2DFD21A7AC9966CC48EA4AEA12 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE21026EE5B83E6CF89E8AA1DBF0D5 /* Popover.swift */; };
+		80CB51A4CDE394C2AECCF1D86F14D351 /* DatePickerDialog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97C779794D556C25BA9640E3C2FE4B8D /* DatePickerDialog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9718C8C2F59A5949126DF7BF9DFE7A22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		99A8BC30A65D703AA29F85F9FCAE84A8 /* Pods-iBudget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6874987821D5EFBA9C22390C4DDC8E /* Pods-iBudget-dummy.m */; };
+		A454FDE721C693A7455E425F500973B1 /* Popover-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 700DF750C1F1292A395566D88700D8BB /* Popover-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B335775CD8A606E48D66A69455ACCF3B /* ChartProgressBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A19E1AA94A98F79B726E185FE0781A9 /* ChartProgressBarDelegate.swift */; };
+		B4900B54D5B1CB52AD0F936BF06C5B7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		CA1A83D7E36AAA68CA7D60964371B075 /* Popover-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43827289AD890422FED86E7F63DFFDE5 /* Popover-dummy.m */; };
+		D551BD9DE54B9E5F58FF18D11F7A81AD /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CACBC2B9F165058925AF76A2A49CC7 /* Bar.swift */; };
+		D9FB289EBC6BFCAAE5FEF26AB177184D /* Pods-iBudget-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E22CD4AE2A40F64835762AE647EB5324 /* Pods-iBudget-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DBEA87B1DF671EA618A6503BB2E445BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		E910CF8D101C51C754737D8309232A6C /* DatePickerDialog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5DD0FB650B916BCA41DF913DFBC528 /* DatePickerDialog-dummy.m */; };
+		F396C1120D0E9FFDBB0777177F65F199 /* MonthYearPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7494330F09DCFAD0E506DF0BBAEDA725 /* MonthYearPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8D77214E1536C10946E04819D056CDC /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC8B21134F8B6006486DFE787898027 /* MonthYearPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F36DDF8A83FC5757D6BB417F0C0466BB /* PBXContainerItemProxy */ = {
+		2789563955FBA02D892A9BF9985CBCE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C664F75D7FE4D02CDB8FE9EFADAEDA6;
+			remoteInfo = MonthYearPicker;
+		};
+		4983BE066A440ED79D0C9A7776626235 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89ADB0D61D0BE9648E9853F5F8BDA717;
+			remoteInfo = Popover;
+		};
+		55DF3B8EBFC9DE2BDED20FD722BF563C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 977B67E6ADDDC9C183DE6B6E33F17FCC;
+			remoteInfo = DatePickerDialog;
+		};
+		E8FD49D627DBA2FA33FDFB26ED308718 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -31,37 +67,92 @@
 
 /* Begin PBXFileReference section */
 		0463DB4BF155E00F13C0754B054C94B3 /* Pods-iBudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iBudget.debug.xcconfig"; sourceTree = "<group>"; };
-		1E737849F7BAA583E4492BCF5169B13F /* ChartProgressBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartProgressBar.swift; path = "ChartProgressBar-ios/Classes/ChartProgressBar.swift"; sourceTree = "<group>"; };
+		0969EB51C1E293C173141D48DC24C3B8 /* DatePickerDialog */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DatePickerDialog; path = DatePickerDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E264B247136FD3E99415629E926AC94 /* DatePickerDialog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DatePickerDialog.debug.xcconfig; sourceTree = "<group>"; };
 		1F34B28D664A0396802615FC6FB6B5CC /* Pods-iBudget-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iBudget-Info.plist"; sourceTree = "<group>"; };
-		29F39788F3FCED02BF02E25CD41D30A2 /* ChartProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartProgressBar-umbrella.h"; sourceTree = "<group>"; };
-		2C637C7D9AD2BCEACEEC8A810322F908 /* BarData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarData.swift; path = "ChartProgressBar-ios/Classes/BarData.swift"; sourceTree = "<group>"; };
+		233576346CF91BE43A22B9D80616C108 /* MonthYearPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MonthYearPicker-Info.plist"; sourceTree = "<group>"; };
+		2694C601F1B387A3905F2024B814C41A /* ChartProgressBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartProgressBar.swift; path = "ChartProgressBar-ios/Classes/ChartProgressBar.swift"; sourceTree = "<group>"; };
+		26FA69B3F449EF3787525B6A98D504BC /* DatePickerDialog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DatePickerDialog.release.xcconfig; sourceTree = "<group>"; };
+		2A19E1AA94A98F79B726E185FE0781A9 /* ChartProgressBarDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartProgressBarDelegate.swift; path = "ChartProgressBar-ios/Classes/ChartProgressBarDelegate.swift"; sourceTree = "<group>"; };
+		306F770DEF61E58495706466B5B4BD53 /* Popover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Popover.release.xcconfig; sourceTree = "<group>"; };
 		324A249AAB13084A8D6C1EA9CD92AC19 /* Pods-iBudget-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iBudget-acknowledgements.markdown"; sourceTree = "<group>"; };
-		44480781D25E5C50B549BFFE6A4A72DE /* ChartProgressBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartProgressBar.debug.xcconfig; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChartProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A2D80C5E9B30D14AD2EA739769ABB8E9 /* Bar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bar.swift; path = "ChartProgressBar-ios/Classes/Bar.swift"; sourceTree = "<group>"; };
-		A58109CFC1D9756B959A054133C84817 /* ChartProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChartProgressBar-Info.plist"; sourceTree = "<group>"; };
+		38FA43C1ACAE40DC92FF50924405F5EC /* MonthYearPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MonthYearPicker.modulemap; sourceTree = "<group>"; };
+		43827289AD890422FED86E7F63DFFDE5 /* Popover-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Popover-dummy.m"; sourceTree = "<group>"; };
+		43A1AEEB7176C4FBE90D70FC6D8A9C17 /* UIColor+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Ext.swift"; path = "Sources/UIColor+Ext.swift"; sourceTree = "<group>"; };
+		5BC4170F4ECEB3F745F5FDC6E91C8E10 /* Popover-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Popover-Info.plist"; sourceTree = "<group>"; };
+		684CDEA4107E25702C766CDF70E6F2C7 /* Popover.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Popover.modulemap; sourceTree = "<group>"; };
+		6E51397DFC207B0AB28D68CB66D992F3 /* Popover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Popover.debug.xcconfig; sourceTree = "<group>"; };
+		6E5DD0FB650B916BCA41DF913DFBC528 /* DatePickerDialog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DatePickerDialog-dummy.m"; sourceTree = "<group>"; };
+		700DF750C1F1292A395566D88700D8BB /* Popover-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Popover-umbrella.h"; sourceTree = "<group>"; };
+		701FD8ACF5CB517E4B210C55293BE900 /* MonthYearPicker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MonthYearPicker; path = MonthYearPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7494330F09DCFAD0E506DF0BBAEDA725 /* MonthYearPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MonthYearPicker-umbrella.h"; sourceTree = "<group>"; };
+		79DBD548136FABB7BB029332166740E1 /* BarData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarData.swift; path = "ChartProgressBar-ios/Classes/BarData.swift"; sourceTree = "<group>"; };
+		7D74EB0F6D37D00A2E6359C3CE1B7754 /* DatePickerDialog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerDialog-prefix.pch"; sourceTree = "<group>"; };
+		819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChartProgressBar; path = ChartProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5EA64D92F8B3D95BE9F84FEB5A0273 /* MonthYearPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MonthYearPicker.release.xcconfig; sourceTree = "<group>"; };
+		94092FC9A75A1AA1237FBF78E99F0B7A /* MonthYearPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MonthYearPicker-dummy.m"; sourceTree = "<group>"; };
+		97C779794D556C25BA9640E3C2FE4B8D /* DatePickerDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerDialog-umbrella.h"; sourceTree = "<group>"; };
+		98CACBC2B9F165058925AF76A2A49CC7 /* Bar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bar.swift; path = "ChartProgressBar-ios/Classes/Bar.swift"; sourceTree = "<group>"; };
+		9B23525FD8EF6DE969F9378AD9EAA6A1 /* ChartProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartProgressBar-prefix.pch"; sourceTree = "<group>"; };
+		9D4656EC2BBA3F3D444344AE32D731F3 /* Colors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Sources/Colors.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AAE794FF24B65B40696DCF4256FCE36B /* Popover-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Popover-prefix.pch"; sourceTree = "<group>"; };
+		AB41A3EE1528F7D80E3C2E5BD50FEFE3 /* ChartProgressBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChartProgressBar.modulemap; sourceTree = "<group>"; };
+		B72A389B0E6A6DD2F3D61F4DC7F84D83 /* Popover */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Popover; path = Popover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE16B545266A8E05691C8F677F80D6B7 /* ChartProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartProgressBar-umbrella.h"; sourceTree = "<group>"; };
 		C13CCDE6ED07349A842E345A2FF078FC /* Pods-iBudget-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iBudget-frameworks.sh"; sourceTree = "<group>"; };
+		C24B6E4336D4B00DB6B5F98A0787B694 /* ChartProgressBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartProgressBar.release.xcconfig; sourceTree = "<group>"; };
 		C77E8A538661C084AFF10956BCA8704D /* Pods-iBudget.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iBudget.modulemap"; sourceTree = "<group>"; };
 		CA6874987821D5EFBA9C22390C4DDC8E /* Pods-iBudget-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iBudget-dummy.m"; sourceTree = "<group>"; };
 		CDFEC870027830F32BDFCECAEC47F6E1 /* Pods-iBudget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iBudget-acknowledgements.plist"; sourceTree = "<group>"; };
-		D20326CF69F8EF934D83EC0E5E89DD32 /* ChartProgressBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartProgressBar.release.xcconfig; sourceTree = "<group>"; };
-		D7EB7D8C697888E1BBE711DF5362DAF2 /* ChartProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChartProgressBar-dummy.m"; sourceTree = "<group>"; };
-		DC1DD5470C8D3F066F7A2CBEBFDE514B /* ChartProgressBarDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartProgressBarDelegate.swift; path = "ChartProgressBar-ios/Classes/ChartProgressBarDelegate.swift"; sourceTree = "<group>"; };
-		DFF03E32FBD962CBDD25AB7A93B1D5A4 /* ChartProgressBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChartProgressBar.modulemap; sourceTree = "<group>"; };
+		D07CE63CA7336407597DA01719E841ED /* DatePickerDialog-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DatePickerDialog-Info.plist"; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		DAF2A5D8BE2B8924704BEAEED6CFA50E /* ChartProgressBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartProgressBar.debug.xcconfig; sourceTree = "<group>"; };
+		DF847739EBAE4F2AB24CD5C1397AD056 /* MonthYearPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MonthYearPicker-prefix.pch"; sourceTree = "<group>"; };
 		E22CD4AE2A40F64835762AE647EB5324 /* Pods-iBudget-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iBudget-umbrella.h"; sourceTree = "<group>"; };
 		E26A94B564A90C3B9B870025C94DF8C4 /* Pods-iBudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iBudget.release.xcconfig"; sourceTree = "<group>"; };
+		E3163D7D10DE0161E147EEB11627EA66 /* DatePickerDialog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DatePickerDialog.modulemap; sourceTree = "<group>"; };
+		E3C44789EF879A91776432CA0D4837E5 /* ChartProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChartProgressBar-dummy.m"; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		ECEE21026EE5B83E6CF89E8AA1DBF0D5 /* Popover.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Popover.swift; path = Classes/Popover.swift; sourceTree = "<group>"; };
+		ED0EEDBC61B2161759BD76EA016032DC /* MonthYearPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MonthYearPicker.debug.xcconfig; sourceTree = "<group>"; };
 		EED33E10A8A96F4271DA70C049E56041 /* Pods-iBudget */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-iBudget"; path = Pods_iBudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F19F474C7D69082AF171E822D21D9D95 /* ChartProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartProgressBar-prefix.pch"; sourceTree = "<group>"; };
+		F7333B9B99F649DE788C295BD69BBCA8 /* ChartProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChartProgressBar-Info.plist"; sourceTree = "<group>"; };
+		FAFE553897DF013E6DB2E07BFC45D8D2 /* DatePickerDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerDialog.swift; path = Sources/DatePickerDialog.swift; sourceTree = "<group>"; };
+		FFC8B21134F8B6006486DFE787898027 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MonthYearPickerView.swift; path = Sources/MonthYearPicker/MonthYearPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FC44A5663EA6AEDD4902B7F59D3A425F /* Frameworks */ = {
+		0C54A228AC7E4CA166161220379005CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F8275BB95682CA80855DA2C572817E3 /* Foundation.framework in Frameworks */,
+				B4900B54D5B1CB52AD0F936BF06C5B7C /* Foundation.framework in Frameworks */,
+				DBEA87B1DF671EA618A6503BB2E445BD /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B45004788C56E4A568C7BDB052F5E03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B937E5D66F277483F1F86FD3A03F616 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC7C854E4B821FFBD025829200D41F4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F7CB932BD20A01C26325651C7995725 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD4E0F7DFDB8FACE79CE4F731651D279 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9718C8C2F59A5949126DF7BF9DFE7A22 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +167,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19E9BFF809A93D605D785156B894FC3E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				684CDEA4107E25702C766CDF70E6F2C7 /* Popover.modulemap */,
+				43827289AD890422FED86E7F63DFFDE5 /* Popover-dummy.m */,
+				5BC4170F4ECEB3F745F5FDC6E91C8E10 /* Popover-Info.plist */,
+				AAE794FF24B65B40696DCF4256FCE36B /* Popover-prefix.pch */,
+				700DF750C1F1292A395566D88700D8BB /* Popover-umbrella.h */,
+				6E51397DFC207B0AB28D68CB66D992F3 /* Popover.debug.xcconfig */,
+				306F770DEF61E58495706466B5B4BD53 /* Popover.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Popover";
+			sourceTree = "<group>";
+		};
+		3403005D414F3C7D8CB8ECDB44BB283E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */,
+				0969EB51C1E293C173141D48DC24C3B8 /* DatePickerDialog */,
+				701FD8ACF5CB517E4B210C55293BE900 /* MonthYearPicker */,
+				EED33E10A8A96F4271DA70C049E56041 /* Pods-iBudget */,
+				B72A389B0E6A6DD2F3D61F4DC7F84D83 /* Popover */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BAE399E277F7849E6179714E59D5E4D /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				ECEE21026EE5B83E6CF89E8AA1DBF0D5 /* Popover.swift */,
+				19E9BFF809A93D605D785156B894FC3E /* Support Files */,
+			);
+			name = Popover;
+			path = Popover;
+			sourceTree = "<group>";
+		};
 		4CD794BB3C2877491096BD93C80B1FB3 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,27 +220,78 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		56815E5AE8E9F4686DE20B66C1023517 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				38FA43C1ACAE40DC92FF50924405F5EC /* MonthYearPicker.modulemap */,
+				94092FC9A75A1AA1237FBF78E99F0B7A /* MonthYearPicker-dummy.m */,
+				233576346CF91BE43A22B9D80616C108 /* MonthYearPicker-Info.plist */,
+				DF847739EBAE4F2AB24CD5C1397AD056 /* MonthYearPicker-prefix.pch */,
+				7494330F09DCFAD0E506DF0BBAEDA725 /* MonthYearPicker-umbrella.h */,
+				ED0EEDBC61B2161759BD76EA016032DC /* MonthYearPicker.debug.xcconfig */,
+				8D5EA64D92F8B3D95BE9F84FEB5A0273 /* MonthYearPicker.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MonthYearPicker";
+			sourceTree = "<group>";
+		};
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		88C241D39F636EB398A9F8CF4AB79D13 /* Support Files */ = {
+		62A39CB61B5694E9AE1D9A78DAF486CC /* ChartProgressBar */ = {
 			isa = PBXGroup;
 			children = (
-				DFF03E32FBD962CBDD25AB7A93B1D5A4 /* ChartProgressBar.modulemap */,
-				D7EB7D8C697888E1BBE711DF5362DAF2 /* ChartProgressBar-dummy.m */,
-				A58109CFC1D9756B959A054133C84817 /* ChartProgressBar-Info.plist */,
-				F19F474C7D69082AF171E822D21D9D95 /* ChartProgressBar-prefix.pch */,
-				29F39788F3FCED02BF02E25CD41D30A2 /* ChartProgressBar-umbrella.h */,
-				44480781D25E5C50B549BFFE6A4A72DE /* ChartProgressBar.debug.xcconfig */,
-				D20326CF69F8EF934D83EC0E5E89DD32 /* ChartProgressBar.release.xcconfig */,
+				98CACBC2B9F165058925AF76A2A49CC7 /* Bar.swift */,
+				79DBD548136FABB7BB029332166740E1 /* BarData.swift */,
+				2694C601F1B387A3905F2024B814C41A /* ChartProgressBar.swift */,
+				2A19E1AA94A98F79B726E185FE0781A9 /* ChartProgressBarDelegate.swift */,
+				DF5A5D27449BA43AF139AD4E3870616C /* Support Files */,
+			);
+			name = ChartProgressBar;
+			path = ChartProgressBar;
+			sourceTree = "<group>";
+		};
+		6FECA10888026E7112A45E0183A62690 /* MonthYearPicker */ = {
+			isa = PBXGroup;
+			children = (
+				FFC8B21134F8B6006486DFE787898027 /* MonthYearPickerView.swift */,
+				56815E5AE8E9F4686DE20B66C1023517 /* Support Files */,
+			);
+			name = MonthYearPicker;
+			path = MonthYearPicker;
+			sourceTree = "<group>";
+		};
+		7301AD907F5B668FDE29537C09B53D18 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3163D7D10DE0161E147EEB11627EA66 /* DatePickerDialog.modulemap */,
+				6E5DD0FB650B916BCA41DF913DFBC528 /* DatePickerDialog-dummy.m */,
+				D07CE63CA7336407597DA01719E841ED /* DatePickerDialog-Info.plist */,
+				7D74EB0F6D37D00A2E6359C3CE1B7754 /* DatePickerDialog-prefix.pch */,
+				97C779794D556C25BA9640E3C2FE4B8D /* DatePickerDialog-umbrella.h */,
+				1E264B247136FD3E99415629E926AC94 /* DatePickerDialog.debug.xcconfig */,
+				26FA69B3F449EF3787525B6A98D504BC /* DatePickerDialog.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/ChartProgressBar";
+			path = "../Target Support Files/DatePickerDialog";
+			sourceTree = "<group>";
+		};
+		909AC6A06B0745EB7C15A46012C5561E /* DatePickerDialog */ = {
+			isa = PBXGroup;
+			children = (
+				9D4656EC2BBA3F3D444344AE32D731F3 /* Colors.swift */,
+				FAFE553897DF013E6DB2E07BFC45D8D2 /* DatePickerDialog.swift */,
+				43A1AEEB7176C4FBE90D70FC6D8A9C17 /* UIColor+Ext.swift */,
+				7301AD907F5B668FDE29537C09B53D18 /* Support Files */,
+			);
+			name = DatePickerDialog;
+			path = DatePickerDialog;
 			sourceTree = "<group>";
 		};
 		C49CF91CEA635918DF9B7D997C948A4C /* Pods-iBudget */ = {
@@ -124,50 +311,39 @@
 			path = "Target Support Files/Pods-iBudget";
 			sourceTree = "<group>";
 		};
-		CB0513C08A943F395E4B4B7495A54F7E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar.framework */,
-				EED33E10A8A96F4271DA70C049E56041 /* Pods-iBudget */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				FF6A1B5BE424C3750D1522DE51F2CFDA /* Pods */,
-				CB0513C08A943F395E4B4B7495A54F7E /* Products */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				FBF41CBDAC78C56B09774752AA87E3DD /* Pods */,
+				3403005D414F3C7D8CB8ECDB44BB283E /* Products */,
 				4CD794BB3C2877491096BD93C80B1FB3 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		DF5A5D27449BA43AF139AD4E3870616C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				AB41A3EE1528F7D80E3C2E5BD50FEFE3 /* ChartProgressBar.modulemap */,
+				E3C44789EF879A91776432CA0D4837E5 /* ChartProgressBar-dummy.m */,
+				F7333B9B99F649DE788C295BD69BBCA8 /* ChartProgressBar-Info.plist */,
+				9B23525FD8EF6DE969F9378AD9EAA6A1 /* ChartProgressBar-prefix.pch */,
+				BE16B545266A8E05691C8F677F80D6B7 /* ChartProgressBar-umbrella.h */,
+				DAF2A5D8BE2B8924704BEAEED6CFA50E /* ChartProgressBar.debug.xcconfig */,
+				C24B6E4336D4B00DB6B5F98A0787B694 /* ChartProgressBar.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/ChartProgressBar";
 			sourceTree = "<group>";
 		};
-		D3B0E0C9594F69D04AE3C2B399A1AFB0 /* ChartProgressBar */ = {
+		FBF41CBDAC78C56B09774752AA87E3DD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A2D80C5E9B30D14AD2EA739769ABB8E9 /* Bar.swift */,
-				2C637C7D9AD2BCEACEEC8A810322F908 /* BarData.swift */,
-				1E737849F7BAA583E4492BCF5169B13F /* ChartProgressBar.swift */,
-				DC1DD5470C8D3F066F7A2CBEBFDE514B /* ChartProgressBarDelegate.swift */,
-				88C241D39F636EB398A9F8CF4AB79D13 /* Support Files */,
-			);
-			path = ChartProgressBar;
-			sourceTree = "<group>";
-		};
-		FF6A1B5BE424C3750D1522DE51F2CFDA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D3B0E0C9594F69D04AE3C2B399A1AFB0 /* ChartProgressBar */,
+				62A39CB61B5694E9AE1D9A78DAF486CC /* ChartProgressBar */,
+				909AC6A06B0745EB7C15A46012C5561E /* DatePickerDialog */,
+				6FECA10888026E7112A45E0183A62690 /* MonthYearPicker */,
+				4BAE399E277F7849E6179714E59D5E4D /* Popover */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -175,14 +351,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0DB819DA4A3352C9302CF0D4128FA17B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A17D49768EEFA3D68039848BB2112BB2 /* Pods-iBudget-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		54765064D640B089874538E11A8A5317 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -191,22 +359,111 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		710B864542BEB2A43DA07B890CEF8B78 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CB51A4CDE394C2AECCF1D86F14D351 /* DatePickerDialog-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E14BF9B53FE33B5739898C1F45D414B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A454FDE721C693A7455E425F500973B1 /* Popover-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD0439C5A4FC038472775B8EBFCBDC0E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9FB289EBC6BFCAAE5FEF26AB177184D /* Pods-iBudget-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB67F7412B4C290725D8D4276FC39A2E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F396C1120D0E9FFDBB0777177F65F199 /* MonthYearPicker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C667998B7E8054295025985D7CEB3042 /* Pods-iBudget */ = {
+		4C664F75D7FE4D02CDB8FE9EFADAEDA6 /* MonthYearPicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B69FFD1E1C7E959C2C7924E6944AB8DC /* Build configuration list for PBXNativeTarget "Pods-iBudget" */;
+			buildConfigurationList = ADE1681A44E23DE3E683CF9D27DC5289 /* Build configuration list for PBXNativeTarget "MonthYearPicker" */;
 			buildPhases = (
-				0DB819DA4A3352C9302CF0D4128FA17B /* Headers */,
-				0524043AEDFD004FDEEF54645EFCF20A /* Sources */,
-				FC44A5663EA6AEDD4902B7F59D3A425F /* Frameworks */,
-				0376220E3958BC2DD190766E6519C115 /* Resources */,
+				EB67F7412B4C290725D8D4276FC39A2E /* Headers */,
+				CFBE6DBC707047B8C97D07D89C7B0185 /* Sources */,
+				0C54A228AC7E4CA166161220379005CB /* Frameworks */,
+				F3F41ECAD941C55347813B4D9CAE1980 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EEFDFC1A30034678CEC97D4B4BA0685E /* PBXTargetDependency */,
+			);
+			name = MonthYearPicker;
+			productName = MonthYearPicker;
+			productReference = 701FD8ACF5CB517E4B210C55293BE900 /* MonthYearPicker */;
+			productType = "com.apple.product-type.framework";
+		};
+		89ADB0D61D0BE9648E9853F5F8BDA717 /* Popover */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13A3C4471CADE0420F8ED9C07C700C48 /* Build configuration list for PBXNativeTarget "Popover" */;
+			buildPhases = (
+				7E14BF9B53FE33B5739898C1F45D414B /* Headers */,
+				A53CC1FC6F2B27375D35087BE1A7FB24 /* Sources */,
+				AC7C854E4B821FFBD025829200D41F4A /* Frameworks */,
+				0C37D8CC78066139CEAC63D4BB605A0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Popover;
+			productName = Popover;
+			productReference = B72A389B0E6A6DD2F3D61F4DC7F84D83 /* Popover */;
+			productType = "com.apple.product-type.framework";
+		};
+		977B67E6ADDDC9C183DE6B6E33F17FCC /* DatePickerDialog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30A24335C1CF9017BB3239AE90AB7C3F /* Build configuration list for PBXNativeTarget "DatePickerDialog" */;
+			buildPhases = (
+				710B864542BEB2A43DA07B890CEF8B78 /* Headers */,
+				F6A8CA7CDFAC03A7D68AC28423982ADE /* Sources */,
+				CD4E0F7DFDB8FACE79CE4F731651D279 /* Frameworks */,
+				4FB9DCA53391D47733F2B8556A93E836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DatePickerDialog;
+			productName = DatePickerDialog;
+			productReference = 0969EB51C1E293C173141D48DC24C3B8 /* DatePickerDialog */;
+			productType = "com.apple.product-type.framework";
+		};
+		C667998B7E8054295025985D7CEB3042 /* Pods-iBudget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6572E8021FD3EF06DA97B657931E0D6 /* Build configuration list for PBXNativeTarget "Pods-iBudget" */;
+			buildPhases = (
+				AD0439C5A4FC038472775B8EBFCBDC0E /* Headers */,
+				FAEDB1DDE4C0A5C70E39F42E73B59934 /* Sources */,
+				8B45004788C56E4A568C7BDB052F5E03 /* Frameworks */,
+				1039734CFF3304862EBBE972C0C0F817 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E1258776FAEAD81A882DAAAA91FA4991 /* PBXTargetDependency */,
+				92544B0FA587B844D399AEEA4E92893F /* PBXTargetDependency */,
+				D1F961AE7D3B165D48A348BEC034CB44 /* PBXTargetDependency */,
+				BCE67B012EA68CBD78ADD38A071B24B3 /* PBXTargetDependency */,
 			);
 			name = "Pods-iBudget";
 			productName = Pods_iBudget;
@@ -228,7 +485,7 @@
 			);
 			name = ChartProgressBar;
 			productName = ChartProgressBar;
-			productReference = 819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar.framework */;
+			productReference = 819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -249,18 +506,35 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = CB0513C08A943F395E4B4B7495A54F7E /* Products */;
+			productRefGroup = 3403005D414F3C7D8CB8ECDB44BB283E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				C956F83D1391452CCB4752121EDF6ED6 /* ChartProgressBar */,
+				977B67E6ADDDC9C183DE6B6E33F17FCC /* DatePickerDialog */,
+				4C664F75D7FE4D02CDB8FE9EFADAEDA6 /* MonthYearPicker */,
 				C667998B7E8054295025985D7CEB3042 /* Pods-iBudget */,
+				89ADB0D61D0BE9648E9853F5F8BDA717 /* Popover */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0376220E3958BC2DD190766E6519C115 /* Resources */ = {
+		0C37D8CC78066139CEAC63D4BB605A0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1039734CFF3304862EBBE972C0C0F817 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4FB9DCA53391D47733F2B8556A93E836 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -274,14 +548,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F3F41ECAD941C55347813B4D9CAE1980 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0524043AEDFD004FDEEF54645EFCF20A /* Sources */ = {
+		A53CC1FC6F2B27375D35087BE1A7FB24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				411979A1BC8187CAD2DDF822972B228B /* Pods-iBudget-dummy.m in Sources */,
+				7860FA2DFD21A7AC9966CC48EA4AEA12 /* Popover.swift in Sources */,
+				CA1A83D7E36AAA68CA7D60964371B075 /* Popover-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,19 +579,133 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFBE6DBC707047B8C97D07D89C7B0185 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EDD43EBD371A293E3C7AC368E0D0D9F /* MonthYearPicker-dummy.m in Sources */,
+				F8D77214E1536C10946E04819D056CDC /* MonthYearPickerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6A8CA7CDFAC03A7D68AC28423982ADE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0378C0BB7E5E906AF017E4D823BD3D14 /* Colors.swift in Sources */,
+				16EFCB69858E5FC5C38EC497F65F8111 /* DatePickerDialog.swift in Sources */,
+				E910CF8D101C51C754737D8309232A6C /* DatePickerDialog-dummy.m in Sources */,
+				1EDD9556E9386F4F03B1909181999CD2 /* UIColor+Ext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAEDB1DDE4C0A5C70E39F42E73B59934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99A8BC30A65D703AA29F85F9FCAE84A8 /* Pods-iBudget-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EEFDFC1A30034678CEC97D4B4BA0685E /* PBXTargetDependency */ = {
+		92544B0FA587B844D399AEEA4E92893F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DatePickerDialog;
+			target = 977B67E6ADDDC9C183DE6B6E33F17FCC /* DatePickerDialog */;
+			targetProxy = 55DF3B8EBFC9DE2BDED20FD722BF563C /* PBXContainerItemProxy */;
+		};
+		BCE67B012EA68CBD78ADD38A071B24B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Popover;
+			target = 89ADB0D61D0BE9648E9853F5F8BDA717 /* Popover */;
+			targetProxy = 4983BE066A440ED79D0C9A7776626235 /* PBXContainerItemProxy */;
+		};
+		D1F961AE7D3B165D48A348BEC034CB44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MonthYearPicker;
+			target = 4C664F75D7FE4D02CDB8FE9EFADAEDA6 /* MonthYearPicker */;
+			targetProxy = 2789563955FBA02D892A9BF9985CBCE8 /* PBXContainerItemProxy */;
+		};
+		E1258776FAEAD81A882DAAAA91FA4991 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ChartProgressBar;
 			target = C956F83D1391452CCB4752121EDF6ED6 /* ChartProgressBar */;
-			targetProxy = F36DDF8A83FC5757D6BB417F0C0466BB /* PBXContainerItemProxy */;
+			targetProxy = E8FD49D627DBA2FA33FDFB26ED308718 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B08AE1244634C2E668CF63AA7ABD289 /* Release */ = {
+		00A3541A2A02EFF44C192DFFB0C7FEC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED0EEDBC61B2161759BD76EA016032DC /* MonthYearPicker.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MonthYearPicker/MonthYearPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MonthYearPicker/MonthYearPicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MonthYearPicker/MonthYearPicker.modulemap";
+				PRODUCT_MODULE_NAME = MonthYearPicker;
+				PRODUCT_NAME = MonthYearPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		563ABDD949CD364893639525340C474A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAF2A5D8BE2B8924704BEAEED6CFA50E /* ChartProgressBar.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ChartProgressBar/ChartProgressBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ChartProgressBar/ChartProgressBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ChartProgressBar/ChartProgressBar.modulemap";
+				PRODUCT_MODULE_NAME = ChartProgressBar;
+				PRODUCT_NAME = ChartProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5F5C4E71B663FE51DF4D8F578791E427 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E26A94B564A90C3B9B870025C94DF8C4 /* Pods-iBudget.release.xcconfig */;
 			buildSettings = {
@@ -347,12 +743,10 @@
 			};
 			name = Release;
 		};
-		45AD409524B8A9CA0F607B53BE6CD376 /* Debug */ = {
+		74EE4C3DDBFA63E05A71C3141F568788 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0463DB4BF155E00F13C0754B054C94B3 /* Pods-iBudget.debug.xcconfig */;
+			baseConfigurationReference = 306F770DEF61E58495706466B5B4BD53 /* Popover.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -361,32 +755,32 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-iBudget/Pods-iBudget-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Popover/Popover-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Popover/Popover-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iBudget/Pods-iBudget.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Popover/Popover.modulemap";
+				PRODUCT_MODULE_NAME = Popover;
+				PRODUCT_NAME = Popover;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		563ABDD949CD364893639525340C474A /* Debug */ = {
+		7F5A7F55922795E437D267FED09D3D3A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44480781D25E5C50B549BFFE6A4A72DE /* ChartProgressBar.debug.xcconfig */;
+			baseConfigurationReference = 26FA69B3F449EF3787525B6A98D504BC /* DatePickerDialog.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -396,27 +790,28 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ChartProgressBar/ChartProgressBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ChartProgressBar/ChartProgressBar-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/DatePickerDialog/DatePickerDialog-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DatePickerDialog/DatePickerDialog-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/ChartProgressBar/ChartProgressBar.modulemap";
-				PRODUCT_MODULE_NAME = ChartProgressBar;
-				PRODUCT_NAME = ChartProgressBar;
+				MODULEMAP_FILE = "Target Support Files/DatePickerDialog/DatePickerDialog.modulemap";
+				PRODUCT_MODULE_NAME = DatePickerDialog;
+				PRODUCT_NAME = DatePickerDialog;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -479,6 +874,43 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
+		};
+		A3732EA6211827F8ACEDD7D64B8BE855 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0463DB4BF155E00F13C0754B054C94B3 /* Pods-iBudget.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iBudget/Pods-iBudget-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iBudget/Pods-iBudget.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -546,9 +978,77 @@
 			};
 			name = Debug;
 		};
+		C7B32E906567C873279F810F540EE593 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E51397DFC207B0AB28D68CB66D992F3 /* Popover.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Popover/Popover-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Popover/Popover-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Popover/Popover.modulemap";
+				PRODUCT_MODULE_NAME = Popover;
+				PRODUCT_NAME = Popover;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CE338AB0712B1F07BB6E1FB6AD0DC567 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E264B247136FD3E99415629E926AC94 /* DatePickerDialog.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DatePickerDialog/DatePickerDialog-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DatePickerDialog/DatePickerDialog-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/DatePickerDialog/DatePickerDialog.modulemap";
+				PRODUCT_MODULE_NAME = DatePickerDialog;
+				PRODUCT_NAME = DatePickerDialog;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		E1705ED097597801ADD6B01A3C1A9516 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D20326CF69F8EF934D83EC0E5E89DD32 /* ChartProgressBar.release.xcconfig */;
+			baseConfigurationReference = C24B6E4336D4B00DB6B5F98A0787B694 /* ChartProgressBar.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -561,7 +1061,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ChartProgressBar/ChartProgressBar-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ChartProgressBar/ChartProgressBar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,9 +1081,62 @@
 			};
 			name = Release;
 		};
+		E66B3245A8D02173F0DBD74C60ADF70B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D5EA64D92F8B3D95BE9F84FEB5A0273 /* MonthYearPicker.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MonthYearPicker/MonthYearPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MonthYearPicker/MonthYearPicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MonthYearPicker/MonthYearPicker.modulemap";
+				PRODUCT_MODULE_NAME = MonthYearPicker;
+				PRODUCT_NAME = MonthYearPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		13A3C4471CADE0420F8ED9C07C700C48 /* Build configuration list for PBXNativeTarget "Popover" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7B32E906567C873279F810F540EE593 /* Debug */,
+				74EE4C3DDBFA63E05A71C3141F568788 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30A24335C1CF9017BB3239AE90AB7C3F /* Build configuration list for PBXNativeTarget "DatePickerDialog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE338AB0712B1F07BB6E1FB6AD0DC567 /* Debug */,
+				7F5A7F55922795E437D267FED09D3D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -593,11 +1146,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B69FFD1E1C7E959C2C7924E6944AB8DC /* Build configuration list for PBXNativeTarget "Pods-iBudget" */ = {
+		ADE1681A44E23DE3E683CF9D27DC5289 /* Build configuration list for PBXNativeTarget "MonthYearPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				45AD409524B8A9CA0F607B53BE6CD376 /* Debug */,
-				0B08AE1244634C2E668CF63AA7ABD289 /* Release */,
+				00A3541A2A02EFF44C192DFFB0C7FEC1 /* Debug */,
+				E66B3245A8D02173F0DBD74C60ADF70B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D6572E8021FD3EF06DA97B657931E0D6 /* Build configuration list for PBXNativeTarget "Pods-iBudget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A3732EA6211827F8ACEDD7D64B8BE855 /* Debug */,
+				5F5C4E71B663FE51DF4D8F578791E427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

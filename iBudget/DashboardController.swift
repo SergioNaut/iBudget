@@ -84,7 +84,7 @@ class DashboardViewController: UIViewController {
         
         chart.data = data
         chart.barsCanBeClick = true
-        chart.maxValue = Float( greatestExpense / 100 )
+        chart.maxValue = Float( totalSavedBuget / 100 )
         chart.progressColor =  UIColor(hex: "#FE7685ff")!
         chart.barTitleColor = UIColor(hex: "#212121ff")!
         chart.barTitleSelectedColor = UIColor(hex: "#FE7685ff")!
@@ -191,9 +191,7 @@ class DashboardViewController: UIViewController {
         catch {
             print ("error fetching data: \(error)")
         }
-        
-        
-        
+         
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest ()
             do {
                 let exps = try getContext().fetch(request)
@@ -223,8 +221,7 @@ class DashboardViewController: UIViewController {
 
                 groupedCategoryList = categoryAmounts.map { ExpenseStruct(amount: Decimal($0.value), categoryName: $0.key) }
                 tableView.reloadData()
-                
-    
+                 
             } catch {
                 print ("error fetching data: \(error)")
             }
