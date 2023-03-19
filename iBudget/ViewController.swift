@@ -81,11 +81,11 @@ class ViewController: UIViewController {
         
         
         let userinfo = UserInfo(context: getContext())
-        userinfo.fullName = fullname
+        userinfo.fullName = fullname.glazeCamelCase
         userinfo.income =  income
         userinfo.id = UUID()
         userinfo.budget = budget
-        UserDefaults().setValue(fullname, forKey: "fullname")
+        UserDefaults().setValue(fullname.glazeCamelCase, forKey: "fullname")
         
         let category = Categories(context: getContext())
         category.name = "Food"

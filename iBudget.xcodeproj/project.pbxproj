@@ -20,6 +20,9 @@
 		1C66AC9629A5CB8B005F129C /* ibudgetedWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1C66AC9229A5CB88005F129C /* ibudgetedWidget.intentdefinition */; };
 		1C66AC9729A5CB8B005F129C /* ibudgetedWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1C66AC9229A5CB88005F129C /* ibudgetedWidget.intentdefinition */; };
 		1C66AC9A29A5CB8B005F129C /* ibudgetedWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1C66AC8629A5CB88005F129C /* ibudgetedWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1C7CB90129C6274700EE977F /* MonthYearWheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7CB90029C6274700EE977F /* MonthYearWheelPicker.swift */; };
+		1C7CB90329C6BCE100EE977F /* ExpenseSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7CB90229C6BCE100EE977F /* ExpenseSummary.swift */; };
+		1C86C46B29C55131008B13AB /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86C46A29C55131008B13AB /* DatePickerController.swift */; };
 		30258ED1297BB7A200C8C50F /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30258ED0297BB7A200C8C50F /* DashboardController.swift */; };
 		30D05B2C2989EB510016308C /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D05B2B2989EB510016308C /* DashboardCell.swift */; };
 		30F4E40E29890555007A2158 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4E40D29890555007A2158 /* ExpenseViewController.swift */; };
@@ -78,6 +81,9 @@
 		1C66AC9529A5CB8B005F129C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C66AC9F29A6D969005F129C /* ibudgetedWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ibudgetedWidgetExtension.entitlements; sourceTree = "<group>"; };
 		1C66ACA029A6D9AE005F129C /* iBudget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iBudget.entitlements; sourceTree = "<group>"; };
+		1C7CB90029C6274700EE977F /* MonthYearWheelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearWheelPicker.swift; sourceTree = "<group>"; };
+		1C7CB90229C6BCE100EE977F /* ExpenseSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSummary.swift; sourceTree = "<group>"; };
+		1C86C46A29C55131008B13AB /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		30258ED0297BB7A200C8C50F /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		30D05B2B2989EB510016308C /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		30F4E40D29890555007A2158 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +190,9 @@
 				1C4E91F92985FEEB00085EDC /* IBudgetModel.xcdatamodeld */,
 				1C4E91FF2986126D00085EDC /* UIExtensions.swift */,
 				30D05B2B2989EB510016308C /* DashboardCell.swift */,
+				1C86C46A29C55131008B13AB /* DatePickerController.swift */,
+				1C7CB90029C6274700EE977F /* MonthYearWheelPicker.swift */,
+				1C7CB90229C6BCE100EE977F /* ExpenseSummary.swift */,
 			);
 			path = iBudget;
 			sourceTree = "<group>";
@@ -367,8 +376,10 @@
 				30258ED1297BB7A200C8C50F /* DashboardController.swift in Sources */,
 				7885DEB729746DF000B6BEF9 /* ViewController.swift in Sources */,
 				78F67F5E298EC03A005F2906 /* categoryList.swift in Sources */,
+				1C7CB90329C6BCE100EE977F /* ExpenseSummary.swift in Sources */,
 				78F67F5C298EBFFF005F2906 /* AddExpenseViewControlller.swift in Sources */,
 				1C66AC9729A5CB8B005F129C /* ibudgetedWidget.intentdefinition in Sources */,
+				1C7CB90129C6274700EE977F /* MonthYearWheelPicker.swift in Sources */,
 				1C4E92002986126D00085EDC /* UIExtensions.swift in Sources */,
 				1C4E91FB2985FEEB00085EDC /* IBudgetModel.xcdatamodeld in Sources */,
 				7885DEB329746DF000B6BEF9 /* AppDelegate.swift in Sources */,
@@ -376,6 +387,7 @@
 				30F4E40E29890555007A2158 /* ExpenseViewController.swift in Sources */,
 				7885DEB529746DF000B6BEF9 /* SceneDelegate.swift in Sources */,
 				3AFF5A1D298B01BA006D2B7A /* AddCategoryViewController.swift in Sources */,
+				1C86C46B29C55131008B13AB /* DatePickerController.swift in Sources */,
 				30D05B2C2989EB510016308C /* DashboardCell.swift in Sources */,
 				1C4E921E298C98D900085EDC /* CustomTabBarController.swift in Sources */,
 				30F4E41029890588007A2158 /* CategoryViewController.swift in Sources */,
@@ -605,7 +617,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,9 +627,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iBudget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -640,7 +656,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -649,9 +666,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iBudget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
