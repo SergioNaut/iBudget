@@ -74,7 +74,7 @@ class ExpenseViewController: UIViewController {
     
     @objc func dateChanged(_ picker: MonthYearPickerView) {
          
-        let monthName = months[picker.date.monthIndex()]
+        let monthName = months[picker.date.monthIndex() - 1]
         lblMonthSelected.text =  monthName + " " + picker.date.Year()
         currrentMonthName  =  monthName
         let selectedYear = Int(picker.date.Year()) ?? 0
@@ -150,7 +150,7 @@ class ExpenseViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addExpense" {
+        if segue.identifier == "addExpenses" {
             let destinationVC = segue.destination as? AddExpenseViewControlller
             destinationVC?.isEdit = isEdit
             destinationVC?.editExpenseItem = selectedExpense
@@ -352,7 +352,7 @@ extension ExpenseViewController: UITableViewDataSource {
         (Bool) -> ()) in
             self.isEdit = true
             self.selectedExpense = self.expenses[indexPath.row]
-            self.performSegue(withIdentifier: "addExpense", sender: nil)
+            self.performSegue(withIdentifier: "addExpenses", sender: nil)
             self.isEdit = false
             actionPerformed(true)
         }

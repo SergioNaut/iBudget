@@ -205,9 +205,9 @@ class SettingViewController: UITableViewController {
     
     func restartApp() {
         
-        let alertController = UIAlertController(title: "Warning!", message: "Are you sure you want to clear all user data and start afresh.", preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: "Erase All Data", message: "Are you sure you want to erase all user data?", preferredStyle: .actionSheet)
         
-        let logoutAction = UIAlertAction(title: "Clear Data", style: .destructive) { (action) in
+        let logoutAction = UIAlertAction(title: "Erase All Data", style: .destructive) { (action) in
             if let bundleID = Bundle.main.bundleIdentifier {
                 UserDefaults.standard.removePersistentDomain(forName: bundleID)
                 self.resetAllRecords(in: "Categories")

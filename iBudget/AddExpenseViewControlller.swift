@@ -40,6 +40,7 @@ class AddExpenseViewControlller : UIViewController,UITextFieldDelegate, UIScroll
         self.txtDate.delegate = self
         self.hideKeyboardWhenTappedAround()
         if(isEdit){
+            
             titleText.text="Edit Expense"
             saveButton.setTitle("Edit", for: .normal)
             expenseName.text = editExpenseItem.name
@@ -55,9 +56,11 @@ class AddExpenseViewControlller : UIViewController,UITextFieldDelegate, UIScroll
             getCategoryData()
         }
         else{
+            
             //Set values from last expense created
             let defaults = UserDefaults.standard
             expenseCategory.text = defaults.string(forKey: "lastCatName")
+            
             let request: NSFetchRequest<Categories> = Categories.fetchRequest ()
             do {
                 let categories = try getContext().fetch(request)
