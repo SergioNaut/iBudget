@@ -11,7 +11,7 @@ import JDStatusBarNotification
 
 class SettingViewController: UITableViewController {
     
-
+    //Version Number Label - current version 1.5.2
     
     override func viewDidLoad() {
         tableView.rowHeight = 60
