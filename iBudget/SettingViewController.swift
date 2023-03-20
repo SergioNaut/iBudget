@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import JDStatusBarNotification
+import CoreData
 
 class SettingViewController: UITableViewController {
     
@@ -46,25 +47,58 @@ class SettingViewController: UITableViewController {
     }
     
     func restartApp() {
-        if let bundleID = Bundle.main.bundleIdentifier {
-            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        
+        let alertController = UIAlertController(title: "Notification", message: "Are you sure you want to clear all user data and start afresh.", preferredStyle: .actionSheet)
+        
+        let logoutAction = UIAlertAction(title: "Clear Data", style: .destructive) { (action) in
+            if let bundleID = Bundle.main.bundleIdentifier {
+                UserDefaults.standard.removePersistentDomain(forName: bundleID)
+                self.resetAllRecords(in: "Categories")
+                self.resetAllRecords(in: "Expenses")
+                self.resetAllRecords(in: "UserInfo")
+            }
+            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                let window = UIWindow(windowScene: windowScene)
+                let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                window.rootViewController = viewController
+                window.makeKeyAndVisible()
+
+                let _: UIViewController? = nil
+
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainTabBarController = storyboard.instantiateViewController(identifier: "userOnboarding") as! ViewController
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController)
+
+                UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: false, completion: nil)
+            }
         }
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
-            window.rootViewController = viewController
-            window.makeKeyAndVisible()
+        alertController.addAction(logoutAction)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             
-            let _: UIViewController? = nil
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let mainTabBarController = storyboard.instantiateViewController(identifier: "userOnboarding") as! ViewController
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController)
-            
-            UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: false, completion: nil)
         }
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true) {
+        }
+
     }
 
+    func resetAllRecords(in entity : String) 
+        {
 
+            let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
+            let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+            do
+            {
+                try context.execute(deleteRequest)
+                try context.save()
+            }
+            catch
+            {
+                print ("There was an error")
+            }
+        }
     
 }
