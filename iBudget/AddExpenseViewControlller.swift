@@ -50,9 +50,30 @@ class AddExpenseViewControlller : UIViewController,UITextFieldDelegate, UIScroll
             dateFormatter.dateFormat = "dd MMM yyyy"
             guard let selecteddate = dateFormatter.date(from: txtDate.text!) else{
                 return
-            } 
+            }
             datePicker2.setDate(selecteddate, animated: true)
             getCategoryData()
+        }
+        else{
+            //Set values from last expense created
+            let defaults = UserDefaults.standard
+            expenseCategory.text = defaults.string(forKey: "lastCatName")
+            let request: NSFetchRequest<Categories> = Categories.fetchRequest ()
+            do {
+                let categories = try getContext().fetch(request)
+                var categoriesArray: [Categories] = []
+                for category in categories{
+                    categoriesArray.append(category)
+                }
+                if let index = categoriesArray.firstIndex(where: { $0.name == defaults.string(forKey: "lastCatName") }) {
+                    categorySelected = categoriesArray[index]
+                }
+            } catch {
+                print ("error fetching data: \(error)")
+            }
+            //categorySelected.name = defaults.string(forKey: "lastCatName")
+            //categorySelected.id = defaults.value(forKey: "lastCatId") as! UUID
+            
         }
         self.txtDate.inputView = datePicker2
         datePicker2.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
@@ -145,6 +166,10 @@ class AddExpenseViewControlller : UIViewController,UITextFieldDelegate, UIScroll
         exp.categoryId = categorySelected.id
         exp.categoryName = categorySelected.name
         exp.amount = Double(  expenseAmount.text! ) ?? 0
+        
+        //Save last used category
+        let defaults = UserDefaults.standard
+        defaults.set(categorySelected.name, forKey: "lastCatName")
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
