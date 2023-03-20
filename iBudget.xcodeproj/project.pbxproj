@@ -24,6 +24,7 @@
 		1C7CB90329C6BCE100EE977F /* ExpenseSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7CB90229C6BCE100EE977F /* ExpenseSummary.swift */; };
 		1C86C46B29C55131008B13AB /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86C46A29C55131008B13AB /* DatePickerController.swift */; };
 		30258ED1297BB7A200C8C50F /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30258ED0297BB7A200C8C50F /* DashboardController.swift */; };
+		30C452B729C7CE9F004F9ED0 /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C452B629C7CE9F004F9ED0 /* DeveloperViewController.swift */; };
 		30D05B2C2989EB510016308C /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D05B2B2989EB510016308C /* DashboardCell.swift */; };
 		30F4E40E29890555007A2158 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4E40D29890555007A2158 /* ExpenseViewController.swift */; };
 		30F4E41029890588007A2158 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4E40F29890588007A2158 /* CategoryViewController.swift */; };
@@ -85,6 +86,7 @@
 		1C7CB90229C6BCE100EE977F /* ExpenseSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSummary.swift; sourceTree = "<group>"; };
 		1C86C46A29C55131008B13AB /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		30258ED0297BB7A200C8C50F /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		30C452B629C7CE9F004F9ED0 /* DeveloperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
 		30D05B2B2989EB510016308C /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		30F4E40D29890555007A2158 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		30F4E40F29890588007A2158 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				1C66ACA029A6D9AE005F129C /* iBudget.entitlements */,
 				1C4E91FC2985FFB300085EDC /* CoreData */,
 				7885DEB229746DF000B6BEF9 /* AppDelegate.swift */,
+				30C452B629C7CE9F004F9ED0 /* DeveloperViewController.swift */,
 				3AFF5A1C298B01BA006D2B7A /* AddCategoryViewController.swift */,
 				78F67F5B298EBFFF005F2906 /* AddExpenseViewControlller.swift */,
 				30F4E40F29890588007A2158 /* CategoryViewController.swift */,
@@ -390,6 +393,7 @@
 				1C86C46B29C55131008B13AB /* DatePickerController.swift in Sources */,
 				30D05B2C2989EB510016308C /* DashboardCell.swift in Sources */,
 				1C4E921E298C98D900085EDC /* CustomTabBarController.swift in Sources */,
+				30C452B729C7CE9F004F9ED0 /* DeveloperViewController.swift in Sources */,
 				30F4E41029890588007A2158 /* CategoryViewController.swift in Sources */,
 				1C4E91FE2985FFD200085EDC /* CoreDataStack.swift in Sources */,
 			);
@@ -608,7 +612,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9ETV3K5KPJ;
+				DEVELOPMENT_TEAM = S428U5YXJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iBudget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iBudget;
@@ -647,7 +651,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9ETV3K5KPJ;
+				DEVELOPMENT_TEAM = S428U5YXJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iBudget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iBudget;

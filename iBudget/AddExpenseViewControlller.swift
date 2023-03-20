@@ -97,16 +97,16 @@ class AddExpenseViewControlller : UIViewController,UITextFieldDelegate, UIScroll
     
     @IBAction func startEdit(_ sender: Any) {
        resignFirstResponder()
-        let detailViewController = categoryList() 
+        let detailViewController = categoryList()
         let nav = UINavigationController(rootViewController: detailViewController)
-        
+
         nav.modalPresentationStyle = .pageSheet
         if let sheet = nav.sheetPresentationController {
             sheet.detents = [.medium(), .large()]
             sheet.prefersScrollingExpandsWhenScrolledToEdge = false
 
         }
-        
+
         present(nav, animated: true, completion: nil)
     }
      

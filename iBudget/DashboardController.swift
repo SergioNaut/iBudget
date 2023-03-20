@@ -83,7 +83,7 @@ class DashboardViewController: UIViewController {
         
         
         chart.data = data
-        chart.barsCanBeClick = true
+//        chart.barsCanBeClick = true
         chart.maxValue = Float( totalSavedBuget / 100 )
         chart.progressColor =  UIColor(hex: "#FE7685ff")!
         chart.barTitleColor = UIColor(hex: "#212121ff")!

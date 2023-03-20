@@ -74,7 +74,7 @@ class ExpenseViewController: UIViewController {
     
     @objc func dateChanged(_ picker: MonthYearPickerView) {
          
-        let monthName = months[picker.date.monthIndex()-1]
+        let monthName = months[picker.date.monthIndex()]
         lblMonthSelected.text =  monthName + " " + picker.date.Year()
         currrentMonthName  =  monthName
         let selectedYear = Int(picker.date.Year()) ?? 0

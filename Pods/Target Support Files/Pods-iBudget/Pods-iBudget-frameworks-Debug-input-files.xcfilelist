@@ -1,2 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/ChartProgressBar/ChartProgressBar.framework
+${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework
+${BUILT_PRODUCTS_DIR}/JDStatusBarNotification/JDStatusBarNotification.framework
+${BUILT_PRODUCTS_DIR}/MonthYearPicker/MonthYearPicker.framework
+${BUILT_PRODUCTS_DIR}/Popover/Popover.framework
