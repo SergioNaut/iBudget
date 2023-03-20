@@ -1,1 +1,5 @@
 ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChartProgressBar.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JDStatusBarNotification.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MonthYearPicker.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework

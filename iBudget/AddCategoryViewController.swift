@@ -61,7 +61,6 @@ class AddCategoryViewController: UIViewController {
             if(_tag != selectedCat)
             {
                 DispatchQueue.main.async {
-                    
                     self.uicollectionView.viewWithTag(_tag)?.tintColor  = UIColor.darkGray
                 }
             }else{
@@ -130,7 +129,10 @@ class AddCategoryViewController: UIViewController {
         
         if(categotyNameTextField.hasText && !isEdit)
         {
-            saveCategory(newCategoryName: categotyNameTextField.text ?? "New Category", newCategoryIconName: choosenIconName)
+            
+            let catName = categotyNameTextField.text?.glazeCamelCase ?? "New Category"
+            
+            saveCategory(newCategoryName: catName, newCategoryIconName: choosenIconName)
             
             
         }else{
@@ -203,7 +205,7 @@ class AddCategoryViewController: UIViewController {
         do {
             let results = try getContext().fetch(fetchRequest)
             if let editedCategory = results.first as? Categories {
-                editedCategory.name = categotyNameTextField.text
+                editedCategory.name = categotyNameTextField.text?.glazeCamelCase ?? "New Category"
                 editedCategory.icon = choosenIconName
           
                 AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
@@ -242,7 +244,7 @@ class AddCategoryViewController: UIViewController {
             }else{
                 
                 let cat = Categories(context: getContext())
-                cat.name = newCategoryName
+                cat.name = newCategoryName.glazeCamelCase //?? "New Category"
                 cat.type = 1
                 let id = UUID()
                 cat.id = id
@@ -331,6 +333,7 @@ extension AddCategoryViewController : UICollectionViewDataSource, UICollectionVi
         if isEdit &&  icons[indexPath.row] == editCategoryItem.icon {
             collCell.imgView.tintColor = .systemPink
             self.cellSelected = collCell
+            self.choosenIconName = editCategoryItem.icon != "" ? editCategoryItem.icon!   : ""
         }
        // if let imgView = collCell.viewWithTag(1) as? UIImageView {
         collCell.imgView.image = UIImage(systemName: icons[indexPath.row])
