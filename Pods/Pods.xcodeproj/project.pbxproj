@@ -7,119 +7,177 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0378C0BB7E5E906AF017E4D823BD3D14 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4656EC2BBA3F3D444344AE32D731F3 /* Colors.swift */; };
-		047FD4C374EE21227DE940AB511BCA51 /* ChartProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2694C601F1B387A3905F2024B814C41A /* ChartProgressBar.swift */; };
-		16EFCB69858E5FC5C38EC497F65F8111 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE553897DF013E6DB2E07BFC45D8D2 /* DatePickerDialog.swift */; };
-		1EDD9556E9386F4F03B1909181999CD2 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A1AEEB7176C4FBE90D70FC6D8A9C17 /* UIColor+Ext.swift */; };
-		2B6D7D36874DF49016B7F7E0074A6CD6 /* BarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBD548136FABB7BB029332166740E1 /* BarData.swift */; };
-		2EDD43EBD371A293E3C7AC368E0D0D9F /* MonthYearPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94092FC9A75A1AA1237FBF78E99F0B7A /* MonthYearPicker-dummy.m */; };
-		3FCE5F6C4BF7FB469AC7D8DC3917322B /* ChartProgressBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BE16B545266A8E05691C8F677F80D6B7 /* ChartProgressBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B937E5D66F277483F1F86FD3A03F616 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		4F61A22BDD21AC3AB4037CB0E978BF73 /* ChartProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C44789EF879A91776432CA0D4837E5 /* ChartProgressBar-dummy.m */; };
+		0378C0BB7E5E906AF017E4D823BD3D14 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6521055DAF4090C18B4F010B838B0D93 /* Colors.swift */; };
+		047FD4C374EE21227DE940AB511BCA51 /* ChartProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BDF7E244A636D145A89B8687C9BFD7 /* ChartProgressBar.swift */; };
+		16EFCB69858E5FC5C38EC497F65F8111 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF2A02104B7295B7150CAE6D5AE88B4 /* DatePickerDialog.swift */; };
+		181526E3972FF383A25E37FE638326E9 /* JDSBNotificationStyleCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2744AB3276322B1025E2DAD3EB820A /* JDSBNotificationStyleCache.m */; };
+		1EDD9556E9386F4F03B1909181999CD2 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B278BD08FC8D95DA79CF8CD62DCFDE /* UIColor+Ext.swift */; };
+		239D9C55C95DF4871092A8A39EC1B205 /* JDSBNotificationWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E05CACBFEBD9358B75DF45C84F59965 /* JDSBNotificationWindow.m */; };
+		24AEDFD40C50EBB5F8EA0DF2BDE49590 /* JDSBNotificationStyleCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CCF44A59788350C7AF05FDCA7661146 /* JDSBNotificationStyleCache.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		25ED3C3F5556B3FF9934B088B7C83C12 /* Pods-iBudget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6874987821D5EFBA9C22390C4DDC8E /* Pods-iBudget-dummy.m */; };
+		2B6D7D36874DF49016B7F7E0074A6CD6 /* BarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1284E219EE852CDF1C83F468AF781FBD /* BarData.swift */; };
+		2EDD43EBD371A293E3C7AC368E0D0D9F /* MonthYearPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3C5E09EC36DC47D5B5603A2367B16B /* MonthYearPicker-dummy.m */; };
+		30F59BC491306CF342E3962DAE5B3CF5 /* JDStatusBarNotificationPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = ECACAF06695AFB8F22C8DBE15765FEFE /* JDStatusBarNotificationPresenter.m */; };
+		3FCE5F6C4BF7FB469AC7D8DC3917322B /* ChartProgressBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6EA63D0B1682C0FF1A6D7897A6B6DD44 /* ChartProgressBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4479089A24134BD00A62EA346CCD967C /* UIApplication+JDSB_MainWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C40EA145BD9A8ED78A61C8025DDF832 /* UIApplication+JDSB_MainWindow.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		49E74F223355E61FD2235229C96991F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		4F61A22BDD21AC3AB4037CB0E978BF73 /* ChartProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8956F72F7D05BCE049FFCEB3FC6B6EF4 /* ChartProgressBar-dummy.m */; };
 		518672D33F8381DA93D8A951BB121748 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		54FD66C8960A612BB35191BEF0FD83ED /* JDStatusBarNotificationStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 1987326CF2EB3DEB2AF5620CF5687E50 /* JDStatusBarNotificationStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		586C53F5D83ADE7D134E4D727441DBF2 /* JDStatusBarNotificationPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA5D5D3DB51139F30524822B8CFA1FF /* JDStatusBarNotificationPresenter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60FDD40CE9A9D4FBE84937C4A8BE6B0B /* UIApplication+JDSB_MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485D9423A301DCCE98205DCF5365664 /* UIApplication+JDSB_MainWindow.m */; };
 		6F7CB932BD20A01C26325651C7995725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		7860FA2DFD21A7AC9966CC48EA4AEA12 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE21026EE5B83E6CF89E8AA1DBF0D5 /* Popover.swift */; };
-		80CB51A4CDE394C2AECCF1D86F14D351 /* DatePickerDialog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 97C779794D556C25BA9640E3C2FE4B8D /* DatePickerDialog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		70BC0FE501CEAA9D1580C58E9C080B2B /* JDStatusBarNotificationStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7DA427D7CFF0D6B43F1F16C8728AB7 /* JDStatusBarNotificationStyle.m */; };
+		72272E58638DE8FA1AEB94A02FD2D359 /* JDStatusBarNotification-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A4A4E945C409630B654F2D88AAAAF964 /* JDStatusBarNotification-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7860FA2DFD21A7AC9966CC48EA4AEA12 /* Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FD381AF09244BD03A057ECA42CC7D4 /* Popover.swift */; };
+		80CB51A4CDE394C2AECCF1D86F14D351 /* DatePickerDialog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0905F4CF1526FA56F14D14A1519AD46 /* DatePickerDialog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8602FE066A0D2A782FFA14B45FB89185 /* JDSBNotificationWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 054436AD1457ACC0DA6DCA16D30B39D6 /* JDSBNotificationWindow.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		9718C8C2F59A5949126DF7BF9DFE7A22 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		99A8BC30A65D703AA29F85F9FCAE84A8 /* Pods-iBudget-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA6874987821D5EFBA9C22390C4DDC8E /* Pods-iBudget-dummy.m */; };
-		A454FDE721C693A7455E425F500973B1 /* Popover-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 700DF750C1F1292A395566D88700D8BB /* Popover-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B335775CD8A606E48D66A69455ACCF3B /* ChartProgressBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A19E1AA94A98F79B726E185FE0781A9 /* ChartProgressBarDelegate.swift */; };
+		A0ED575EF299797C7BD65A7A55D9B959 /* JDSystemStatusBarHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 583ACD40FAE8D22A63582D4858D1F220 /* JDSystemStatusBarHelpers.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A454FDE721C693A7455E425F500973B1 /* Popover-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C89DF8BA502770067F902F1CCDAF7E6 /* Popover-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7139CE4203288693C9D436F57430F7C /* JDStatusBarNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E3662A9ABED18636EE90CD04FB2E138 /* JDStatusBarNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFEFAF84F8648ED9DA3B4F6CC3914715 /* JDSBNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F3397C03EF1D7152F2B0229052DFD2 /* JDSBNotificationViewController.m */; };
+		B335775CD8A606E48D66A69455ACCF3B /* ChartProgressBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CF2C3345A08D072A60FEE156D1C31 /* ChartProgressBarDelegate.swift */; };
 		B4900B54D5B1CB52AD0F936BF06C5B7C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		CA1A83D7E36AAA68CA7D60964371B075 /* Popover-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43827289AD890422FED86E7F63DFFDE5 /* Popover-dummy.m */; };
-		D551BD9DE54B9E5F58FF18D11F7A81AD /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98CACBC2B9F165058925AF76A2A49CC7 /* Bar.swift */; };
-		D9FB289EBC6BFCAAE5FEF26AB177184D /* Pods-iBudget-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E22CD4AE2A40F64835762AE647EB5324 /* Pods-iBudget-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2787ED0A30E9CFFE658B0869D541C23 /* JDSBNotificationViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BFE6DF2EDD8C1751C44D4B15F813C91 /* JDSBNotificationViewController.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C49DC8521ACD680FBBC77346718756F6 /* JDSBNotificationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3135785C64D7AA6E6616AB359C22B34E /* JDSBNotificationView.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		C5CB6FEE315AD75BDC93F58761873250 /* JDSBNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B79560016B7509A1B5AB26FDDF9EA02 /* JDSBNotificationView.m */; };
+		C5D475B4D139B7767429925E95C9E50F /* Pods-iBudget-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E22CD4AE2A40F64835762AE647EB5324 /* Pods-iBudget-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CA1A83D7E36AAA68CA7D60964371B075 /* Popover-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E54B7204ABD83EF82B36192572DB33AE /* Popover-dummy.m */; };
+		CCADC11D9C5EA2D2BB8E40785B6E7D56 /* JDSBNotificationAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7460E2CB4EDBC11031CD224FA98C6FDA /* JDSBNotificationAnimator.m */; };
+		D006DEEF351CAEE0020ADC4A9F9B96A7 /* JDStatusBarNotification-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6CECB11D0941B0FBB256BDE4294D92 /* JDStatusBarNotification-dummy.m */; };
+		D551BD9DE54B9E5F58FF18D11F7A81AD /* Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87193BB2F863941E2E91032E39844E8 /* Bar.swift */; };
+		DA901FD42A85027322F4185C4FB46336 /* JDSystemStatusBarHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 882A8FF717B1F08DC67E8D4490263663 /* JDSystemStatusBarHelpers.m */; };
 		DBEA87B1DF671EA618A6503BB2E445BD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
-		E910CF8D101C51C754737D8309232A6C /* DatePickerDialog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5DD0FB650B916BCA41DF913DFBC528 /* DatePickerDialog-dummy.m */; };
-		F396C1120D0E9FFDBB0777177F65F199 /* MonthYearPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7494330F09DCFAD0E506DF0BBAEDA725 /* MonthYearPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F8D77214E1536C10946E04819D056CDC /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC8B21134F8B6006486DFE787898027 /* MonthYearPickerView.swift */; };
+		E60951B1A1EA2E679809DA20052C4255 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		E910CF8D101C51C754737D8309232A6C /* DatePickerDialog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C233BE5CE3C26CE2F61F672D8FA78317 /* DatePickerDialog-dummy.m */; };
+		F396C1120D0E9FFDBB0777177F65F199 /* MonthYearPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28429EDE2CED87CA985BD26CB79F362C /* MonthYearPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F45FB9C97C32F0C30FB7D31395335E8F /* JDSBNotificationAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = CCDD8E921CBACAD5691404BDFDE779B5 /* JDSBNotificationAnimator.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F8A2DB5F194AFFCC42E744FE0B233BF1 /* JDStatusBarNotificationPresenterPrepareStyleBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A03A67A53EEDD2814DD36749CE916EE /* JDStatusBarNotificationPresenterPrepareStyleBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8D77214E1536C10946E04819D056CDC /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94786D4FD72826F3E055A130AF4B1D63 /* MonthYearPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2789563955FBA02D892A9BF9985CBCE8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C664F75D7FE4D02CDB8FE9EFADAEDA6;
-			remoteInfo = MonthYearPicker;
-		};
-		4983BE066A440ED79D0C9A7776626235 /* PBXContainerItemProxy */ = {
+		098625E92EF33A6462C508F247466503 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 89ADB0D61D0BE9648E9853F5F8BDA717;
 			remoteInfo = Popover;
 		};
-		55DF3B8EBFC9DE2BDED20FD722BF563C /* PBXContainerItemProxy */ = {
+		0FAD78088B09866DF6B836059C01B9FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 977B67E6ADDDC9C183DE6B6E33F17FCC;
 			remoteInfo = DatePickerDialog;
 		};
-		E8FD49D627DBA2FA33FDFB26ED308718 /* PBXContainerItemProxy */ = {
+		76D7435A234F517F514574087055709E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB07D88E59040F928F73F9A46CA65C69;
+			remoteInfo = JDStatusBarNotification;
+		};
+		7800438E304C490F30306442733CEFF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C956F83D1391452CCB4752121EDF6ED6;
 			remoteInfo = ChartProgressBar;
 		};
+		9A0364BECB46FDD77489ACC5D2252324 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C664F75D7FE4D02CDB8FE9EFADAEDA6;
+			remoteInfo = MonthYearPicker;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0463DB4BF155E00F13C0754B054C94B3 /* Pods-iBudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iBudget.debug.xcconfig"; sourceTree = "<group>"; };
+		054436AD1457ACC0DA6DCA16D30B39D6 /* JDSBNotificationWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDSBNotificationWindow.h; path = JDStatusBarNotification/Private/JDSBNotificationWindow.h; sourceTree = "<group>"; };
 		0969EB51C1E293C173141D48DC24C3B8 /* DatePickerDialog */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DatePickerDialog; path = DatePickerDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E264B247136FD3E99415629E926AC94 /* DatePickerDialog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DatePickerDialog.debug.xcconfig; sourceTree = "<group>"; };
+		1284E219EE852CDF1C83F468AF781FBD /* BarData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarData.swift; path = "ChartProgressBar-ios/Classes/BarData.swift"; sourceTree = "<group>"; };
+		17E699C5F5EE85EF1E21FA852F42C68E /* Popover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Popover.release.xcconfig; sourceTree = "<group>"; };
+		1987326CF2EB3DEB2AF5620CF5687E50 /* JDStatusBarNotificationStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDStatusBarNotificationStyle.h; path = JDStatusBarNotification/Public/JDStatusBarNotificationStyle.h; sourceTree = "<group>"; };
+		1CCF44A59788350C7AF05FDCA7661146 /* JDSBNotificationStyleCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDSBNotificationStyleCache.h; path = JDStatusBarNotification/Private/JDSBNotificationStyleCache.h; sourceTree = "<group>"; };
 		1F34B28D664A0396802615FC6FB6B5CC /* Pods-iBudget-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iBudget-Info.plist"; sourceTree = "<group>"; };
-		233576346CF91BE43A22B9D80616C108 /* MonthYearPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MonthYearPicker-Info.plist"; sourceTree = "<group>"; };
-		2694C601F1B387A3905F2024B814C41A /* ChartProgressBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartProgressBar.swift; path = "ChartProgressBar-ios/Classes/ChartProgressBar.swift"; sourceTree = "<group>"; };
-		26FA69B3F449EF3787525B6A98D504BC /* DatePickerDialog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DatePickerDialog.release.xcconfig; sourceTree = "<group>"; };
-		2A19E1AA94A98F79B726E185FE0781A9 /* ChartProgressBarDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartProgressBarDelegate.swift; path = "ChartProgressBar-ios/Classes/ChartProgressBarDelegate.swift"; sourceTree = "<group>"; };
-		306F770DEF61E58495706466B5B4BD53 /* Popover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Popover.release.xcconfig; sourceTree = "<group>"; };
+		1FA08902DC54C5CB055029BAE984704D /* Popover-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Popover-prefix.pch"; sourceTree = "<group>"; };
+		2485D9423A301DCCE98205DCF5365664 /* UIApplication+JDSB_MainWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+JDSB_MainWindow.m"; path = "JDStatusBarNotification/Private/UIApplication+JDSB_MainWindow.m"; sourceTree = "<group>"; };
+		28092938E4D254AB61493542D544DBA8 /* ChartProgressBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartProgressBar.release.xcconfig; sourceTree = "<group>"; };
+		28429EDE2CED87CA985BD26CB79F362C /* MonthYearPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MonthYearPicker-umbrella.h"; sourceTree = "<group>"; };
+		2BFE6DF2EDD8C1751C44D4B15F813C91 /* JDSBNotificationViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDSBNotificationViewController.h; path = JDStatusBarNotification/Private/JDSBNotificationViewController.h; sourceTree = "<group>"; };
+		2C89DF8BA502770067F902F1CCDAF7E6 /* Popover-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Popover-umbrella.h"; sourceTree = "<group>"; };
+		3135785C64D7AA6E6616AB359C22B34E /* JDSBNotificationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDSBNotificationView.h; path = JDStatusBarNotification/Private/JDSBNotificationView.h; sourceTree = "<group>"; };
 		324A249AAB13084A8D6C1EA9CD92AC19 /* Pods-iBudget-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iBudget-acknowledgements.markdown"; sourceTree = "<group>"; };
-		38FA43C1ACAE40DC92FF50924405F5EC /* MonthYearPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MonthYearPicker.modulemap; sourceTree = "<group>"; };
-		43827289AD890422FED86E7F63DFFDE5 /* Popover-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Popover-dummy.m"; sourceTree = "<group>"; };
-		43A1AEEB7176C4FBE90D70FC6D8A9C17 /* UIColor+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Ext.swift"; path = "Sources/UIColor+Ext.swift"; sourceTree = "<group>"; };
-		5BC4170F4ECEB3F745F5FDC6E91C8E10 /* Popover-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Popover-Info.plist"; sourceTree = "<group>"; };
-		684CDEA4107E25702C766CDF70E6F2C7 /* Popover.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Popover.modulemap; sourceTree = "<group>"; };
-		6E51397DFC207B0AB28D68CB66D992F3 /* Popover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Popover.debug.xcconfig; sourceTree = "<group>"; };
-		6E5DD0FB650B916BCA41DF913DFBC528 /* DatePickerDialog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DatePickerDialog-dummy.m"; sourceTree = "<group>"; };
-		700DF750C1F1292A395566D88700D8BB /* Popover-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Popover-umbrella.h"; sourceTree = "<group>"; };
+		32E2E0F7881A9272C01B3BEF5343A2A1 /* MonthYearPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MonthYearPicker.modulemap; sourceTree = "<group>"; };
+		34ED46ED5C404A3AE83D57393BDCB5C1 /* MonthYearPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MonthYearPicker.release.xcconfig; sourceTree = "<group>"; };
+		376963DE9CE0BF07CF00AB13997FFD43 /* MonthYearPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MonthYearPicker.debug.xcconfig; sourceTree = "<group>"; };
+		395432BFE237096E37A46C73211A6B8B /* Popover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Popover.debug.xcconfig; sourceTree = "<group>"; };
+		47C2CEF09FB9CF3E19BF5D666699B563 /* DatePickerDialog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DatePickerDialog.debug.xcconfig; sourceTree = "<group>"; };
+		491A8C8940D9091981B6B97DF98C6E7F /* ChartProgressBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChartProgressBar.modulemap; sourceTree = "<group>"; };
+		4E05CACBFEBD9358B75DF45C84F59965 /* JDSBNotificationWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDSBNotificationWindow.m; path = JDStatusBarNotification/Private/JDSBNotificationWindow.m; sourceTree = "<group>"; };
+		583ACD40FAE8D22A63582D4858D1F220 /* JDSystemStatusBarHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDSystemStatusBarHelpers.h; path = JDStatusBarNotification/Private/JDSystemStatusBarHelpers.h; sourceTree = "<group>"; };
+		5EE876211D9E628FEB971A628A061855 /* DatePickerDialog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerDialog-prefix.pch"; sourceTree = "<group>"; };
+		6521055DAF4090C18B4F010B838B0D93 /* Colors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Sources/Colors.swift; sourceTree = "<group>"; };
+		6864A0E3B375FDA757CCFF331E8CC0C0 /* DatePickerDialog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DatePickerDialog.release.xcconfig; sourceTree = "<group>"; };
+		6E3662A9ABED18636EE90CD04FB2E138 /* JDStatusBarNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDStatusBarNotification.h; path = JDStatusBarNotification/Public/JDStatusBarNotification.h; sourceTree = "<group>"; };
+		6EA63D0B1682C0FF1A6D7897A6B6DD44 /* ChartProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartProgressBar-umbrella.h"; sourceTree = "<group>"; };
 		701FD8ACF5CB517E4B210C55293BE900 /* MonthYearPicker */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MonthYearPicker; path = MonthYearPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7494330F09DCFAD0E506DF0BBAEDA725 /* MonthYearPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MonthYearPicker-umbrella.h"; sourceTree = "<group>"; };
-		79DBD548136FABB7BB029332166740E1 /* BarData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarData.swift; path = "ChartProgressBar-ios/Classes/BarData.swift"; sourceTree = "<group>"; };
-		7D74EB0F6D37D00A2E6359C3CE1B7754 /* DatePickerDialog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerDialog-prefix.pch"; sourceTree = "<group>"; };
+		71BDF7E244A636D145A89B8687C9BFD7 /* ChartProgressBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartProgressBar.swift; path = "ChartProgressBar-ios/Classes/ChartProgressBar.swift"; sourceTree = "<group>"; };
+		7460E2CB4EDBC11031CD224FA98C6FDA /* JDSBNotificationAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDSBNotificationAnimator.m; path = JDStatusBarNotification/Private/JDSBNotificationAnimator.m; sourceTree = "<group>"; };
+		7A03A67A53EEDD2814DD36749CE916EE /* JDStatusBarNotificationPresenterPrepareStyleBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDStatusBarNotificationPresenterPrepareStyleBlock.h; path = JDStatusBarNotification/Public/JDStatusBarNotificationPresenterPrepareStyleBlock.h; sourceTree = "<group>"; };
+		7B7DA427D7CFF0D6B43F1F16C8728AB7 /* JDStatusBarNotificationStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDStatusBarNotificationStyle.m; path = JDStatusBarNotification/Public/JDStatusBarNotificationStyle.m; sourceTree = "<group>"; };
+		7C40EA145BD9A8ED78A61C8025DDF832 /* UIApplication+JDSB_MainWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+JDSB_MainWindow.h"; path = "JDStatusBarNotification/Private/UIApplication+JDSB_MainWindow.h"; sourceTree = "<group>"; };
+		7CA46F9C45764D3D48AF0C50D4596949 /* Popover-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Popover-Info.plist"; sourceTree = "<group>"; };
+		7D6CECB11D0941B0FBB256BDE4294D92 /* JDStatusBarNotification-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JDStatusBarNotification-dummy.m"; sourceTree = "<group>"; };
 		819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChartProgressBar; path = ChartProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D5EA64D92F8B3D95BE9F84FEB5A0273 /* MonthYearPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MonthYearPicker.release.xcconfig; sourceTree = "<group>"; };
-		94092FC9A75A1AA1237FBF78E99F0B7A /* MonthYearPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MonthYearPicker-dummy.m"; sourceTree = "<group>"; };
-		97C779794D556C25BA9640E3C2FE4B8D /* DatePickerDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerDialog-umbrella.h"; sourceTree = "<group>"; };
-		98CACBC2B9F165058925AF76A2A49CC7 /* Bar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bar.swift; path = "ChartProgressBar-ios/Classes/Bar.swift"; sourceTree = "<group>"; };
-		9B23525FD8EF6DE969F9378AD9EAA6A1 /* ChartProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartProgressBar-prefix.pch"; sourceTree = "<group>"; };
-		9D4656EC2BBA3F3D444344AE32D731F3 /* Colors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Sources/Colors.swift; sourceTree = "<group>"; };
+		8485366100FE928FECF0DE97A3815381 /* ChartProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartProgressBar-prefix.pch"; sourceTree = "<group>"; };
+		882A8FF717B1F08DC67E8D4490263663 /* JDSystemStatusBarHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDSystemStatusBarHelpers.m; path = JDStatusBarNotification/Private/JDSystemStatusBarHelpers.m; sourceTree = "<group>"; };
+		8956F72F7D05BCE049FFCEB3FC6B6EF4 /* ChartProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChartProgressBar-dummy.m"; sourceTree = "<group>"; };
+		8B2744AB3276322B1025E2DAD3EB820A /* JDSBNotificationStyleCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDSBNotificationStyleCache.m; path = JDStatusBarNotification/Private/JDSBNotificationStyleCache.m; sourceTree = "<group>"; };
+		8B79560016B7509A1B5AB26FDDF9EA02 /* JDSBNotificationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDSBNotificationView.m; path = JDStatusBarNotification/Private/JDSBNotificationView.m; sourceTree = "<group>"; };
+		9025DD9DFBC819155D0DD307916CB963 /* ChartProgressBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartProgressBar.debug.xcconfig; sourceTree = "<group>"; };
+		94786D4FD72826F3E055A130AF4B1D63 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MonthYearPickerView.swift; path = Sources/MonthYearPicker/MonthYearPickerView.swift; sourceTree = "<group>"; };
+		966CF2C3345A08D072A60FEE156D1C31 /* ChartProgressBarDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartProgressBarDelegate.swift; path = "ChartProgressBar-ios/Classes/ChartProgressBarDelegate.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AAE794FF24B65B40696DCF4256FCE36B /* Popover-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Popover-prefix.pch"; sourceTree = "<group>"; };
-		AB41A3EE1528F7D80E3C2E5BD50FEFE3 /* ChartProgressBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChartProgressBar.modulemap; sourceTree = "<group>"; };
+		9E3C5E09EC36DC47D5B5603A2367B16B /* MonthYearPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MonthYearPicker-dummy.m"; sourceTree = "<group>"; };
+		9F6DB066B11F9235780713F98CED8846 /* DatePickerDialog-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DatePickerDialog-Info.plist"; sourceTree = "<group>"; };
+		A0905F4CF1526FA56F14D14A1519AD46 /* DatePickerDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerDialog-umbrella.h"; sourceTree = "<group>"; };
+		A0E62FEACD4DAB001635B8AAC6349AE7 /* JDStatusBarNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JDStatusBarNotification.release.xcconfig; sourceTree = "<group>"; };
+		A12C0346E281122E94BD92FAA893D4B1 /* JDStatusBarNotification.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JDStatusBarNotification.modulemap; sourceTree = "<group>"; };
+		A4A4E945C409630B654F2D88AAAAF964 /* JDStatusBarNotification-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDStatusBarNotification-umbrella.h"; sourceTree = "<group>"; };
+		B0F3397C03EF1D7152F2B0229052DFD2 /* JDSBNotificationViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDSBNotificationViewController.m; path = JDStatusBarNotification/Private/JDSBNotificationViewController.m; sourceTree = "<group>"; };
+		B0FD381AF09244BD03A057ECA42CC7D4 /* Popover.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Popover.swift; path = Classes/Popover.swift; sourceTree = "<group>"; };
 		B72A389B0E6A6DD2F3D61F4DC7F84D83 /* Popover */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Popover; path = Popover.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE16B545266A8E05691C8F677F80D6B7 /* ChartProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartProgressBar-umbrella.h"; sourceTree = "<group>"; };
+		BF07DFFAF9A44DBDEBD897387E83B1DC /* JDStatusBarNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JDStatusBarNotification.debug.xcconfig; sourceTree = "<group>"; };
 		C13CCDE6ED07349A842E345A2FF078FC /* Pods-iBudget-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iBudget-frameworks.sh"; sourceTree = "<group>"; };
-		C24B6E4336D4B00DB6B5F98A0787B694 /* ChartProgressBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartProgressBar.release.xcconfig; sourceTree = "<group>"; };
+		C233BE5CE3C26CE2F61F672D8FA78317 /* DatePickerDialog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DatePickerDialog-dummy.m"; sourceTree = "<group>"; };
+		C2FE7C0CF10A2A6E70C2317B04BA0485 /* JDStatusBarNotification-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JDStatusBarNotification-Info.plist"; sourceTree = "<group>"; };
 		C77E8A538661C084AFF10956BCA8704D /* Pods-iBudget.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iBudget.modulemap"; sourceTree = "<group>"; };
+		C87193BB2F863941E2E91032E39844E8 /* Bar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bar.swift; path = "ChartProgressBar-ios/Classes/Bar.swift"; sourceTree = "<group>"; };
 		CA6874987821D5EFBA9C22390C4DDC8E /* Pods-iBudget-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iBudget-dummy.m"; sourceTree = "<group>"; };
+		CCDD8E921CBACAD5691404BDFDE779B5 /* JDSBNotificationAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDSBNotificationAnimator.h; path = JDStatusBarNotification/Private/JDSBNotificationAnimator.h; sourceTree = "<group>"; };
 		CDFEC870027830F32BDFCECAEC47F6E1 /* Pods-iBudget-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iBudget-acknowledgements.plist"; sourceTree = "<group>"; };
-		D07CE63CA7336407597DA01719E841ED /* DatePickerDialog-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DatePickerDialog-Info.plist"; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		DAF2A5D8BE2B8924704BEAEED6CFA50E /* ChartProgressBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartProgressBar.debug.xcconfig; sourceTree = "<group>"; };
-		DF847739EBAE4F2AB24CD5C1397AD056 /* MonthYearPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MonthYearPicker-prefix.pch"; sourceTree = "<group>"; };
+		D3DABB6E902A9AEA36D85BAF3E52456A /* MonthYearPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MonthYearPicker-prefix.pch"; sourceTree = "<group>"; };
+		DCD328403D55EA384BABF322FD7F8405 /* JDStatusBarNotification-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JDStatusBarNotification-prefix.pch"; sourceTree = "<group>"; };
+		DEA5D5D3DB51139F30524822B8CFA1FF /* JDStatusBarNotificationPresenter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JDStatusBarNotificationPresenter.h; path = JDStatusBarNotification/Public/JDStatusBarNotificationPresenter.h; sourceTree = "<group>"; };
+		DEF2A02104B7295B7150CAE6D5AE88B4 /* DatePickerDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerDialog.swift; path = Sources/DatePickerDialog.swift; sourceTree = "<group>"; };
+		E1B278BD08FC8D95DA79CF8CD62DCFDE /* UIColor+Ext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Ext.swift"; path = "Sources/UIColor+Ext.swift"; sourceTree = "<group>"; };
 		E22CD4AE2A40F64835762AE647EB5324 /* Pods-iBudget-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iBudget-umbrella.h"; sourceTree = "<group>"; };
 		E26A94B564A90C3B9B870025C94DF8C4 /* Pods-iBudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iBudget.release.xcconfig"; sourceTree = "<group>"; };
-		E3163D7D10DE0161E147EEB11627EA66 /* DatePickerDialog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DatePickerDialog.modulemap; sourceTree = "<group>"; };
-		E3C44789EF879A91776432CA0D4837E5 /* ChartProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChartProgressBar-dummy.m"; sourceTree = "<group>"; };
+		E3838059D8748FB877099FDC6D783AAF /* ChartProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChartProgressBar-Info.plist"; sourceTree = "<group>"; };
+		E54B7204ABD83EF82B36192572DB33AE /* Popover-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Popover-dummy.m"; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		ECEE21026EE5B83E6CF89E8AA1DBF0D5 /* Popover.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Popover.swift; path = Classes/Popover.swift; sourceTree = "<group>"; };
-		ED0EEDBC61B2161759BD76EA016032DC /* MonthYearPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MonthYearPicker.debug.xcconfig; sourceTree = "<group>"; };
+		ECACAF06695AFB8F22C8DBE15765FEFE /* JDStatusBarNotificationPresenter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDStatusBarNotificationPresenter.m; path = JDStatusBarNotification/Public/JDStatusBarNotificationPresenter.m; sourceTree = "<group>"; };
 		EED33E10A8A96F4271DA70C049E56041 /* Pods-iBudget */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-iBudget"; path = Pods_iBudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7333B9B99F649DE788C295BD69BBCA8 /* ChartProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChartProgressBar-Info.plist"; sourceTree = "<group>"; };
-		FAFE553897DF013E6DB2E07BFC45D8D2 /* DatePickerDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerDialog.swift; path = Sources/DatePickerDialog.swift; sourceTree = "<group>"; };
-		FFC8B21134F8B6006486DFE787898027 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MonthYearPickerView.swift; path = Sources/MonthYearPicker/MonthYearPickerView.swift; sourceTree = "<group>"; };
+		F2F51A76CEBA43C420F8F841CF2645DE /* JDStatusBarNotification */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JDStatusBarNotification; path = JDStatusBarNotification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3286AAE538941904506D7F02158EBD9 /* Popover.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Popover.modulemap; sourceTree = "<group>"; };
+		F48D0945AE657266E81FDD1B59E53BC8 /* MonthYearPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MonthYearPicker-Info.plist"; sourceTree = "<group>"; };
+		FB8E5C8D2867CD19A7EE3EC1EE894750 /* DatePickerDialog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DatePickerDialog.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +190,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B45004788C56E4A568C7BDB052F5E03 /* Frameworks */ = {
+		A800532F364EACA6AA678D76F517270C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B937E5D66F277483F1F86FD3A03F616 /* Foundation.framework in Frameworks */,
+				49E74F223355E61FD2235229C96991F8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA6CAE328D5136E3B54E72B8EF071BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E60951B1A1EA2E679809DA20052C4255 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,41 +241,71 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		19E9BFF809A93D605D785156B894FC3E /* Support Files */ = {
+		224C7B822C444E890C267DD8432DA64D /* DatePickerDialog */ = {
 			isa = PBXGroup;
 			children = (
-				684CDEA4107E25702C766CDF70E6F2C7 /* Popover.modulemap */,
-				43827289AD890422FED86E7F63DFFDE5 /* Popover-dummy.m */,
-				5BC4170F4ECEB3F745F5FDC6E91C8E10 /* Popover-Info.plist */,
-				AAE794FF24B65B40696DCF4256FCE36B /* Popover-prefix.pch */,
-				700DF750C1F1292A395566D88700D8BB /* Popover-umbrella.h */,
-				6E51397DFC207B0AB28D68CB66D992F3 /* Popover.debug.xcconfig */,
-				306F770DEF61E58495706466B5B4BD53 /* Popover.release.xcconfig */,
+				6521055DAF4090C18B4F010B838B0D93 /* Colors.swift */,
+				DEF2A02104B7295B7150CAE6D5AE88B4 /* DatePickerDialog.swift */,
+				E1B278BD08FC8D95DA79CF8CD62DCFDE /* UIColor+Ext.swift */,
+				C25EF44AEE56BB74FE6B50B1F1116885 /* Support Files */,
+			);
+			name = DatePickerDialog;
+			path = DatePickerDialog;
+			sourceTree = "<group>";
+		};
+		2AE3C648149B874CA07656F33334B62F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3286AAE538941904506D7F02158EBD9 /* Popover.modulemap */,
+				E54B7204ABD83EF82B36192572DB33AE /* Popover-dummy.m */,
+				7CA46F9C45764D3D48AF0C50D4596949 /* Popover-Info.plist */,
+				1FA08902DC54C5CB055029BAE984704D /* Popover-prefix.pch */,
+				2C89DF8BA502770067F902F1CCDAF7E6 /* Popover-umbrella.h */,
+				395432BFE237096E37A46C73211A6B8B /* Popover.debug.xcconfig */,
+				17E699C5F5EE85EF1E21FA852F42C68E /* Popover.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Popover";
 			sourceTree = "<group>";
 		};
-		3403005D414F3C7D8CB8ECDB44BB283E /* Products */ = {
+		2B762E1CE166298A93DFED8FE8E7AC5A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */,
-				0969EB51C1E293C173141D48DC24C3B8 /* DatePickerDialog */,
-				701FD8ACF5CB517E4B210C55293BE900 /* MonthYearPicker */,
-				EED33E10A8A96F4271DA70C049E56041 /* Pods-iBudget */,
-				B72A389B0E6A6DD2F3D61F4DC7F84D83 /* Popover */,
+				32E2E0F7881A9272C01B3BEF5343A2A1 /* MonthYearPicker.modulemap */,
+				9E3C5E09EC36DC47D5B5603A2367B16B /* MonthYearPicker-dummy.m */,
+				F48D0945AE657266E81FDD1B59E53BC8 /* MonthYearPicker-Info.plist */,
+				D3DABB6E902A9AEA36D85BAF3E52456A /* MonthYearPicker-prefix.pch */,
+				28429EDE2CED87CA985BD26CB79F362C /* MonthYearPicker-umbrella.h */,
+				376963DE9CE0BF07CF00AB13997FFD43 /* MonthYearPicker.debug.xcconfig */,
+				34ED46ED5C404A3AE83D57393BDCB5C1 /* MonthYearPicker.release.xcconfig */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/MonthYearPicker";
 			sourceTree = "<group>";
 		};
-		4BAE399E277F7849E6179714E59D5E4D /* Popover */ = {
+		37B2536511F7FF88F053D9F00B95455F /* Popover */ = {
 			isa = PBXGroup;
 			children = (
-				ECEE21026EE5B83E6CF89E8AA1DBF0D5 /* Popover.swift */,
-				19E9BFF809A93D605D785156B894FC3E /* Support Files */,
+				B0FD381AF09244BD03A057ECA42CC7D4 /* Popover.swift */,
+				2AE3C648149B874CA07656F33334B62F /* Support Files */,
 			);
 			name = Popover;
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		450C32AC01E0D1B3760E98E63FCF4F55 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A12C0346E281122E94BD92FAA893D4B1 /* JDStatusBarNotification.modulemap */,
+				7D6CECB11D0941B0FBB256BDE4294D92 /* JDStatusBarNotification-dummy.m */,
+				C2FE7C0CF10A2A6E70C2317B04BA0485 /* JDStatusBarNotification-Info.plist */,
+				DCD328403D55EA384BABF322FD7F8405 /* JDStatusBarNotification-prefix.pch */,
+				A4A4E945C409630B654F2D88AAAAF964 /* JDStatusBarNotification-umbrella.h */,
+				BF07DFFAF9A44DBDEBD897387E83B1DC /* JDStatusBarNotification.debug.xcconfig */,
+				A0E62FEACD4DAB001635B8AAC6349AE7 /* JDStatusBarNotification.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JDStatusBarNotification";
 			sourceTree = "<group>";
 		};
 		4CD794BB3C2877491096BD93C80B1FB3 /* Targets Support Files */ = {
@@ -218,21 +314,6 @@
 				C49CF91CEA635918DF9B7D997C948A4C /* Pods-iBudget */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		56815E5AE8E9F4686DE20B66C1023517 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				38FA43C1ACAE40DC92FF50924405F5EC /* MonthYearPicker.modulemap */,
-				94092FC9A75A1AA1237FBF78E99F0B7A /* MonthYearPicker-dummy.m */,
-				233576346CF91BE43A22B9D80616C108 /* MonthYearPicker-Info.plist */,
-				DF847739EBAE4F2AB24CD5C1397AD056 /* MonthYearPicker-prefix.pch */,
-				7494330F09DCFAD0E506DF0BBAEDA725 /* MonthYearPicker-umbrella.h */,
-				ED0EEDBC61B2161759BD76EA016032DC /* MonthYearPicker.debug.xcconfig */,
-				8D5EA64D92F8B3D95BE9F84FEB5A0273 /* MonthYearPicker.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MonthYearPicker";
 			sourceTree = "<group>";
 		};
 		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
@@ -244,54 +325,86 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		62A39CB61B5694E9AE1D9A78DAF486CC /* ChartProgressBar */ = {
+		8446A37AB88CE4FF4C79D889BBE469D0 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				98CACBC2B9F165058925AF76A2A49CC7 /* Bar.swift */,
-				79DBD548136FABB7BB029332166740E1 /* BarData.swift */,
-				2694C601F1B387A3905F2024B814C41A /* ChartProgressBar.swift */,
-				2A19E1AA94A98F79B726E185FE0781A9 /* ChartProgressBarDelegate.swift */,
-				DF5A5D27449BA43AF139AD4E3870616C /* Support Files */,
+				491A8C8940D9091981B6B97DF98C6E7F /* ChartProgressBar.modulemap */,
+				8956F72F7D05BCE049FFCEB3FC6B6EF4 /* ChartProgressBar-dummy.m */,
+				E3838059D8748FB877099FDC6D783AAF /* ChartProgressBar-Info.plist */,
+				8485366100FE928FECF0DE97A3815381 /* ChartProgressBar-prefix.pch */,
+				6EA63D0B1682C0FF1A6D7897A6B6DD44 /* ChartProgressBar-umbrella.h */,
+				9025DD9DFBC819155D0DD307916CB963 /* ChartProgressBar.debug.xcconfig */,
+				28092938E4D254AB61493542D544DBA8 /* ChartProgressBar.release.xcconfig */,
 			);
-			name = ChartProgressBar;
-			path = ChartProgressBar;
+			name = "Support Files";
+			path = "../Target Support Files/ChartProgressBar";
 			sourceTree = "<group>";
 		};
-		6FECA10888026E7112A45E0183A62690 /* MonthYearPicker */ = {
+		A197858047C25704FC2E95705B2E6F95 /* JDStatusBarNotification */ = {
 			isa = PBXGroup;
 			children = (
-				FFC8B21134F8B6006486DFE787898027 /* MonthYearPickerView.swift */,
-				56815E5AE8E9F4686DE20B66C1023517 /* Support Files */,
+				CCDD8E921CBACAD5691404BDFDE779B5 /* JDSBNotificationAnimator.h */,
+				7460E2CB4EDBC11031CD224FA98C6FDA /* JDSBNotificationAnimator.m */,
+				1CCF44A59788350C7AF05FDCA7661146 /* JDSBNotificationStyleCache.h */,
+				8B2744AB3276322B1025E2DAD3EB820A /* JDSBNotificationStyleCache.m */,
+				3135785C64D7AA6E6616AB359C22B34E /* JDSBNotificationView.h */,
+				8B79560016B7509A1B5AB26FDDF9EA02 /* JDSBNotificationView.m */,
+				2BFE6DF2EDD8C1751C44D4B15F813C91 /* JDSBNotificationViewController.h */,
+				B0F3397C03EF1D7152F2B0229052DFD2 /* JDSBNotificationViewController.m */,
+				054436AD1457ACC0DA6DCA16D30B39D6 /* JDSBNotificationWindow.h */,
+				4E05CACBFEBD9358B75DF45C84F59965 /* JDSBNotificationWindow.m */,
+				6E3662A9ABED18636EE90CD04FB2E138 /* JDStatusBarNotification.h */,
+				DEA5D5D3DB51139F30524822B8CFA1FF /* JDStatusBarNotificationPresenter.h */,
+				ECACAF06695AFB8F22C8DBE15765FEFE /* JDStatusBarNotificationPresenter.m */,
+				7A03A67A53EEDD2814DD36749CE916EE /* JDStatusBarNotificationPresenterPrepareStyleBlock.h */,
+				1987326CF2EB3DEB2AF5620CF5687E50 /* JDStatusBarNotificationStyle.h */,
+				7B7DA427D7CFF0D6B43F1F16C8728AB7 /* JDStatusBarNotificationStyle.m */,
+				583ACD40FAE8D22A63582D4858D1F220 /* JDSystemStatusBarHelpers.h */,
+				882A8FF717B1F08DC67E8D4490263663 /* JDSystemStatusBarHelpers.m */,
+				7C40EA145BD9A8ED78A61C8025DDF832 /* UIApplication+JDSB_MainWindow.h */,
+				2485D9423A301DCCE98205DCF5365664 /* UIApplication+JDSB_MainWindow.m */,
+				450C32AC01E0D1B3760E98E63FCF4F55 /* Support Files */,
+			);
+			name = JDStatusBarNotification;
+			path = JDStatusBarNotification;
+			sourceTree = "<group>";
+		};
+		A98CEF827BCCC40B91F19ABC7B220761 /* MonthYearPicker */ = {
+			isa = PBXGroup;
+			children = (
+				94786D4FD72826F3E055A130AF4B1D63 /* MonthYearPickerView.swift */,
+				2B762E1CE166298A93DFED8FE8E7AC5A /* Support Files */,
 			);
 			name = MonthYearPicker;
 			path = MonthYearPicker;
 			sourceTree = "<group>";
 		};
-		7301AD907F5B668FDE29537C09B53D18 /* Support Files */ = {
+		BCD5E94DEDE5BC340350E3584FF6325F /* ChartProgressBar */ = {
 			isa = PBXGroup;
 			children = (
-				E3163D7D10DE0161E147EEB11627EA66 /* DatePickerDialog.modulemap */,
-				6E5DD0FB650B916BCA41DF913DFBC528 /* DatePickerDialog-dummy.m */,
-				D07CE63CA7336407597DA01719E841ED /* DatePickerDialog-Info.plist */,
-				7D74EB0F6D37D00A2E6359C3CE1B7754 /* DatePickerDialog-prefix.pch */,
-				97C779794D556C25BA9640E3C2FE4B8D /* DatePickerDialog-umbrella.h */,
-				1E264B247136FD3E99415629E926AC94 /* DatePickerDialog.debug.xcconfig */,
-				26FA69B3F449EF3787525B6A98D504BC /* DatePickerDialog.release.xcconfig */,
+				C87193BB2F863941E2E91032E39844E8 /* Bar.swift */,
+				1284E219EE852CDF1C83F468AF781FBD /* BarData.swift */,
+				71BDF7E244A636D145A89B8687C9BFD7 /* ChartProgressBar.swift */,
+				966CF2C3345A08D072A60FEE156D1C31 /* ChartProgressBarDelegate.swift */,
+				8446A37AB88CE4FF4C79D889BBE469D0 /* Support Files */,
+			);
+			name = ChartProgressBar;
+			path = ChartProgressBar;
+			sourceTree = "<group>";
+		};
+		C25EF44AEE56BB74FE6B50B1F1116885 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB8E5C8D2867CD19A7EE3EC1EE894750 /* DatePickerDialog.modulemap */,
+				C233BE5CE3C26CE2F61F672D8FA78317 /* DatePickerDialog-dummy.m */,
+				9F6DB066B11F9235780713F98CED8846 /* DatePickerDialog-Info.plist */,
+				5EE876211D9E628FEB971A628A061855 /* DatePickerDialog-prefix.pch */,
+				A0905F4CF1526FA56F14D14A1519AD46 /* DatePickerDialog-umbrella.h */,
+				47C2CEF09FB9CF3E19BF5D666699B563 /* DatePickerDialog.debug.xcconfig */,
+				6864A0E3B375FDA757CCFF331E8CC0C0 /* DatePickerDialog.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/DatePickerDialog";
-			sourceTree = "<group>";
-		};
-		909AC6A06B0745EB7C15A46012C5561E /* DatePickerDialog */ = {
-			isa = PBXGroup;
-			children = (
-				9D4656EC2BBA3F3D444344AE32D731F3 /* Colors.swift */,
-				FAFE553897DF013E6DB2E07BFC45D8D2 /* DatePickerDialog.swift */,
-				43A1AEEB7176C4FBE90D70FC6D8A9C17 /* UIColor+Ext.swift */,
-				7301AD907F5B668FDE29537C09B53D18 /* Support Files */,
-			);
-			name = DatePickerDialog;
-			path = DatePickerDialog;
 			sourceTree = "<group>";
 		};
 		C49CF91CEA635918DF9B7D997C948A4C /* Pods-iBudget */ = {
@@ -316,34 +429,33 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				FBF41CBDAC78C56B09774752AA87E3DD /* Pods */,
-				3403005D414F3C7D8CB8ECDB44BB283E /* Products */,
+				FC318EA4DAB4B345873094737655CFEA /* Pods */,
+				E5E0EADAC0378418837C5392FFF059C1 /* Products */,
 				4CD794BB3C2877491096BD93C80B1FB3 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		DF5A5D27449BA43AF139AD4E3870616C /* Support Files */ = {
+		E5E0EADAC0378418837C5392FFF059C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB41A3EE1528F7D80E3C2E5BD50FEFE3 /* ChartProgressBar.modulemap */,
-				E3C44789EF879A91776432CA0D4837E5 /* ChartProgressBar-dummy.m */,
-				F7333B9B99F649DE788C295BD69BBCA8 /* ChartProgressBar-Info.plist */,
-				9B23525FD8EF6DE969F9378AD9EAA6A1 /* ChartProgressBar-prefix.pch */,
-				BE16B545266A8E05691C8F677F80D6B7 /* ChartProgressBar-umbrella.h */,
-				DAF2A5D8BE2B8924704BEAEED6CFA50E /* ChartProgressBar.debug.xcconfig */,
-				C24B6E4336D4B00DB6B5F98A0787B694 /* ChartProgressBar.release.xcconfig */,
+				819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */,
+				0969EB51C1E293C173141D48DC24C3B8 /* DatePickerDialog */,
+				F2F51A76CEBA43C420F8F841CF2645DE /* JDStatusBarNotification */,
+				701FD8ACF5CB517E4B210C55293BE900 /* MonthYearPicker */,
+				EED33E10A8A96F4271DA70C049E56041 /* Pods-iBudget */,
+				B72A389B0E6A6DD2F3D61F4DC7F84D83 /* Popover */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ChartProgressBar";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		FBF41CBDAC78C56B09774752AA87E3DD /* Pods */ = {
+		FC318EA4DAB4B345873094737655CFEA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				62A39CB61B5694E9AE1D9A78DAF486CC /* ChartProgressBar */,
-				909AC6A06B0745EB7C15A46012C5561E /* DatePickerDialog */,
-				6FECA10888026E7112A45E0183A62690 /* MonthYearPicker */,
-				4BAE399E277F7849E6179714E59D5E4D /* Popover */,
+				BCD5E94DEDE5BC340350E3584FF6325F /* ChartProgressBar */,
+				224C7B822C444E890C267DD8432DA64D /* DatePickerDialog */,
+				A197858047C25704FC2E95705B2E6F95 /* JDStatusBarNotification */,
+				A98CEF827BCCC40B91F19ABC7B220761 /* MonthYearPicker */,
+				37B2536511F7FF88F053D9F00B95455F /* Popover */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -351,6 +463,33 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0B49619215F589D3CF9A9714757C9E0B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5D475B4D139B7767429925E95C9E50F /* Pods-iBudget-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A8A413CDC3A107AAEE96F884351FDD9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F45FB9C97C32F0C30FB7D31395335E8F /* JDSBNotificationAnimator.h in Headers */,
+				24AEDFD40C50EBB5F8EA0DF2BDE49590 /* JDSBNotificationStyleCache.h in Headers */,
+				C49DC8521ACD680FBBC77346718756F6 /* JDSBNotificationView.h in Headers */,
+				C2787ED0A30E9CFFE658B0869D541C23 /* JDSBNotificationViewController.h in Headers */,
+				8602FE066A0D2A782FFA14B45FB89185 /* JDSBNotificationWindow.h in Headers */,
+				A7139CE4203288693C9D436F57430F7C /* JDStatusBarNotification.h in Headers */,
+				72272E58638DE8FA1AEB94A02FD2D359 /* JDStatusBarNotification-umbrella.h in Headers */,
+				586C53F5D83ADE7D134E4D727441DBF2 /* JDStatusBarNotificationPresenter.h in Headers */,
+				F8A2DB5F194AFFCC42E744FE0B233BF1 /* JDStatusBarNotificationPresenterPrepareStyleBlock.h in Headers */,
+				54FD66C8960A612BB35191BEF0FD83ED /* JDStatusBarNotificationStyle.h in Headers */,
+				A0ED575EF299797C7BD65A7A55D9B959 /* JDSystemStatusBarHelpers.h in Headers */,
+				4479089A24134BD00A62EA346CCD967C /* UIApplication+JDSB_MainWindow.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		54765064D640B089874538E11A8A5317 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,14 +511,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A454FDE721C693A7455E425F500973B1 /* Popover-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AD0439C5A4FC038472775B8EBFCBDC0E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D9FB289EBC6BFCAAE5FEF26AB177184D /* Pods-iBudget-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,20 +581,21 @@
 		};
 		C667998B7E8054295025985D7CEB3042 /* Pods-iBudget */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D6572E8021FD3EF06DA97B657931E0D6 /* Build configuration list for PBXNativeTarget "Pods-iBudget" */;
+			buildConfigurationList = 042C582B19DDCDDDF6E4E01CE9D50560 /* Build configuration list for PBXNativeTarget "Pods-iBudget" */;
 			buildPhases = (
-				AD0439C5A4FC038472775B8EBFCBDC0E /* Headers */,
-				FAEDB1DDE4C0A5C70E39F42E73B59934 /* Sources */,
-				8B45004788C56E4A568C7BDB052F5E03 /* Frameworks */,
-				1039734CFF3304862EBBE972C0C0F817 /* Resources */,
+				0B49619215F589D3CF9A9714757C9E0B /* Headers */,
+				90AF25334FCB47CCD6953C2CAD725DA9 /* Sources */,
+				AA6CAE328D5136E3B54E72B8EF071BC9 /* Frameworks */,
+				E6323AA640E324B2A22FEA8C93EE3661 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E1258776FAEAD81A882DAAAA91FA4991 /* PBXTargetDependency */,
-				92544B0FA587B844D399AEEA4E92893F /* PBXTargetDependency */,
-				D1F961AE7D3B165D48A348BEC034CB44 /* PBXTargetDependency */,
-				BCE67B012EA68CBD78ADD38A071B24B3 /* PBXTargetDependency */,
+				E54272F5030520316DBFB77D62BDF9F6 /* PBXTargetDependency */,
+				D82CCDE717DEF19E266FBF16BDECB33C /* PBXTargetDependency */,
+				2D5EC2E4C10ED058833CC4146329134E /* PBXTargetDependency */,
+				ACD2A2E46562D80CDEE926817C03AE61 /* PBXTargetDependency */,
+				1DFCE7AFE6E2F07453E9B54967A189D0 /* PBXTargetDependency */,
 			);
 			name = "Pods-iBudget";
 			productName = Pods_iBudget;
@@ -488,6 +620,24 @@
 			productReference = 819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */;
 			productType = "com.apple.product-type.framework";
 		};
+		EB07D88E59040F928F73F9A46CA65C69 /* JDStatusBarNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7292EB02DAFE780672E1EB35069A5DED /* Build configuration list for PBXNativeTarget "JDStatusBarNotification" */;
+			buildPhases = (
+				1A8A413CDC3A107AAEE96F884351FDD9 /* Headers */,
+				F389DD7104EFBC603F3C25D3E4E4C187 /* Sources */,
+				A800532F364EACA6AA678D76F517270C /* Frameworks */,
+				CB85E38334D4D7E07819E3DABB797C67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JDStatusBarNotification;
+			productName = JDStatusBarNotification;
+			productReference = F2F51A76CEBA43C420F8F841CF2645DE /* JDStatusBarNotification */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -506,12 +656,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 3403005D414F3C7D8CB8ECDB44BB283E /* Products */;
+			productRefGroup = E5E0EADAC0378418837C5392FFF059C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				C956F83D1391452CCB4752121EDF6ED6 /* ChartProgressBar */,
 				977B67E6ADDDC9C183DE6B6E33F17FCC /* DatePickerDialog */,
+				EB07D88E59040F928F73F9A46CA65C69 /* JDStatusBarNotification */,
 				4C664F75D7FE4D02CDB8FE9EFADAEDA6 /* MonthYearPicker */,
 				C667998B7E8054295025985D7CEB3042 /* Pods-iBudget */,
 				89ADB0D61D0BE9648E9853F5F8BDA717 /* Popover */,
@@ -521,13 +672,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		0C37D8CC78066139CEAC63D4BB605A0F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1039734CFF3304862EBBE972C0C0F817 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -548,6 +692,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB85E38334D4D7E07819E3DABB797C67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6323AA640E324B2A22FEA8C93EE3661 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3F41ECAD941C55347813B4D9CAE1980 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -558,6 +716,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		90AF25334FCB47CCD6953C2CAD725DA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25ED3C3F5556B3FF9934B088B7C83C12 /* Pods-iBudget-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A53CC1FC6F2B27375D35087BE1A7FB24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -588,6 +754,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F389DD7104EFBC603F3C25D3E4E4C187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCADC11D9C5EA2D2BB8E40785B6E7D56 /* JDSBNotificationAnimator.m in Sources */,
+				181526E3972FF383A25E37FE638326E9 /* JDSBNotificationStyleCache.m in Sources */,
+				C5CB6FEE315AD75BDC93F58761873250 /* JDSBNotificationView.m in Sources */,
+				AFEFAF84F8648ED9DA3B4F6CC3914715 /* JDSBNotificationViewController.m in Sources */,
+				239D9C55C95DF4871092A8A39EC1B205 /* JDSBNotificationWindow.m in Sources */,
+				D006DEEF351CAEE0020ADC4A9F9B96A7 /* JDStatusBarNotification-dummy.m in Sources */,
+				30F59BC491306CF342E3962DAE5B3CF5 /* JDStatusBarNotificationPresenter.m in Sources */,
+				70BC0FE501CEAA9D1580C58E9C080B2B /* JDStatusBarNotificationStyle.m in Sources */,
+				DA901FD42A85027322F4185C4FB46336 /* JDSystemStatusBarHelpers.m in Sources */,
+				60FDD40CE9A9D4FBE84937C4A8BE6B0B /* UIApplication+JDSB_MainWindow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6A8CA7CDFAC03A7D68AC28423982ADE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,47 +782,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAEDB1DDE4C0A5C70E39F42E73B59934 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99A8BC30A65D703AA29F85F9FCAE84A8 /* Pods-iBudget-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		92544B0FA587B844D399AEEA4E92893F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DatePickerDialog;
-			target = 977B67E6ADDDC9C183DE6B6E33F17FCC /* DatePickerDialog */;
-			targetProxy = 55DF3B8EBFC9DE2BDED20FD722BF563C /* PBXContainerItemProxy */;
-		};
-		BCE67B012EA68CBD78ADD38A071B24B3 /* PBXTargetDependency */ = {
+		1DFCE7AFE6E2F07453E9B54967A189D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Popover;
 			target = 89ADB0D61D0BE9648E9853F5F8BDA717 /* Popover */;
-			targetProxy = 4983BE066A440ED79D0C9A7776626235 /* PBXContainerItemProxy */;
+			targetProxy = 098625E92EF33A6462C508F247466503 /* PBXContainerItemProxy */;
 		};
-		D1F961AE7D3B165D48A348BEC034CB44 /* PBXTargetDependency */ = {
+		2D5EC2E4C10ED058833CC4146329134E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JDStatusBarNotification;
+			target = EB07D88E59040F928F73F9A46CA65C69 /* JDStatusBarNotification */;
+			targetProxy = 76D7435A234F517F514574087055709E /* PBXContainerItemProxy */;
+		};
+		ACD2A2E46562D80CDEE926817C03AE61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MonthYearPicker;
 			target = 4C664F75D7FE4D02CDB8FE9EFADAEDA6 /* MonthYearPicker */;
-			targetProxy = 2789563955FBA02D892A9BF9985CBCE8 /* PBXContainerItemProxy */;
+			targetProxy = 9A0364BECB46FDD77489ACC5D2252324 /* PBXContainerItemProxy */;
 		};
-		E1258776FAEAD81A882DAAAA91FA4991 /* PBXTargetDependency */ = {
+		D82CCDE717DEF19E266FBF16BDECB33C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DatePickerDialog;
+			target = 977B67E6ADDDC9C183DE6B6E33F17FCC /* DatePickerDialog */;
+			targetProxy = 0FAD78088B09866DF6B836059C01B9FD /* PBXContainerItemProxy */;
+		};
+		E54272F5030520316DBFB77D62BDF9F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ChartProgressBar;
 			target = C956F83D1391452CCB4752121EDF6ED6 /* ChartProgressBar */;
-			targetProxy = E8FD49D627DBA2FA33FDFB26ED308718 /* PBXContainerItemProxy */;
+			targetProxy = 7800438E304C490F30306442733CEFF3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		00A3541A2A02EFF44C192DFFB0C7FEC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED0EEDBC61B2161759BD76EA016032DC /* MonthYearPicker.debug.xcconfig */;
+			baseConfigurationReference = 376963DE9CE0BF07CF00AB13997FFD43 /* MonthYearPicker.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -671,9 +852,44 @@
 			};
 			name = Debug;
 		};
+		4B07CCB078F9F28DCD9BFC4D36F37972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF07DFFAF9A44DBDEBD897387E83B1DC /* JDStatusBarNotification.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JDStatusBarNotification/JDStatusBarNotification-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JDStatusBarNotification/JDStatusBarNotification-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JDStatusBarNotification/JDStatusBarNotification.modulemap";
+				PRODUCT_MODULE_NAME = JDStatusBarNotification;
+				PRODUCT_NAME = JDStatusBarNotification;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		563ABDD949CD364893639525340C474A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAF2A5D8BE2B8924704BEAEED6CFA50E /* ChartProgressBar.debug.xcconfig */;
+			baseConfigurationReference = 9025DD9DFBC819155D0DD307916CB963 /* ChartProgressBar.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -705,7 +921,7 @@
 			};
 			name = Debug;
 		};
-		5F5C4E71B663FE51DF4D8F578791E427 /* Release */ = {
+		5E8A2E3F55D6FB13E9A58F0C2B176374 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E26A94B564A90C3B9B870025C94DF8C4 /* Pods-iBudget.release.xcconfig */;
 			buildSettings = {
@@ -721,7 +937,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-iBudget/Pods-iBudget-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -745,7 +961,7 @@
 		};
 		74EE4C3DDBFA63E05A71C3141F568788 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 306F770DEF61E58495706466B5B4BD53 /* Popover.release.xcconfig */;
+			baseConfigurationReference = 17E699C5F5EE85EF1E21FA852F42C68E /* Popover.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -780,7 +996,7 @@
 		};
 		7F5A7F55922795E437D267FED09D3D3A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26FA69B3F449EF3787525B6A98D504BC /* DatePickerDialog.release.xcconfig */;
+			baseConfigurationReference = 6864A0E3B375FDA757CCFF331E8CC0C0 /* DatePickerDialog.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -813,106 +1029,7 @@
 			};
 			name = Release;
 		};
-		903A0004D3E6651EFD5D2E16214D101B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		A3732EA6211827F8ACEDD7D64B8BE855 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0463DB4BF155E00F13C0754B054C94B3 /* Pods-iBudget.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-iBudget/Pods-iBudget-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-iBudget/Pods-iBudget.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */ = {
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -965,7 +1082,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -978,9 +1095,108 @@
 			};
 			name = Debug;
 		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BAFD60818C012C0CCD0993134CC48B79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0463DB4BF155E00F13C0754B054C94B3 /* Pods-iBudget.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iBudget/Pods-iBudget-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iBudget/Pods-iBudget.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		C7B32E906567C873279F810F540EE593 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E51397DFC207B0AB28D68CB66D992F3 /* Popover.debug.xcconfig */;
+			baseConfigurationReference = 395432BFE237096E37A46C73211A6B8B /* Popover.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1014,7 +1230,7 @@
 		};
 		CE338AB0712B1F07BB6E1FB6AD0DC567 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E264B247136FD3E99415629E926AC94 /* DatePickerDialog.debug.xcconfig */;
+			baseConfigurationReference = 47C2CEF09FB9CF3E19BF5D666699B563 /* DatePickerDialog.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1048,7 +1264,7 @@
 		};
 		E1705ED097597801ADD6B01A3C1A9516 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C24B6E4336D4B00DB6B5F98A0787B694 /* ChartProgressBar.release.xcconfig */;
+			baseConfigurationReference = 28092938E4D254AB61493542D544DBA8 /* ChartProgressBar.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1083,7 +1299,7 @@
 		};
 		E66B3245A8D02173F0DBD74C60ADF70B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D5EA64D92F8B3D95BE9F84FEB5A0273 /* MonthYearPicker.release.xcconfig */;
+			baseConfigurationReference = 34ED46ED5C404A3AE83D57393BDCB5C1 /* MonthYearPicker.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1116,9 +1332,54 @@
 			};
 			name = Release;
 		};
+		E8EBC42EE84EBDA4E68781602D7BDA27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0E62FEACD4DAB001635B8AAC6349AE7 /* JDStatusBarNotification.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JDStatusBarNotification/JDStatusBarNotification-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JDStatusBarNotification/JDStatusBarNotification-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JDStatusBarNotification/JDStatusBarNotification.modulemap";
+				PRODUCT_MODULE_NAME = JDStatusBarNotification;
+				PRODUCT_NAME = JDStatusBarNotification;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		042C582B19DDCDDDF6E4E01CE9D50560 /* Build configuration list for PBXNativeTarget "Pods-iBudget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BAFD60818C012C0CCD0993134CC48B79 /* Debug */,
+				5E8A2E3F55D6FB13E9A58F0C2B176374 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		13A3C4471CADE0420F8ED9C07C700C48 /* Build configuration list for PBXNativeTarget "Popover" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1140,8 +1401,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
-				903A0004D3E6651EFD5D2E16214D101B /* Release */,
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7292EB02DAFE780672E1EB35069A5DED /* Build configuration list for PBXNativeTarget "JDStatusBarNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B07CCB078F9F28DCD9BFC4D36F37972 /* Debug */,
+				E8EBC42EE84EBDA4E68781602D7BDA27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1151,15 +1421,6 @@
 			buildConfigurations = (
 				00A3541A2A02EFF44C192DFFB0C7FEC1 /* Debug */,
 				E66B3245A8D02173F0DBD74C60ADF70B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D6572E8021FD3EF06DA97B657931E0D6 /* Build configuration list for PBXNativeTarget "Pods-iBudget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A3732EA6211827F8ACEDD7D64B8BE855 /* Debug */,
-				5F5C4E71B663FE51DF4D8F578791E427 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

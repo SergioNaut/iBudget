@@ -1,4 +1,4 @@
-platform :ios, '11.0'
+platform :ios, '13.0'
 use_frameworks!
 
 target 'iBudget' do
@@ -6,6 +6,7 @@ target 'iBudget' do
   pod 'DatePickerDialog'
   pod 'Popover'
   pod "MonthYearPicker", '~> 4.0.2'
+  pod 'JDStatusBarNotification'
 
 
 end
