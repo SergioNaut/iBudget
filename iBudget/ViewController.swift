@@ -133,7 +133,7 @@ class ViewController: UIViewController {
         category5.icon = "cross"
 
         
-        if false {
+        if true {
             // add budgets to core data
             let budget1 = Expenses(context: getContext())
             budget1.id = UUID()
