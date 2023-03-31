@@ -12,7 +12,6 @@ class DeveloperViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        print("hii chris")
         if let presentationController = presentationController as? UISheetPresentationController {
                 presentationController.detents = [
                     .medium(),

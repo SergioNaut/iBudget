@@ -48,7 +48,7 @@ class categoryList : UITableViewController  {
         
         let containerView = UIView(frame: CGRect(x: 15, y: 9, width: 42, height: 40))
         containerView.backgroundColor = UIColor(hex: "#F7F8FCff")
-        containerView.cornerRadius = 8
+//        containerView.cornerRadius = 8
 
         let imageView = UIImageView(frame: CGRect(x: 6, y: 2, width: 30, height: 37))
         imageView.contentMode = .scaleAspectFit

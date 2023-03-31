@@ -30,6 +30,7 @@ class ExpenseViewController: UIViewController {
     var currrentMonthName = ""
     @IBOutlet weak var expenseFilter: UITextField!
     @IBOutlet weak var expenseProgressBar: UIProgressView!
+    @IBOutlet weak var calendarIcon: UIImageView!
     
     @IBOutlet weak var lblMonthSelected: UILabel!
     @IBOutlet weak var lblExpenseTotal: UILabel!
@@ -44,8 +45,11 @@ class ExpenseViewController: UIViewController {
         currrentMonthName = String().getCurrentLongMonthName
         selectedMonth = String().getCurrentLongMonthName
         lblMonthSelected.isUserInteractionEnabled = true
+        calendarIcon.isUserInteractionEnabled = true
         let guestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(labelClicked(_:)))
         lblMonthSelected.addGestureRecognizer(guestureRecognizer)
+        let guestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(labelClicked(_:)))
+        calendarIcon.addGestureRecognizer(guestureRecognizer2)
         lblExpenseTotal.text =  String(getTotalAmountForMonth(("").getCurrentLongMonthName,year: CurrentYear()) ?? 0.0)
     }
     
@@ -62,6 +66,7 @@ class ExpenseViewController: UIViewController {
         let picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 0 / 2), size: CGSize(width: view.bounds.width, height: 216)))
              picker.minimumDate = sevenMonthsAgo
              picker.maximumDate = Date()
+          
              picker.setDate(pickerDate, animated: true)
              picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
              
@@ -73,8 +78,8 @@ class ExpenseViewController: UIViewController {
     
     
     @objc func dateChanged(_ picker: MonthYearPickerView) {
-         
-        let monthName = months[picker.date.monthIndex() - 1]
+        
+        let monthName = months[picker.date.monthIndex() > 11 ? 0 :picker.date.monthIndex()  ]
         lblMonthSelected.text =  monthName + " " + picker.date.Year()
         currrentMonthName  =  monthName
         let selectedYear = Int(picker.date.Year()) ?? 0
