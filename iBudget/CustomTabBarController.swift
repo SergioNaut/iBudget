@@ -7,10 +7,7 @@
 
 import Foundation
 import UIKit
-
  
-
-
 class CustomTabBarController : UITabBarController,UITabBarControllerDelegate{
     
   
@@ -24,8 +21,9 @@ class CustomTabBarController : UITabBarController,UITabBarControllerDelegate{
         // add these two lines
         self.tabBar.backgroundImage = UIImage()
         self.tabBar.shadowImage = UIImage()
-        
+       
     }
+    
     
     
     
@@ -39,9 +37,10 @@ class CustomTabBarController : UITabBarController,UITabBarControllerDelegate{
             middleBtn.backgroundColor = UIColor(hex: "#FE7685ff")
             middleBtn.layer.cornerRadius = (middleBtn.layer.frame.width / 2)
             middleBtn.setImage(UIImage(systemName: "plus")?.withTintColor(.white), for: .normal)
-//            middleBtn.shadowColor = UIColor.gray
-//            middleBtn.shadowRadius = 10
-//            middleBtn.shadowOffset = CGSize(width: 0, height: 3)
+            middleBtn.shadowColor = UIColor.gray
+            middleBtn.shadowRadius = 10
+            middleBtn.shadowOpacity = 1
+            middleBtn.shadowOffset = CGSize(width: 0, height: 3)
             
             
             //add to the tabbar and add click event
@@ -61,6 +60,7 @@ class CustomTabBarController : UITabBarController,UITabBarControllerDelegate{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+          
             super.viewWillAppear(animated)
             if let items = tabBar.items {
                 // Setting the title text color of all tab bar items:
