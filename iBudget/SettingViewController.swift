@@ -24,8 +24,10 @@ class SettingViewController: UITableViewController {
     }
     @IBOutlet weak var shareAppSelector: UIView!
     
+    @IBOutlet weak var secureContent: UISwitch!
     var userSavedName = ""
     var userSavedBudget = 0.0, userSavedIncome = 0.0
+    var userSavedSecurityEnabled = false
     
     override func viewDidLoad() {
         tableView.rowHeight = 60
@@ -65,6 +67,17 @@ class SettingViewController: UITableViewController {
             self.present(activityVC, animated: true, completion: nil)
     }
     
+    @IBAction func securityToggled(_ sender: Any) {
+        
+        if secureContent.isOn {
+            UserDefaults().set(true, forKey: "locked")
+        }else {
+           UserDefaults().set(false, forKey: "locked")
+        }
+        saveUserInfo()
+    }
+    
+    
     func getContext()->NSManagedObjectContext{
          
         let context  = AppDelegate.sharedAppDelegate.coreDataStack.getCoreDataContext()!
@@ -84,6 +97,8 @@ class SettingViewController: UITableViewController {
                     userSavedIncome = exp.income as! Double
                     userBudget.text = formatDouble(exp.budget as! Double)
                     userIncome.text = formatDouble(exp.income as! Double)
+                    userSavedSecurityEnabled =  exp.secured
+                    secureContent.isOn = exp.secured
                 }
             } catch {
                 print ("error fetching data: \(error)")
@@ -132,7 +147,7 @@ class SettingViewController: UITableViewController {
         let budget = NSDecimalNumber(string: userBudget.text == "" ? "0" : userBudget.text)
         let tmp_budget = Double(truncating: budget)
         
-        if(fullname == userSavedName && tmp_budget == userSavedBudget && tmp_income == userSavedIncome){
+        if(fullname == userSavedName && tmp_budget == userSavedBudget && tmp_income == userSavedIncome && userSavedSecurityEnabled == secureContent.isOn ){
             return
         }
          
@@ -162,11 +177,14 @@ class SettingViewController: UITableViewController {
             return
         }
         
+        userSavedSecurityEnabled = secureContent.isOn
+        
         let userinfo = UserInfo(context: getContext())
         userinfo.fullName = fullname.glazeCamelCase
         userinfo.income =  income
         userinfo.id = UUID()
         userinfo.budget = budget
+        userinfo.secured = secureContent.isOn
         UserDefaults().setValue(fullname.glazeCamelCase, forKey: "fullname")
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
         showSuccessMsg()

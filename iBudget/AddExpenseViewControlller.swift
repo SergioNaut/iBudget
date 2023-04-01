@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 import CoreData
 import LinkPresentation
- 
+import JDStatusBarNotification
+
 class AddExpenseViewControlller : UIViewController,UITextFieldDelegate, UIScrollViewDelegate {
     
      
@@ -180,6 +181,9 @@ class AddExpenseViewControlller : UIViewController,UITextFieldDelegate, UIScroll
         
         exp.created = date //Date()
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+        showSuccessMsg(MsgTitle: "Expense Added successfully!")
+        
+        
         dismiss(animated: true)
     }
     
@@ -219,15 +223,7 @@ class AddExpenseViewControlller : UIViewController,UITextFieldDelegate, UIScroll
             return
         }
         
-        
-        
-//        let alert = UIAlertController(title: "Validation", message: "You need to fill in the category, title and amount to submit.", preferredStyle: UIAlertController.Style.alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//        return;
-        
-       // || !expenseAmount.hasText || !expenseCategory.hasText
-         
+ 
         if(isEdit){
             editExpense()
         }else {
@@ -310,6 +306,29 @@ class AddExpenseViewControlller : UIViewController,UITextFieldDelegate, UIScroll
 
 
 extension AddExpenseViewControlller  {
+    
+    
+    func showSuccessMsg(MsgTitle : String ){
+        
+        let image = UIImageView(image: UIImage(systemName: "hand.thumbsup.circle.fill")?.withTintColor(.orange, renderingMode: .alwaysOriginal))
+        NotificationPresenter.shared().present(title: MsgTitle, subtitle: "", includedStyle: .dark)
+        NotificationPresenter.shared().displayLeftView(image)
+        NotificationPresenter.shared().dismiss(afterDelay: 2)
+    }
+        
+    func showErrorMsg(title: String, msg: String){
+        
+        let image = UIImage(named: "logo")
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        NotificationPresenter.shared().present(title: title, subtitle: msg, includedStyle: .error)
+        //            NotificationPresenter.shared().displayLeftView(imageView)
+        NotificationPresenter.shared().dismiss(afterDelay: 5)
+        
+    }
+        
+    
+    
     
     func showSelectedCategory(_category: Categories) {
         expenseCategory.text = _category.name

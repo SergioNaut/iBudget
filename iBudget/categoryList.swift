@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
-
-
+ 
 
 class categoryList : UITableViewController  {
     private var categoriesArray: [Categories] = []

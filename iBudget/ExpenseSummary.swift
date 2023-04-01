@@ -175,7 +175,7 @@ extension SummaryViewController: UITableViewDataSource {
         let progressValue = Double(currPrice)
 
         //if let formattedString = formatter.string(from: groupedCategoryList[indexPath.row].amount as NSDecimalNumber) {
-            print("Percentage price: \(currPrice) total expense: \(totalExpense)")
+           // print("Percentage price: \(currPrice) total expense: \(totalExpense)")
         
             let catPercent =  round(Float(progressValue) / Float(totalExpense)*100)
             cell.totalPrice.text = "$\(progressValue.abbreviateNumber()) (\(catPercent)%)"
@@ -192,7 +192,7 @@ extension SummaryViewController: UITableViewDataSource {
          
  
         //let progressValue = total > totalBudget ? totalBudget: total
-        print(Float(progressValue) / Float(totalExpense))
+       // print(Float(progressValue) / Float(totalExpense))
         expenseProgressBar.setProgress(Float(progressValue) / Float(totalExpense), animated: true) // Set maximum progress value
         
         return cell

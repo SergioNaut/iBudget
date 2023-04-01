@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import JDStatusBarNotification
 
 class CategoryViewController: UIViewController {
     
@@ -84,6 +85,27 @@ struct CategoryValues {
 
 //Extension for TableView
 extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    func showSuccessMsg(MsgTitle : String ){
+        
+        let image = UIImageView(image: UIImage(systemName: "trash.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal))
+        NotificationPresenter.shared().present(title: MsgTitle, subtitle: "", includedStyle: .dark)
+        NotificationPresenter.shared().displayLeftView(image)
+        NotificationPresenter.shared().dismiss(afterDelay: 2)
+    }
+        
+    func showErrorMsg(title: String, msg: String){
+        
+        let image = UIImage(named: "logo")
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        NotificationPresenter.shared().present(title: title, subtitle: msg, includedStyle: .error)
+        //            NotificationPresenter.shared().displayLeftView(imageView)
+        NotificationPresenter.shared().dismiss(afterDelay: 5)
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //returns table size
         return categoriesArray.count
@@ -110,6 +132,7 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
 //                return UISwipeActionsConfiguration(actions: [])
 //            }else {
 //                CanActionPerformed = true
+//
 //
 //            }
         
@@ -197,6 +220,9 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
                           AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
                           tableView.deleteRows(at: [indexPath], with: .fade)
                     
+                          self.showSuccessMsg(MsgTitle: "Category deleted successfully!")
+                          
+                          
                           self.dismiss(animated: true)
                       }
                      

@@ -7,31 +7,70 @@
 
 import UIKit
 import CoreData
+import LocalAuthentication
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    func authenticateUser() {
+            let context = LAContext()
+            var error: NSError?
+            
+            if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error:  &error) {
+                let reason = "identify yourself !"
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success,
+                    authenticationError in
+                    DispatchQueue.main.async {
+                        if success {
+                            let ac = UIAlertController(title: "Biometry unavailable", message: "Your device is not configured for biometric authentication.", preferredStyle: .alert)
+                            ac.addAction(UIAlertAction(title: "OK", style: .default))
+                            self?.window?.rootViewController!.present(ac, animated: true)
+                            
+                        }else{
+                            //error
+                            let ac = UIAlertController(title: "Authentication failed", message: "user verification failed; please try again.", preferredStyle: .alert)
+                            ac.addAction(UIAlertAction(title: "OK", style: .default))
+                            self?.window?.rootViewController!.present(ac, animated: true)
+                        }
+                    }
+                 
+                }
+                
+            }
+        }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+      
+        
+        
         guard let _ = (scene as? UIWindowScene) else { return }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
          
         if( UserDefaults().string(forKey: "fullname") != nil){
             
+            
+           // authenticateUser()
+           
+            
             let customTB = storyboard.instantiateViewController(identifier: "CustomTabBarController") as! CustomTabBarController
             window?.rootViewController = customTB
             window?.makeKeyAndVisible()
+            
+            
+            
             
         }else{
             
             let onboardVC = storyboard.instantiateViewController(withIdentifier: "userOnboarding")
             window?.rootViewController = onboardVC
             window?.makeKeyAndVisible()
+ 
+
             
         }
       
@@ -64,6 +103,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+     
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -81,6 +121,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+        UserDefaults().set(true, forKey: "locked")
 
     }
     

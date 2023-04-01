@@ -11,6 +11,8 @@ import CoreData
 import LinkPresentation
 import Popover
 import MonthYearPicker
+import JDStatusBarNotification
+
 
 class ExpenseViewController: UIViewController {
     
@@ -60,16 +62,15 @@ class ExpenseViewController: UIViewController {
         let aView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width-50, height: 180))
         let popover = Popover()
         let calendar = Calendar.current
-        let currentDate = Date()
-        let sevenMonthsAgo = calendar.date(byAdding: .month, value: -7, to: currentDate)!
+        let currentDate = NSDate()
+        let sevenMonthsAgo = calendar.date(byAdding: .month, value: -7, to: currentDate as Date)!
       
         let picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 0 / 2), size: CGSize(width: view.bounds.width, height: 216)))
              picker.minimumDate = sevenMonthsAgo
-             picker.maximumDate = Date()
-          
-             picker.setDate(pickerDate, animated: true)
+             picker.maximumDate = Date().removeTimeStamp
+            
              picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
-             
+        picker.setDate(pickerDate, animated: true)
         aView.addSubview(picker)
         popover.show(aView, point: startPoint)
     }
@@ -80,10 +81,9 @@ class ExpenseViewController: UIViewController {
     @objc func dateChanged(_ picker: MonthYearPickerView) {
         
         let monthName = months[picker.date.monthIndex() > 11 ? 0 :picker.date.monthIndex()  ]
-        lblMonthSelected.text =  monthName + " " + picker.date.Year()
+        lblMonthSelected.text =  monthName + " " + String(picker.SelectedYear)
         currrentMonthName  =  monthName
-        let selectedYear = Int(picker.date.Year()) ?? 0
-        loadExpenses(_monthName: monthName, _year: selectedYear)
+        loadExpenses(_monthName: monthName, _year: picker.SelectedYear)
         pickerDate = picker.date
         setTotals()
     }
@@ -267,9 +267,21 @@ class ExpenseViewController: UIViewController {
         setTotals()
     }
     
+    
+    
     func deleteExpenses(contextIndx : Int) {
-         getContext().delete(expenses[contextIndx])
-         setTotals()
+        
+        let selectedItemId =  expenses[contextIndx].id
+        guard let expObject = expenses.first(where: {$0.id ==  selectedItemId}) else { return  }
+        guard let exIndx =  expenses.firstIndex(where: {$0.id ==  selectedItemId}) else { return  }
+        
+        expenses.remove(at: contextIndx)
+        
+        expensesSearch.remove(at: exIndx)
+        let tmpArr  = expensesSearch.filter { $0.name != nil }
+        expensesSearch = tmpArr
+        getContext().delete(expObject)
+        setTotals()
     }
     
     func filterContentForSearchText(searchText: String) {
@@ -277,7 +289,12 @@ class ExpenseViewController: UIViewController {
         if(searchText == "") {
              expenses = expensesSearch
         }else{
-            expenses = expensesSearch .filter { $0.name!.lowercased().contains(searchText.lowercased())
+            print("After delete \(expensesSearch.count)")
+            
+            expenses = expensesSearch.filter {
+                
+                $0.name != nil && $0.name!.lowercased().contains(searchText.lowercased())
+                
             }
         }
         self.tableView.reloadData()
@@ -318,6 +335,27 @@ class ExpenseViewController: UIViewController {
     }
 }
 
+extension ExpenseViewController {
+    func showSuccessMsg(MsgTitle : String ){
+   
+        let image = UIImageView(image: UIImage(systemName: "trash")?.withTintColor(.red, renderingMode: .alwaysOriginal))
+        NotificationPresenter.shared().present(title: MsgTitle, subtitle: "", includedStyle: .dark)
+        NotificationPresenter.shared().displayLeftView(image)
+        NotificationPresenter.shared().dismiss(afterDelay: 2)
+    }
+    
+    func showErrorMsg(title: String, msg: String){
+       
+            let image = UIImage(named: "logo")
+            let imageView = UIImageView(image: image)
+            imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+            NotificationPresenter.shared().present(title: title, subtitle: msg, includedStyle: .error)
+//            NotificationPresenter.shared().displayLeftView(imageView)
+            NotificationPresenter.shared().dismiss(afterDelay: 5)
+        
+    }
+    
+}
 
 extension ExpenseViewController: UITableViewDelegate {
 }
@@ -330,7 +368,11 @@ extension ExpenseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
     
+        
         let  ExpCategoryName = expenses[indexPath.row].categoryName
+        if(ExpCategoryName == nil ) {
+            return cell
+        }
         let categoryElem  = categoriesArray.first { $0.name! == ExpCategoryName }
         
         cell.categoryImage.image = UIImage(systemName: categoryElem!.icon!)
@@ -381,9 +423,13 @@ extension ExpenseViewController: UITableViewDataSource {
               let alert = UIAlertController(title: "Delete Confirmation", message: "Are you sure you want to delete this expense?", preferredStyle: .alert)
               alert.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: "Default action"), style: .default, handler: { _ in
                   self.deleteExpenses(contextIndx: indexPath.row)
-                  self.expenses.remove(at: indexPath.row)
+//                  self.expenses.remove(at: indexPath.row)
                   AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
                   tableView.deleteRows(at: [indexPath], with: .fade)
+                  
+                  self.showSuccessMsg(MsgTitle: "Expense deleted successfully")
+                  tableView.reloadData()
+                  
               }))
               
               alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Ignore"), style: .cancel, handler: { _ in

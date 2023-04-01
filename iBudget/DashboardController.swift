@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 import ChartProgressBar
+import LocalAuthentication
 
 
 
@@ -28,17 +29,19 @@ class DashboardViewController: UIViewController {
     var data: [BarData] = []
     var last7Months: [MonthYear] = []
     var totalSavedBuget: Double = 0
-    
+    var isSecured  = false
     private var categoriesArray : [Categories] = []
     private var groupedCategoryList: [ExpenseStruct] = []
     
     override func viewDidLoad() {
+ 
         super.viewDidLoad()
+       // authenticateUser()
         lblCurrentMonthTotalExpenselabel.text =  "Total Expenses " + "(" + ("").getCurrentShortMonth + ")"
-       
         totalBudgetlabel.text = "Total Budget " + "(" + ("").getCurrentShortMonth + ")"
         tableView.rowHeight = 60
         viewAllButton.titleLabel?.font = UIFont(name: "Avenir Medium", size: 14)
+        
     }
 
     func getLast7Months() {
@@ -54,11 +57,7 @@ class DashboardViewController: UIViewController {
                 last7Months.append(monthYear)
             }
         setBarChart()
-        print(last7Months)
-        print(
-            getTotalAmountForMonth(last7Months[1].month, year: last7Months[1].year)!
-        )
-    }
+     }
     
     func setBarChart(){
         var greatestExpense = 0.0
@@ -80,7 +79,8 @@ class DashboardViewController: UIViewController {
         }
         
         
-        
+         
+
         
         chart.data = data
 //        chart.barsCanBeClick = true
@@ -127,6 +127,7 @@ class DashboardViewController: UIViewController {
     }
 
     
+    
     func getTotalAmountForMonth(_ monthName: String, year: Int) -> Double? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Expenses")
 
@@ -161,6 +162,7 @@ class DashboardViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.rowHeight = 65
@@ -169,6 +171,10 @@ class DashboardViewController: UIViewController {
         loadValues()
         getLast7Months()
         chart.removeClickedBar()
+//        let isLocked = UserDefaults().bool(forKey: "Locked")
+//          if isLocked && isSecured {
+//              authenticateUser()
+//          }
     }
     
     @IBAction func onViewAllPressed(_ sender: Any) {
@@ -200,6 +206,7 @@ class DashboardViewController: UIViewController {
                     userName.text = "Hi, \(exp.fullName ?? "-")"
                     totalBudget.text = "$ \(exp.budget ?? 0)"
                     totalSavedBuget = exp.budget as! Double
+                    isSecured = exp.secured
                 }
     
             } catch {
@@ -275,8 +282,7 @@ extension DashboardViewController: UITableViewDelegate {
 
 extension DashboardViewController: ChartProgressBarDelegate {
     func ChartProgressBar(_ chartProgressBar: ChartProgressBar, didSelectRowAt rowIndex: Int) {
-        print(rowIndex)
-    }
+     }
 }
 
 struct ExpenseStruct {
