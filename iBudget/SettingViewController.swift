@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import JDStatusBarNotification
 import CoreData
+import LocalAuthentication
 
 class SettingViewController: UITableViewController {
     
@@ -72,13 +73,42 @@ class SettingViewController: UITableViewController {
     @IBAction func securityToggled(_ sender: Any) {
         
         if secureContent.isOn {
-            UserDefaults().set(true, forKey: "locked")
+            UserDefaults().set(true, forKey: "secured")
+            authenticateUser()
         }else {
-           UserDefaults().set(false, forKey: "locked")
+            UserDefaults().set(false, forKey: "secured")
+             self.showSuccessMsg(msgTitle: "Biometric Access disabled!")
+
         }
         saveUserInfo()
     }
     
+    func authenticateUser() {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error:  &error) {
+            let reason = "identify yourself !"
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success,
+                authenticationError in
+                DispatchQueue.main.async {
+                    if success {
+               
+                        self?.showSuccessMsg(msgTitle: "Biometric Access enabled")
+                        self?.dismiss(animated: true)
+                        self?.dismiss(animated: true, completion: nil)
+                    }else{
+                        //error
+                        let ac = UIAlertController(title: "Authentication failed", message: "user verification failed; please try again.", preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self?.present(ac, animated: true)
+                    }
+                }
+                
+            }
+            
+        }
+    }
     
     func getContext()->NSManagedObjectContext{
          
@@ -107,12 +137,12 @@ class SettingViewController: UITableViewController {
             }
     }
     
-    func showSuccessMsg(){
+    func showSuccessMsg(msgTitle : String ){
         let image = UIImage(named: "logo")
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
 
-        NotificationPresenter.shared().present(title: "User info saved successfully!", subtitle: "", includedStyle: .success)
+        NotificationPresenter.shared().present(title: msgTitle, subtitle: "", includedStyle: .success)
 //        NotificationPresenter.shared().displayLeftView(imageView)
         NotificationPresenter.shared().dismiss(afterDelay: 3)
     }
@@ -189,7 +219,7 @@ class SettingViewController: UITableViewController {
         userinfo.secured = secureContent.isOn
         UserDefaults().setValue(fullname.glazeCamelCase, forKey: "fullname")
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
-        showSuccessMsg()
+        showSuccessMsg(msgTitle: "User info saved successfully!")
         getUserInfo()
     }
     
@@ -266,7 +296,8 @@ class SettingViewController: UITableViewController {
 
     func resetAllRecords(in entity : String) 
         {
-
+            UserDefaults().set(false, forKey: "locked")
+            UserDefaults().set(false, forKey: "secured")
             let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
             let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)

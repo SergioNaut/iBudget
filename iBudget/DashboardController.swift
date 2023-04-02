@@ -23,16 +23,16 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var chart: ChartProgressBar!
     @IBOutlet weak var viewAllButton: UIButton!
     @IBOutlet weak var last7MonthWindow: UILabel!
-    
     @IBOutlet weak var totalBudgetlabel: UILabel!
     @IBOutlet weak var lblCurrentMonthTotalExpenselabel: UILabel!
+    var firstLoad = true
     var data: [BarData] = []
     var last7Months: [MonthYear] = []
     var totalSavedBuget: Double = 0
     var isSecured  = false
     private var categoriesArray : [Categories] = []
     private var groupedCategoryList: [ExpenseStruct] = []
-    
+    private var userfullname  = "Hi, -"
     override func viewDidLoad() {
  
         super.viewDidLoad()
@@ -166,7 +166,7 @@ class DashboardViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.rowHeight = 65
-
+        userName.text = ""
         // Do any additional setup after loading the view.
         loadValues()
         getLast7Months()
@@ -201,9 +201,9 @@ class DashboardViewController: UIViewController {
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest ()
             do {
                 let exps = try getContext().fetch(request)
-    
+                
                 for exp in exps{
-                    userName.text = "Hi, \(exp.fullName ?? "-")"
+                    userfullname =   "Hi, \(exp.fullName ?? "-")"
                     totalBudget.text = "$ \(exp.budget ?? 0)"
                     totalSavedBuget = exp.budget as! Double
                     isSecured = exp.secured
@@ -212,7 +212,12 @@ class DashboardViewController: UIViewController {
             } catch {
                 print ("error fetching data: \(error)")
             }
-        
+        if(firstLoad) {
+            userName.typeOn(string:userfullname )
+            firstLoad = false
+        } else {
+            userName.text = userfullname
+        }
         let request1: NSFetchRequest<Expenses> = Expenses.fetchRequest()
             do {
                 let items = try getContext().fetch(request1)

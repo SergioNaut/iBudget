@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0AB85829D9B18500F903B8 /* CategorySummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0AB85729D9B18500F903B8 /* CategorySummaryViewController.swift */; };
 		1C4E91FB2985FEEB00085EDC /* IBudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91F92985FEEB00085EDC /* IBudgetModel.xcdatamodeld */; };
 		1C4E91FE2985FFD200085EDC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */; };
 		1C4E92002986126D00085EDC /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91FF2986126D00085EDC /* UIExtensions.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		007DBCBD438EC8CFF9A53D7C /* Pods_iBudget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C0AB85729D9B18500F903B8 /* CategorySummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySummaryViewController.swift; sourceTree = "<group>"; };
 		1C4E91FA2985FEEB00085EDC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1C4E91FF2986126D00085EDC /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				1C86C46A29C55131008B13AB /* DatePickerController.swift */,
 				1C7CB90029C6274700EE977F /* MonthYearWheelPicker.swift */,
 				1C7CB90229C6BCE100EE977F /* ExpenseSummary.swift */,
+				1C0AB85729D9B18500F903B8 /* CategorySummaryViewController.swift */,
 			);
 			path = iBudget;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				1C7CB90329C6BCE100EE977F /* ExpenseSummary.swift in Sources */,
 				78F67F5C298EBFFF005F2906 /* AddExpenseViewControlller.swift in Sources */,
 				1C66AC9729A5CB8B005F129C /* ibudgetedWidget.intentdefinition in Sources */,
+				1C0AB85829D9B18500F903B8 /* CategorySummaryViewController.swift in Sources */,
 				1C7CB90129C6274700EE977F /* MonthYearWheelPicker.swift in Sources */,
 				1C4E92002986126D00085EDC /* UIExtensions.swift in Sources */,
 				1C4E91FB2985FEEB00085EDC /* IBudgetModel.xcdatamodeld in Sources */,
@@ -617,6 +621,7 @@
 				INFOPLIST_FILE = iBudget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iBudget;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Used to secure app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -656,6 +661,7 @@
 				INFOPLIST_FILE = iBudget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iBudget;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Used to secure app.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
