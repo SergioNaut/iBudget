@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,11 +23,27 @@
                                     <constraint firstAttribute="height" constant="200" id="giZ-lL-i0Q"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Build 1.1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2W-aj-IQ6">
+                                <rect key="frame" x="153.5" y="495" width="68" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© All Right Reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERu-Bp-tsj">
+                                <rect key="frame" x="120.5" y="524" width="134" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="g2W-aj-IQ6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GXP-Ig-k1D"/>
+                            <constraint firstItem="ERu-Bp-tsj" firstAttribute="top" secondItem="g2W-aj-IQ6" secondAttribute="bottom" constant="11" id="Hdb-lW-lzB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ERu-Bp-tsj" secondAttribute="bottom" constant="126" id="ivb-A4-BUD"/>
                             <constraint firstItem="Szl-3u-oDs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="pBL-QI-Trd"/>
+                            <constraint firstItem="ERu-Bp-tsj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sa8-r2-ute"/>
                             <constraint firstItem="Szl-3u-oDs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zKk-23-sP9"/>
                         </constraints>
                     </view>
@@ -37,6 +54,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="500" height="500"/>
+        <image name="logo" width="80" height="80"/>
     </resources>
 </document>
