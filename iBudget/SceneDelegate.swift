@@ -154,28 +154,47 @@ class RedModalViewController: UIViewController {
      
     
     override func viewDidLoad() {
-           super.viewDidLoad()
-        super.viewDidLoad()
-        authenticateUser()
-        view.backgroundColor = .white
- 
-//           let closeButton = UIButton(type: .system)
-//           closeButton.setTitle("Close", for: .normal)
-//           closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
-//
-//           view.addSubview(closeButton)
-//           closeButton.translatesAutoresizingMaskIntoConstraints = false
-//           NSLayoutConstraint.activate([
-//               closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//               closeButton.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-//           ])
+            super.viewDidLoad()
+            super.viewDidLoad()
+            authenticateUser()
+            view.backgroundColor = .white
+
+        let imageView = UIImageView(image: UIImage(systemName: "touchid")?.withTintColor(.systemTeal, renderingMode: .alwaysOriginal))
+            imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+            
+            let closeButton = UIButton(type: .system)
+            closeButton.setTitle("Click to gain access to IBudget", for: .normal)
+            closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+            let imgGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeButtonTapped))
+            imageView.addGestureRecognizer( imgGestureRecognizer)
+            imageView.isUserInteractionEnabled = true
+        //(self, action: #selector(closeButtonTapped), for: .allTouchEvents)
+        
+        view.addSubview(closeButton)
+            view.addSubview(imageView)
+         
+            closeButton.translatesAutoresizingMaskIntoConstraints = false
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                closeButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                
+                imageView.widthAnchor.constraint(equalToConstant: 90),
+                imageView.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 50),
+                imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1),
+                imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+                
+                 
+            ])
        }
        
-//       @objc func closeButtonTapped() {
-//           dismiss(animated: true, completion: nil)
-//       }
-//
-//
+       @objc func closeButtonTapped() {
+           authenticateUser()
+           //dismiss(animated: true, completion: nil)
+       }
+ 
      
     
     func authenticateUser() {
@@ -196,7 +215,9 @@ class RedModalViewController: UIViewController {
                     }else{
                         //error
                         let ac = UIAlertController(title: "Authentication failed", message: "user verification failed; please try again.", preferredStyle: .alert)
+                        
                         ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        
                         self?.present(ac, animated: true)
                     }
                 }
