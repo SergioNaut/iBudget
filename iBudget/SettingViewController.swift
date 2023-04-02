@@ -25,6 +25,8 @@ class SettingViewController: UITableViewController {
     @IBOutlet weak var shareAppSelector: UIView!
     
     @IBOutlet weak var secureContent: UISwitch!
+    
+    
     var userSavedName = ""
     var userSavedBudget = 0.0, userSavedIncome = 0.0
     var userSavedSecurityEnabled = false
@@ -209,11 +211,14 @@ class SettingViewController: UITableViewController {
     
     @objc func openDeveloperPopup(_ sender: Any){
         //help page open
+        performSegue(withIdentifier: "goToHelp", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
-//            let destinationVC = segue.destination as? AddExpenseViewControlller
+        if segue.identifier == "goToHelp"{
+            let destinationVC = segue.destination as? DeveloperViewController
+        }
            
     }
     
