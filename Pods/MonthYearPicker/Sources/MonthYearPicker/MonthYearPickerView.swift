@@ -26,7 +26,7 @@ import UIKit
 
 open class MonthYearPickerView: UIControl {
     public var SelectedYear : Int = 0
-
+    public var SelectedMonth : Int = 0
     /// specify min date. default is nil. When `minimumDate` > `maximumDate`, the values are ignored.
     /// If `date` is earlier than `minimumDate` when it is set, `date` is changed to `minimumDate`.
     open var minimumDate: Date? = nil {
@@ -147,6 +147,7 @@ extension MonthYearPickerView: UIPickerViewDelegate {
         dateComponents.year = value(for: pickerView.selectedRow(inComponent: .year), representing: .year)
         SelectedYear =  dateComponents.year!
         dateComponents.month = value(for: pickerView.selectedRow(inComponent: .month), representing: .month)
+        SelectedMonth = dateComponents.month!
         guard let date = calendar.date(from: dateComponents) else { return }
         self.date = date
     }

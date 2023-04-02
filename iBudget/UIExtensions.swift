@@ -123,7 +123,7 @@ extension UILabel {
     func typeOn(string: String) {
         let characterArray =  string.map(String.init)
         var characterIndex = 0
-        Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { (timer) in
+        Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { (timer) in
             if characterArray[characterIndex] != "$" {
                 while characterArray[characterIndex] == " " {
                     self.text! += " "

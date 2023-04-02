@@ -34,6 +34,11 @@ class CategoryViewController: UIViewController {
             let destinationVC = segue.destination as? AddCategoryViewController
             destinationVC?.isEdit = isEdit
             destinationVC?.editCategoryItem = selectedCategory
+        }else if segue.identifier == "categoryExpense" {
+            let destinationVC = segue.destination as? CategorySummaryViewController
+            let object = sender as! [String: Any?]
+            destinationVC?.categoryName = object["categoryName"] as? String ?? ""
+            //destinationVC?.editCategoryItem = selectedCategory
         }
     }
     
@@ -111,8 +116,14 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
         return categoriesArray.count
     }
     
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = categoriesArray[indexPath.row]
+        let categoryName  = (item.name?.lowercased())!
         tableView.deselectRow(at: indexPath, animated: true)
+        let sender : [String: Any?] = ["categoryName": categoryName] 
+        performSegue(withIdentifier: "categoryExpense", sender: sender)
     }
     
     func deleteCategory(index: Int){
