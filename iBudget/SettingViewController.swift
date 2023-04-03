@@ -202,6 +202,7 @@ class SettingViewController: UITableViewController {
 
 //        Get users income
         let income = NSDecimalNumber(string: userIncome.text == "" ? "0" : userIncome.text)
+        
         let tmp_income = Double(truncating: income)
         
 //        Get users budget

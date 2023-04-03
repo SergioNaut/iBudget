@@ -12,26 +12,19 @@
 		1C4E91FE2985FFD200085EDC /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */; };
 		1C4E92002986126D00085EDC /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E91FF2986126D00085EDC /* UIExtensions.swift */; };
 		1C4E921E298C98D900085EDC /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4E921D298C98D900085EDC /* CustomTabBarController.swift */; };
-		1C66AC8829A5CB88005F129C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C66AC8729A5CB88005F129C /* WidgetKit.framework */; };
-		1C66AC8A29A5CB88005F129C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C66AC8929A5CB88005F129C /* SwiftUI.framework */; };
-		1C66AC8D29A5CB88005F129C /* ibudgetedWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66AC8C29A5CB88005F129C /* ibudgetedWidgetBundle.swift */; };
-		1C66AC8F29A5CB88005F129C /* ibudgetedWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66AC8E29A5CB88005F129C /* ibudgetedWidgetLiveActivity.swift */; };
-		1C66AC9129A5CB88005F129C /* ibudgetedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C66AC9029A5CB88005F129C /* ibudgetedWidget.swift */; };
-		1C66AC9429A5CB8B005F129C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C66AC9329A5CB8B005F129C /* Assets.xcassets */; };
-		1C66AC9629A5CB8B005F129C /* ibudgetedWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1C66AC9229A5CB88005F129C /* ibudgetedWidget.intentdefinition */; };
 		1C66AC9729A5CB8B005F129C /* ibudgetedWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1C66AC9229A5CB88005F129C /* ibudgetedWidget.intentdefinition */; };
-		1C66AC9A29A5CB8B005F129C /* ibudgetedWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1C66AC8629A5CB88005F129C /* ibudgetedWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1C7CB90129C6274700EE977F /* MonthYearWheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7CB90029C6274700EE977F /* MonthYearWheelPicker.swift */; };
 		1C7CB90329C6BCE100EE977F /* ExpenseSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7CB90229C6BCE100EE977F /* ExpenseSummary.swift */; };
 		1C86C46B29C55131008B13AB /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C86C46A29C55131008B13AB /* DatePickerController.swift */; };
 		30258ED1297BB7A200C8C50F /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30258ED0297BB7A200C8C50F /* DashboardController.swift */; };
+		306C220C29DA9338003C6578 /* success.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 306C220A29DA9338003C6578 /* success.mp3 */; };
+		306C220D29DA9338003C6578 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 306C220B29DA9338003C6578 /* click.mp3 */; };
 		30C452B729C7CE9F004F9ED0 /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C452B629C7CE9F004F9ED0 /* DeveloperViewController.swift */; };
 		30D05B2C2989EB510016308C /* DashboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D05B2B2989EB510016308C /* DashboardCell.swift */; };
 		30F4E40E29890555007A2158 /* ExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4E40D29890555007A2158 /* ExpenseViewController.swift */; };
 		30F4E41029890588007A2158 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4E40F29890588007A2158 /* CategoryViewController.swift */; };
 		30F4E4122989059F007A2158 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F4E4112989059F007A2158 /* SettingViewController.swift */; };
 		3AFF5A1D298B01BA006D2B7A /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFF5A1C298B01BA006D2B7A /* AddCategoryViewController.swift */; };
-		6EC8107CDC617F0E48C51611 /* Pods_iBudget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007DBCBD438EC8CFF9A53D7C /* Pods_iBudget.framework */; };
 		7885DEB329746DF000B6BEF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885DEB229746DF000B6BEF9 /* AppDelegate.swift */; };
 		7885DEB529746DF000B6BEF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885DEB429746DF000B6BEF9 /* SceneDelegate.swift */; };
 		7885DEB729746DF000B6BEF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7885DEB629746DF000B6BEF9 /* ViewController.swift */; };
@@ -40,17 +33,8 @@
 		7885DEBF29746DF000B6BEF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7885DEBD29746DF000B6BEF9 /* LaunchScreen.storyboard */; };
 		78F67F5C298EBFFF005F2906 /* AddExpenseViewControlller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67F5B298EBFFF005F2906 /* AddExpenseViewControlller.swift */; };
 		78F67F5E298EC03A005F2906 /* categoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F67F5D298EC03A005F2906 /* categoryList.swift */; };
+		D34119F63FD18B288DE4ED3F /* Pods_iBudget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1C99DA7BD824487DDF7E95 /* Pods_iBudget.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		1C66AC9829A5CB8B005F129C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7885DEA729746DEF00B6BEF9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1C66AC8529A5CB88005F129C;
-			remoteInfo = ibudgetedWidgetExtension;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1C66AC9E29A5CB8B005F129C /* Embed Foundation Extensions */ = {
@@ -59,7 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1C66AC9A29A5CB8B005F129C /* ibudgetedWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,13 +50,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		007DBCBD438EC8CFF9A53D7C /* Pods_iBudget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C0AB85729D9B18500F903B8 /* CategorySummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySummaryViewController.swift; sourceTree = "<group>"; };
 		1C4E91FA2985FEEB00085EDC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1C4E91FD2985FFD200085EDC /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1C4E91FF2986126D00085EDC /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		1C4E921D298C98D900085EDC /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		1C66AC8629A5CB88005F129C /* ibudgetedWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ibudgetedWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C66AC8729A5CB88005F129C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1C66AC8929A5CB88005F129C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		1C66AC8C29A5CB88005F129C /* ibudgetedWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ibudgetedWidgetBundle.swift; sourceTree = "<group>"; };
@@ -88,13 +69,15 @@
 		1C7CB90229C6BCE100EE977F /* ExpenseSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSummary.swift; sourceTree = "<group>"; };
 		1C86C46A29C55131008B13AB /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		30258ED0297BB7A200C8C50F /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		306C220A29DA9338003C6578 /* success.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success.mp3; sourceTree = "<group>"; };
+		306C220B29DA9338003C6578 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		30C452B629C7CE9F004F9ED0 /* DeveloperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
 		30D05B2B2989EB510016308C /* DashboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCell.swift; sourceTree = "<group>"; };
 		30F4E40D29890555007A2158 /* ExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewController.swift; sourceTree = "<group>"; };
 		30F4E40F29890588007A2158 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		30F4E4112989059F007A2158 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		36358F3C8AC1F8259E506DE4 /* Pods-iBudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBudget.release.xcconfig"; path = "Target Support Files/Pods-iBudget/Pods-iBudget.release.xcconfig"; sourceTree = "<group>"; };
 		3AFF5A1C298B01BA006D2B7A /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		67AB42FA97F5BCDEA0426E6F /* Pods-iBudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBudget.debug.xcconfig"; path = "Target Support Files/Pods-iBudget/Pods-iBudget.debug.xcconfig"; sourceTree = "<group>"; };
 		7885DEAF29746DF000B6BEF9 /* iBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7885DEB229746DF000B6BEF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7885DEB429746DF000B6BEF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,24 +88,16 @@
 		7885DEC029746DF000B6BEF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78F67F5B298EBFFF005F2906 /* AddExpenseViewControlller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddExpenseViewControlller.swift; sourceTree = "<group>"; };
 		78F67F5D298EC03A005F2906 /* categoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryList.swift; sourceTree = "<group>"; };
-		D3416F7D297BDBE631318EA2 /* Pods-iBudget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBudget.debug.xcconfig"; path = "Target Support Files/Pods-iBudget/Pods-iBudget.debug.xcconfig"; sourceTree = "<group>"; };
+		7D1C99DA7BD824487DDF7E95 /* Pods_iBudget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBudget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE8351E51255B2A8614C4BD /* Pods-iBudget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBudget.release.xcconfig"; path = "Target Support Files/Pods-iBudget/Pods-iBudget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1C66AC8329A5CB88005F129C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C66AC8A29A5CB88005F129C /* SwiftUI.framework in Frameworks */,
-				1C66AC8829A5CB88005F129C /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7885DEAC29746DF000B6BEF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EC8107CDC617F0E48C51611 /* Pods_iBudget.framework in Frameworks */,
+				D34119F63FD18B288DE4ED3F /* Pods_iBudget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				7885DEAF29746DF000B6BEF9 /* iBudget.app */,
-				1C66AC8629A5CB88005F129C /* ibudgetedWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +160,8 @@
 				1C4E921D298C98D900085EDC /* CustomTabBarController.swift */,
 				30258ED0297BB7A200C8C50F /* DashboardController.swift */,
 				78F67F5D298EC03A005F2906 /* categoryList.swift */,
+				306C220B29DA9338003C6578 /* click.mp3 */,
+				306C220A29DA9338003C6578 /* success.mp3 */,
 				30F4E4112989059F007A2158 /* SettingViewController.swift */,
 				7885DEB629746DF000B6BEF9 /* ViewController.swift */,
 				7885DEB829746DF000B6BEF9 /* Main.storyboard */,
@@ -206,9 +182,9 @@
 		D87CFC63696A6FDED3CBB8B1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				007DBCBD438EC8CFF9A53D7C /* Pods_iBudget.framework */,
 				1C66AC8729A5CB88005F129C /* WidgetKit.framework */,
 				1C66AC8929A5CB88005F129C /* SwiftUI.framework */,
+				7D1C99DA7BD824487DDF7E95 /* Pods_iBudget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,8 +192,8 @@
 		E4308D8331E416236176740F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D3416F7D297BDBE631318EA2 /* Pods-iBudget.debug.xcconfig */,
-				36358F3C8AC1F8259E506DE4 /* Pods-iBudget.release.xcconfig */,
+				67AB42FA97F5BCDEA0426E6F /* Pods-iBudget.debug.xcconfig */,
+				CEE8351E51255B2A8614C4BD /* Pods-iBudget.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -225,38 +201,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1C66AC8529A5CB88005F129C /* ibudgetedWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1C66AC9B29A5CB8B005F129C /* Build configuration list for PBXNativeTarget "ibudgetedWidgetExtension" */;
-			buildPhases = (
-				1C66AC8229A5CB88005F129C /* Sources */,
-				1C66AC8329A5CB88005F129C /* Frameworks */,
-				1C66AC8429A5CB88005F129C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ibudgetedWidgetExtension;
-			productName = ibudgetedWidgetExtension;
-			productReference = 1C66AC8629A5CB88005F129C /* ibudgetedWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		7885DEAE29746DF000B6BEF9 /* iBudget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7885DEC329746DF000B6BEF9 /* Build configuration list for PBXNativeTarget "iBudget" */;
 			buildPhases = (
-				DD658A5DA18470E937D8407D /* [CP] Check Pods Manifest.lock */,
+				04E6343BA4824425F5EDC450 /* [CP] Check Pods Manifest.lock */,
 				7885DEAB29746DF000B6BEF9 /* Sources */,
 				7885DEAC29746DF000B6BEF9 /* Frameworks */,
 				7885DEAD29746DF000B6BEF9 /* Resources */,
-				CA83794DD598E5DC4064BCDA /* [CP] Embed Pods Frameworks */,
 				1C66AC9E29A5CB8B005F129C /* Embed Foundation Extensions */,
+				EFD05E9D682D1A022BA9C95F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1C66AC9929A5CB8B005F129C /* PBXTargetDependency */,
 			);
 			name = iBudget;
 			productName = iBudget;
@@ -273,9 +231,6 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					1C66AC8529A5CB88005F129C = {
-						CreatedOnToolsVersion = 14.2;
-					};
 					7885DEAE29746DF000B6BEF9 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -295,26 +250,19 @@
 			projectRoot = "";
 			targets = (
 				7885DEAE29746DF000B6BEF9 /* iBudget */,
-				1C66AC8529A5CB88005F129C /* ibudgetedWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1C66AC8429A5CB88005F129C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C66AC9429A5CB8B005F129C /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7885DEAD29746DF000B6BEF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7885DEBF29746DF000B6BEF9 /* LaunchScreen.storyboard in Resources */,
+				306C220D29DA9338003C6578 /* click.mp3 in Resources */,
 				7885DEBC29746DF000B6BEF9 /* Assets.xcassets in Resources */,
+				306C220C29DA9338003C6578 /* success.mp3 in Resources */,
 				7885DEBA29746DF000B6BEF9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,24 +270,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CA83794DD598E5DC4064BCDA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD658A5DA18470E937D8407D /* [CP] Check Pods Manifest.lock */ = {
+		04E6343BA4824425F5EDC450 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,20 +292,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EFD05E9D682D1A022BA9C95F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iBudget/Pods-iBudget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1C66AC8229A5CB88005F129C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C66AC9629A5CB8B005F129C /* ibudgetedWidget.intentdefinition in Sources */,
-				1C66AC9129A5CB88005F129C /* ibudgetedWidget.swift in Sources */,
-				1C66AC8F29A5CB88005F129C /* ibudgetedWidgetLiveActivity.swift in Sources */,
-				1C66AC8D29A5CB88005F129C /* ibudgetedWidgetBundle.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7885DEAB29746DF000B6BEF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,14 +342,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1C66AC9929A5CB8B005F129C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1C66AC8529A5CB88005F129C /* ibudgetedWidgetExtension */;
-			targetProxy = 1C66AC9829A5CB8B005F129C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		7885DEB829746DF000B6BEF9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -433,64 +362,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1C66AC9C29A5CB8B005F129C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ibudgetedWidgetExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9ETV3K5KPJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ibudgetedWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ibudgetedWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iBudget.ibudgetedWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1C66AC9D29A5CB8B005F129C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ibudgetedWidgetExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9ETV3K5KPJ;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ibudgetedWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ibudgetedWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iBudget.ibudgetedWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		7885DEC129746DF000B6BEF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -607,7 +478,7 @@
 		};
 		7885DEC429746DF000B6BEF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D3416F7D297BDBE631318EA2 /* Pods-iBudget.debug.xcconfig */;
+			baseConfigurationReference = 67AB42FA97F5BCDEA0426E6F /* Pods-iBudget.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -615,8 +486,8 @@
 				CODE_SIGN_ENTITLEMENTS = iBudget/iBudget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9ETV3K5KPJ;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = S428U5YXJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iBudget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iBudget;
@@ -632,8 +503,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iBudget;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group82.iBudgetedere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -647,7 +518,7 @@
 		};
 		7885DEC529746DF000B6BEF9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36358F3C8AC1F8259E506DE4 /* Pods-iBudget.release.xcconfig */;
+			baseConfigurationReference = CEE8351E51255B2A8614C4BD /* Pods-iBudget.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -655,8 +526,8 @@
 				CODE_SIGN_ENTITLEMENTS = iBudget/iBudget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9ETV3K5KPJ;
+				CURRENT_PROJECT_VERSION = 6;
+				DEVELOPMENT_TEAM = S428U5YXJ2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iBudget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = iBudget;
@@ -672,8 +543,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.group8.iBudget;
+				MARKETING_VERSION = 2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.group82.iBudgetedere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -688,15 +559,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C66AC9B29A5CB8B005F129C /* Build configuration list for PBXNativeTarget "ibudgetedWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1C66AC9C29A5CB8B005F129C /* Debug */,
-				1C66AC9D29A5CB8B005F129C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		7885DEAA29746DEF00B6BEF9 /* Build configuration list for PBXProject "iBudget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -96,7 +96,11 @@ class categoryList : UITableViewController  {
             if  let presenter = presentingViewController as? CategorySummaryViewController {
                 presenter.categoryId = categoriesArray[indexPath.row].id ?? UUID()
                 presenter.lblCategoryName.text = categoriesArray[indexPath.row].name?.glazeCamelCase ?? "not found"
-                presenter.loadExpenses(_monthName: monthName, _year: yearSelected)
+                
+                let monthYear = presenter.lblMonthSelected.text
+                let year = Int(monthYear?.split(separator: " ")[1] ?? "0")
+                presenter.loadExpenses(_monthName: String((monthYear?.split(separator: " ")[0])!), _year: year!)
+                
                 dismiss(animated: true)
             }
         }

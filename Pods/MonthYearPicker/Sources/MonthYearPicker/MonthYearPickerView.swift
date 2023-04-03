@@ -146,10 +146,18 @@ extension MonthYearPickerView: UIPickerViewDelegate {
         var dateComponents = calendar.dateComponents([.hour, .minute, .second], from: date)
         dateComponents.year = value(for: pickerView.selectedRow(inComponent: .year), representing: .year)
         SelectedYear =  dateComponents.year!
+        
+        
         dateComponents.month = value(for: pickerView.selectedRow(inComponent: .month), representing: .month)
         SelectedMonth = dateComponents.month!
+        
+        print( dateComponents.month)
+        
         guard let date = calendar.date(from: dateComponents) else { return }
         self.date = date
+        
+        print(self.date)
+        
     }
     
 }
@@ -228,3 +236,4 @@ private extension UIPickerView {
         selectRow(row, inComponent: component.rawValue, animated: animated)
     }
 }
+
