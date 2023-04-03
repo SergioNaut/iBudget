@@ -100,9 +100,15 @@ class DashboardViewController: UIViewController {
     }
     
     func setTotalExpenseAndCalendar(){
+        let substring = data.last!.pinText.dropFirst(2)
         
-        totalIncome.text = data.last?.pinText
-        
+//        if let originalString = data.last!.pinText, data.last!.pinText.count > 2 {
+//            let substring = String(originalString.dropFirst(2))
+//            print(substring) // Output: "llo, world!"
+//        }
+        let totalBudgett = NumberFormatter.formatString(String(substring))
+//
+        totalIncome.text = "$ \(totalBudgett ?? "0")"
         UserDefaults(suiteName:"com.group8.iBudget.ibudgetedWidget")!.set(totalIncome.text, forKey: "totalExpense")
         UserDefaults(suiteName:"com.group8.iBudget.ibudgetedWidget")!.set(totalBudget.text, forKey: "Budget")
         
@@ -198,8 +204,10 @@ class DashboardViewController: UIViewController {
     
                 for exp in exps{
                     userName.text = "Hi, \(exp.fullName ?? "-")"
-                    totalBudget.text = "$ \(exp.budget ?? 0)"
+                    let totalBudgett = NumberFormatter.formatDecimal(exp.budget as! Double)
+                    totalBudget.text = "$ \(totalBudgett ?? "0")"
                     totalSavedBuget = exp.budget as! Double
+
                 }
     
             } catch {
@@ -257,13 +265,15 @@ extension DashboardViewController: UITableViewDataSource {
         
         cell.categoryImage.image = UIImage(systemName: (categoryElem?.icon)!)
         cell.categoryName.text = groupedCategoryList[indexPath.row].categoryName
-        let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-
-        if let formattedString = formatter.string(from: groupedCategoryList[indexPath.row].amount as NSDecimalNumber) {
-            cell.totalPrice.text = "$\(formattedString)"
-        }
+//        let formatter = NumberFormatter()
+//        formatter.minimumFractionDigits = 2
+//        formatter.maximumFractionDigits = 2
+//
+//        if let formattedString = formatter.string(from: groupedCategoryList[indexPath.row].amount as NSDecimalNumber) {
+//            cell.totalPrice.text = "$\(formattedString)"
+//        }
+//        
+        cell.totalPrice.text = NumberFormatter.formatDecimal(Double(truncating: groupedCategoryList[indexPath.row].amount as NSDecimalNumber))
         return cell
     }
 

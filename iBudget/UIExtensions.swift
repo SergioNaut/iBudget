@@ -479,3 +479,39 @@ extension CustomTabBarController  {
     }
     
 }
+
+extension NumberFormatter {
+    static let currencyFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.locale = Locale.current
+        return formatter
+    }()
+    
+    static func formatCurrency(_ value: Double) -> String? {
+        return currencyFormatter.string(from: NSNumber(value: value))
+    }
+    
+    static func formatDecimal(_ value: Double) -> String? {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        formatter.locale = Locale.current
+        return formatter.string(from: NSNumber(value: value))
+    }
+    
+    static func formatString(_ stringValue: String) -> String? {
+        if let doubleValue = Double(stringValue) {
+            let formatter = NumberFormatter()
+            formatter.numberStyle = .decimal
+            formatter.minimumFractionDigits = 2
+            formatter.maximumFractionDigits = 2
+            formatter.locale = Locale.current
+            return formatter.string(from: NSNumber(value: doubleValue))
+        } else {
+            return nil
+        }
+    }
+
+}
