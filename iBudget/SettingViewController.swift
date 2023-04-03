@@ -10,6 +10,7 @@ import UIKit
 import JDStatusBarNotification
 import CoreData
 import LocalAuthentication
+import AVFAudio
 
 class SettingViewController: UITableViewController {
     
@@ -27,7 +28,9 @@ class SettingViewController: UITableViewController {
     
     @IBOutlet weak var secureContent: UISwitch!
     
+    @IBOutlet weak var appVersion: UILabel!
     
+    @IBOutlet weak var appBuildNumber: UILabel!
     var userSavedName = ""
     var userSavedBudget = 0.0, userSavedIncome = 0.0
     var userSavedSecurityEnabled = false
@@ -40,7 +43,8 @@ class SettingViewController: UITableViewController {
          
         let guestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openDeveloperPopup(_:)))
                 onDevelopersPressed.addGestureRecognizer(guestureRecognizer)
-        
+        appVersion.text = "\(Bundle.main.versionNumber)"
+        appBuildNumber.text="\(Bundle.main.buildNumber)"
         let shareAppRecognizer = UITapGestureRecognizer(target: self, action: #selector(shareApp(_:)))
         shareAppSelector.addGestureRecognizer(shareAppRecognizer)
         getUserInfo()
@@ -73,14 +77,13 @@ class SettingViewController: UITableViewController {
     @IBAction func securityToggled(_ sender: Any) {
         
         if secureContent.isOn {
-            UserDefaults().set(true, forKey: "secured")
-            authenticateUser()
+            authenticateUser() 
         }else {
             UserDefaults().set(false, forKey: "secured")
-             self.showSuccessMsg(msgTitle: "Biometric Access disabled!")
-
+            self.showSuccessMsg(msgTitle: "Biometric Access disabled!", imgName: "lock.open.fill")
+            saveUserInfo()
         }
-        saveUserInfo()
+       
     }
     
     func authenticateUser() {
@@ -93,15 +96,24 @@ class SettingViewController: UITableViewController {
                 authenticationError in
                 DispatchQueue.main.async {
                     if success {
-               
-                        self?.showSuccessMsg(msgTitle: "Biometric Access enabled")
-                        self?.dismiss(animated: true)
-                        self?.dismiss(animated: true, completion: nil)
+                        self?.saveUserInfo()
+                        self?.showSuccessMsg(msgTitle: "Biometric access enabled", imgName: "lock.fill")
+                        self?.secureContent.isOn = true
+                        self?.playSound()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self?.dismiss(animated: true, completion: nil)
+                        }
+                        UserDefaults().set(true, forKey: "secured")
+                        
+                        
                     }else{
                         //error
                         let ac = UIAlertController(title: "Authentication failed", message: "user verification failed; please try again.", preferredStyle: .alert)
                         ac.addAction(UIAlertAction(title: "OK", style: .default))
                         self?.present(ac, animated: true)
+                        UserDefaults().set(false, forKey: "secured")
+                        self?.secureContent.isOn = false
+                        self?.showSuccessMsg(msgTitle: "Biometric access not enabled !", imgName: "xmark.circle")
                     }
                 }
                 
@@ -117,7 +129,23 @@ class SettingViewController: UITableViewController {
         return context
     }
     
-    func getUserInfo(){
+    var completeEffect: AVAudioPlayer?
+
+    
+    func playSound() {
+        // Load a local sound file
+        let path = Bundle.main.path(forResource: "click.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            completeEffect = try AVAudioPlayer(contentsOf: url)
+            completeEffect?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
+    func getUserInfo() {
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest ()
             do {
                 let exps = try getContext().fetch(request)
@@ -137,13 +165,14 @@ class SettingViewController: UITableViewController {
             }
     }
     
-    func showSuccessMsg(msgTitle : String ){
-        let image = UIImage(named: "logo")
-        let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-
-        NotificationPresenter.shared().present(title: msgTitle, subtitle: "", includedStyle: .success)
-//        NotificationPresenter.shared().displayLeftView(imageView)
+    func showSuccessMsg(msgTitle : String,imgName : String ){
+        NotificationPresenter.shared().present(title: msgTitle, subtitle: "", includedStyle: .dark)
+        if(!imgName.isEmpty)
+        { 
+            let imageView = UIImageView(image: UIImage(systemName: imgName)?.withTintColor(.orange, renderingMode: .alwaysOriginal))
+            imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+            NotificationPresenter.shared().displayLeftView(imageView)
+        }
         NotificationPresenter.shared().dismiss(afterDelay: 3)
     }
     
@@ -219,7 +248,7 @@ class SettingViewController: UITableViewController {
         userinfo.secured = secureContent.isOn
         UserDefaults().setValue(fullname.glazeCamelCase, forKey: "fullname")
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
-        showSuccessMsg(msgTitle: "User info saved successfully!")
+        showSuccessMsg(msgTitle: "User info saved successfully!", imgName: "hand.thumbsup.fill")
         getUserInfo()
     }
     
@@ -278,7 +307,6 @@ class SettingViewController: UITableViewController {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let mainTabBarController = storyboard.instantiateViewController(identifier: "userOnboarding") as! ViewController
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController)
-
                 UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: false, completion: nil)
             }
         }

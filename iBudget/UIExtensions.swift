@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
  
 extension UIImage {
   func resized(to newSize: CGSize) -> UIImage? {
@@ -267,6 +268,15 @@ extension Date {
             df.setLocalizedDateFormatFromTemplate("dd MMM yyyy")
             return df.string(from: self)
     }
+    
+    func customfullDate2() -> String {
+        
+            let df = DateFormatter()
+            df.locale = Locale.current
+            df.dateFormat = "MMMM yyyy"
+            return df.string(from: self)
+    }
+    
 }
 
 extension Date {
@@ -504,6 +514,11 @@ extension Double {
     }
 }
 
+func getContext()->NSManagedObjectContext {
+    let context  = AppDelegate.sharedAppDelegate.coreDataStack.getCoreDataContext()!
+    return context
+}
+
 extension CustomTabBarController  {
     
     func openAddViewController() {
@@ -511,4 +526,24 @@ extension CustomTabBarController  {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+}
+
+extension Bundle {
+
+    var appName: String {
+        return infoDictionary?["CFBundleName"] as! String
+    }
+
+    var bundleId: String {
+        return bundleIdentifier!
+    }
+
+    var versionNumber: String {
+        return infoDictionary?["CFBundleShortVersionString"] as! String
+    }
+
+    var buildNumber: String {
+        return infoDictionary?["CFBundleVersion"] as! String
+    }
+
 }

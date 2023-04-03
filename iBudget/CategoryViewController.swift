@@ -38,6 +38,7 @@ class CategoryViewController: UIViewController {
             let destinationVC = segue.destination as? CategorySummaryViewController
             let object = sender as! [String: Any?]
             destinationVC?.categoryName = object["categoryName"] as? String ?? ""
+            destinationVC?.categoryId = object["categoryId"] as? UUID ?? UUID()
             //destinationVC?.editCategoryItem = selectedCategory
         }
     }
@@ -122,7 +123,7 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
         let item = categoriesArray[indexPath.row]
         let categoryName  = (item.name?.lowercased())!
         tableView.deselectRow(at: indexPath, animated: true)
-        let sender : [String: Any?] = ["categoryName": categoryName] 
+        let sender : [String: Any?] = ["categoryName": categoryName,"categoryId":item.id]
         performSegue(withIdentifier: "categoryExpense", sender: sender)
     }
     

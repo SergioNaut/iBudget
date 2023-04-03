@@ -217,7 +217,7 @@ extension UILabel {
                 self.text = "$\(Int(from + diff * (Double(item) / diff)).abbreviateNumber())"
             }
         }
-        print("completed")
+        
     }
 }
  
