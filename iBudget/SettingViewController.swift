@@ -10,6 +10,7 @@ import UIKit
 import JDStatusBarNotification
 import CoreData
 import LocalAuthentication
+import AVFAudio
 
 class SettingViewController: UITableViewController {
     
@@ -98,8 +99,13 @@ class SettingViewController: UITableViewController {
                         self?.saveUserInfo()
                         self?.showSuccessMsg(msgTitle: "Biometric access enabled", imgName: "lock.fill")
                         self?.secureContent.isOn = true
-                        self?.dismiss(animated: true, completion: nil)
+                        self?.playSound()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self?.dismiss(animated: true, completion: nil)
+                        }
                         UserDefaults().set(true, forKey: "secured")
+                        
+                        
                     }else{
                         //error
                         let ac = UIAlertController(title: "Authentication failed", message: "user verification failed; please try again.", preferredStyle: .alert)
@@ -123,7 +129,23 @@ class SettingViewController: UITableViewController {
         return context
     }
     
-    func getUserInfo(){
+    var completeEffect: AVAudioPlayer?
+
+    
+    func playSound() {
+        // Load a local sound file
+        let path = Bundle.main.path(forResource: "click.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            completeEffect = try AVAudioPlayer(contentsOf: url)
+            completeEffect?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
+    func getUserInfo() {
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest ()
             do {
                 let exps = try getContext().fetch(request)
