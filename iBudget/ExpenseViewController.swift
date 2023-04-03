@@ -40,6 +40,7 @@ class ExpenseViewController: UIViewController {
     @IBOutlet weak var lblExpenseSubtitle: UILabel!
     
     override func viewDidLoad() {
+        
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.rowHeight = 65
@@ -66,16 +67,19 @@ class ExpenseViewController: UIViewController {
         let sevenMonthsAgo = calendar.date(byAdding: .month, value: -7, to: currentDate as Date)!
         let picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 0 / 2), size: CGSize(width: view.bounds.width, height: 216)))
         picker.minimumDate = sevenMonthsAgo
-        picker.maximumDate = Date().removeTimeStamp
+        picker.maximumDate = Date()//.removeTimeStamp
         picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
+        picker.locale = Locale.current
         picker.setDate(pickerDate, animated: true)
         aView.addSubview(picker)
         popover.show(aView, point: startPoint)
+        
     }
     
     @objc func dateChanged(_ picker: MonthYearPickerView) {
         
-        let monthName = months[picker.date.monthIndex() > 11 ? 0 :picker.date.monthIndex()  ]
+        let monthIndx =   picker.date.description.split(separator: "-")[1]
+        let monthName = months[ Int(monthIndx)! - 1 ]
         lblMonthSelected.text =  monthName + " " + String(picker.SelectedYear)
         currrentMonthName  =  monthName
         loadExpenses(_monthName: monthName, _year: picker.SelectedYear)
@@ -193,7 +197,7 @@ class ExpenseViewController: UIViewController {
             let totalAmount = objects.compactMap { $0 as? NSManagedObject }
                 .compactMap { $0.value(forKey: "amount") as? Double }
                 .reduce(0, +)
-            print(totalAmount)
+           
             return totalAmount
         } catch {
             print("Error fetching expenses: \(error)")
@@ -260,7 +264,6 @@ class ExpenseViewController: UIViewController {
         guard let exIndx =  expenses.firstIndex(where: {$0.id ==  selectedItemId}) else { return  }
         
         expenses.remove(at: contextIndx)
-        
         expensesSearch.remove(at: exIndx)
         let tmpArr  = expensesSearch.filter { $0.name != nil }
         expensesSearch = tmpArr

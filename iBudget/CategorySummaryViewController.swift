@@ -26,6 +26,7 @@ class CategorySummaryViewController: UIViewController {
     var categoryName = ""
     var categoryId = UUID()
     
+    @IBOutlet weak var expenseDate: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblMonthSelected: UILabel!
     @IBOutlet weak var lbltotalExpense: UILabel!
@@ -45,7 +46,7 @@ class CategorySummaryViewController: UIViewController {
         lbltotalExpense.text = "0.0"//\(String(format: "$%.2f", totalExpense))"
         monthName = Date().monthName()
         yearofMonth = Date().currentYear()
-        lblCategoryName.text  = categoryName.uppercased()
+        lblCategoryName.text  = categoryName//.uppercased()
         lblMonthSelected.text = ("\(Date().monthName())  \(yearofMonth)")
         let guestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(labelClicked(_:)))
         lblMonthSelected.addGestureRecognizer(guestureRecognizer)
@@ -85,7 +86,11 @@ class CategorySummaryViewController: UIViewController {
     
     @objc func dateChanged(_ picker: MonthYearPickerView) {
         
-        let monthName = months[picker.date.monthIndex() > 11 ? 0 :picker.date.monthIndex() ]
+        //let monthName = months[picker.date.monthIndex() > 11 ? 0 :picker.date.monthIndex() ]
+        
+        let monthIndx =   picker.date.description.split(separator: "-")[1]
+        let monthName = months[ Int(monthIndx)! - 1 ]
+        
         lblMonthSelected.text =  monthName + " " + String(picker.SelectedYear)
         // currrentMonthName  =  monthName
         loadExpenses(_monthName: monthName, _year: picker.SelectedYear)
@@ -98,6 +103,8 @@ class CategorySummaryViewController: UIViewController {
         
         let detailViewController = categoryList()
         detailViewController.presenterName = "categorySummary"
+        detailViewController.monthName = monthName
+        detailViewController.yearSelected = yearofMonth
         let nav = UINavigationController(rootViewController: detailViewController)
         nav.modalPresentationStyle = .pageSheet
         if let sheet = nav.sheetPresentationController {
@@ -109,6 +116,7 @@ class CategorySummaryViewController: UIViewController {
     
     func loadExpenses(_monthName: String, _year : Int) {
         expenses = []
+        tableView.reloadData()
         let fetchRequest = NSFetchRequest<Expenses>(entityName: "Expenses")
         // Get the current calendar and the desired month and year
         let monthName = _monthName == "" ?  String().getCurrentLongMonthName : _monthName
@@ -155,68 +163,7 @@ class CategorySummaryViewController: UIViewController {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60.0;//Choose your custom row height
     }
-    
-    
-//    func loadValues( _monthName: String, _year : Int) {
-//
-//        //        categoriesArray = []
-//        //        groupedCategoryList = []
-//
-//
-//        let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest ()
-//        do {
-//            let exps = try getContext().fetch(request)
-//            for exp in exps{
-//                totalBudget = exp.budget as! Double
-//            }
-//        } catch {
-//            print ("error fetching data: \(error)")
-//        }
-//
-//
-//        let fetchRequestFilteredByMonth = NSFetchRequest<Expenses>(entityName: "Expenses")
-//        // Get the current calendar and the desired month and year
-//        let monthName = _monthName == "" ?  String().getCurrentLongMonthName : _monthName
-//        let calendar = Calendar.current
-//        guard let month = DateFormatter().monthSymbols.firstIndex(of: monthName) else {
-//            print("Invalid month name: \(monthName)")
-//            return
-//        }
-//        let year = _year == 0 ?  CurrentYear() : _year
-//        // Create a date range for the desired month and year
-//        let startDateComponents = DateComponents(year: year, month: month + 1, day: 1)
-//        let startDate = calendar.date(from: startDateComponents)!
-//        let endDate = calendar.date(byAdding: DateComponents(month: 1, day: -1), to: startDate)!
-//
-//        // Create a predicate that checks if the "created" field of the expense is between the start and end dates of the desired month and year
-//        let predicate = NSPredicate(format: "created BETWEEN {%@, %@}", startDate as NSDate, endDate as NSDate)
-//
-//        // Set the predicate on the fetch request
-//        fetchRequestFilteredByMonth.predicate = predicate
-//
-//        do {
-//            let items = try getContext().fetch(fetchRequestFilteredByMonth)
-//            var categoryAmounts = [String: Double]()
-//
-//            for item in items {
-//                if let currentAmount = categoryAmounts[item.categoryName!] {
-//                    categoryAmounts[item.categoryName!] = currentAmount + item.amount
-//
-//                } else {
-//                    categoryAmounts[item.categoryName!] = item.amount
-//                }
-//            }
-//
-//            groupedCategoryList = categoryAmounts.map { ExpenseStruct(amount: Decimal($0.value), categoryName: $0.key) }
-//            tableView.reloadData()
-//
-//        } catch {
-//            print ("error fetching data: \(error)")
-//        }
-//    }
-//
-
- 
+     
 }
 
 
@@ -240,14 +187,15 @@ extension CategorySummaryViewController: UITableViewDataSource {
         let progressValue = Double(currPrice)
         let catPercent =  round(Float(progressValue) / Float(totalExpense)*100)
         let expenseProgressBar = cell.viewWithTag(4001) as! UIProgressView
-        
+        let expensedate = cell.viewWithTag(1009) as! UILabel
+        expensedate.text = expenseObj.created?.customfullDate()
         cell.categoryName.text = expenseObj.name
         formatter.minimumFractionDigits = 2
         cell.totalPrice.text = "$\(progressValue.abbreviateNumber()) (\(catPercent)%)"
         expenseProgressBar.setProgress(0.0, animated: false) // Set initial progress value to 0
          
         if(progressValue > totalBudget) {
-            expenseProgressBar.progressTintColor = .red
+            expenseProgressBar.progressTintColor = .systemBlue
         } else {
             expenseProgressBar.progressTintColor = .systemTeal
         }

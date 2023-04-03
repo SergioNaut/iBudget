@@ -268,6 +268,15 @@ extension Date {
             df.setLocalizedDateFormatFromTemplate("dd MMM yyyy")
             return df.string(from: self)
     }
+    
+    func customfullDate2() -> String {
+        
+            let df = DateFormatter()
+            df.locale = Locale.current
+            df.dateFormat = "MMMM yyyy"
+            return df.string(from: self)
+    }
+    
 }
 
 extension Date {

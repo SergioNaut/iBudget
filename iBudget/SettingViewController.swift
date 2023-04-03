@@ -29,6 +29,7 @@ class SettingViewController: UITableViewController {
     
     @IBOutlet weak var appVersion: UILabel!
     
+    @IBOutlet weak var appBuildNumber: UILabel!
     var userSavedName = ""
     var userSavedBudget = 0.0, userSavedIncome = 0.0
     var userSavedSecurityEnabled = false
@@ -41,7 +42,8 @@ class SettingViewController: UITableViewController {
          
         let guestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openDeveloperPopup(_:)))
                 onDevelopersPressed.addGestureRecognizer(guestureRecognizer)
-        appVersion.text = "\(Bundle.main.versionNumber).\(Bundle.main.buildNumber)"
+        appVersion.text = "\(Bundle.main.versionNumber)"
+        appBuildNumber.text="\(Bundle.main.buildNumber)"
         let shareAppRecognizer = UITapGestureRecognizer(target: self, action: #selector(shareApp(_:)))
         shareAppSelector.addGestureRecognizer(shareAppRecognizer)
         getUserInfo()

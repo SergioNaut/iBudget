@@ -12,8 +12,9 @@ import CoreData
 
 class categoryList : UITableViewController  {
     private var categoriesArray: [Categories] = []
-    public var presenterName = "''"
-    
+    public var presenterName = ""
+    public var monthName = ""
+    public var yearSelected = 0
     override func viewDidLoad() {
         loadValues()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -93,7 +94,9 @@ class categoryList : UITableViewController  {
  
         if(presenterName == "categorySummary") {
             if  let presenter = presentingViewController as? CategorySummaryViewController {
-                presenter.lblCategoryName.text = categoriesArray[indexPath.row].name ?? "not found"
+                presenter.categoryId = categoriesArray[indexPath.row].id ?? UUID()
+                presenter.lblCategoryName.text = categoriesArray[indexPath.row].name?.glazeCamelCase ?? "not found"
+                presenter.loadExpenses(_monthName: monthName, _year: yearSelected)
                 dismiss(animated: true)
             }
         }
