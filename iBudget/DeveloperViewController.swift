@@ -16,12 +16,13 @@ class DeveloperViewController: UIViewController {
     
     @IBAction func contactUs(_ sender: UIButton) {
         //TODO: Change email
-        let contactEmail = "foo@bar.com"
-        let contactEmailURL = URL(string: "mailto://\(contactEmail)")!
-        if UIApplication.shared.canOpenURL(contactEmailURL){
-            UIApplication.shared.open(contactEmailURL)
-        }
-        
+        let contactEmail = "group6@fanshaweonline.ca"
+        let subject = "iBudget App Feedback"
+        let body = "Hi, I have a feedback for iBudget App"
+        let email = "mailto:\(contactEmail)?subject=\(subject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)&body=\(body.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)"
+        if let url = URL(string: email) {
+            UIApplication.shared.open(url)
+        }        
     }
     
     override func viewDidLoad() {

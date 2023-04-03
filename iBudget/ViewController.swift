@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        lblGreeting.typeOn(string: "To get started with iBudget please fill out the details requested below to kick things off !")
+//        lblGreeting.typeOn(string: "To get started with iBudget please fill out the details requested below to kick things off !")
     }
     
     var completeEffect: AVAudioPlayer?

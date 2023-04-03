@@ -116,6 +116,8 @@ class CategorySummaryViewController: UIViewController {
     
     func loadExpenses(_monthName: String, _year : Int) {
         expenses = []
+        lbltotalExpense.text = "$ 0.0"
+        lblCategoryName.text = lblCategoryName.text?.glazeCamelCase
         tableView.reloadData()
         let fetchRequest = NSFetchRequest<Expenses>(entityName: "Expenses")
         // Get the current calendar and the desired month and year
