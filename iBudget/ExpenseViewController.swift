@@ -348,7 +348,7 @@ extension ExpenseViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.createdTimeStamp.text = date //+ (expenses[indexPath.row].created?.formatted())!
         cell.categoryName.text = expenses[indexPath.row].name
-        cell.totalPrice.text = "\( String(format: "$%.2f",  expenses[indexPath.row].amount ) )"
+        cell.totalPrice.text = NumberFormatter.formatDecimal(expenses[indexPath.row].amount )
         
         return cell
     }
