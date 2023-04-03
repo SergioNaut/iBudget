@@ -85,6 +85,8 @@ class DashboardViewController: UIViewController {
         chart.data = data
 //        chart.barsCanBeClick = true
         chart.maxValue = Float( totalSavedBuget / 100 )
+        print(totalSavedBuget)
+        
         chart.progressColor =  UIColor(hex: "#FE7685ff")!
         chart.barTitleColor = UIColor(hex: "#212121ff")!
         chart.barTitleSelectedColor = UIColor(hex: "#FE7685ff")!
@@ -212,6 +214,7 @@ class DashboardViewController: UIViewController {
                     userfullname =   "Hi, \(exp.fullName ?? "-")"
                     let totalBudgett = NumberFormatter.formatDecimal(exp.budget as! Double)
                     totalBudget.text = "$ \(totalBudgett ?? "0")"
+                    totalSavedBuget = exp.budget as! Double
                     isSecured = exp.secured
                 }
     
@@ -268,9 +271,6 @@ extension DashboardViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
         
         let ExpCategoryName = groupedCategoryList[indexPath.row].categoryName
-        
-     
-        
         let categoryElem  = categoriesArray.first { $0.name! == ExpCategoryName }
         
         cell.categoryImage.image = UIImage(systemName: (categoryElem?.icon)!)
