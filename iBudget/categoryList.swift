@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 import CoreData
-
-
+ 
 
 class categoryList : UITableViewController  {
     private var categoriesArray: [Categories] = []
-    
-    
+    public var presenterName = ""
+    public var monthName = ""
+    public var yearSelected = 0
     override func viewDidLoad() {
         loadValues()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -42,6 +42,10 @@ class categoryList : UITableViewController  {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoriesArray.count
     }
+    
+    
+  
+     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -78,9 +82,6 @@ class categoryList : UITableViewController  {
 //        cell.imageView?.image = cellImg//!.withTintColor(.systemIndigo)
 //        cell.imageView?.backgroundColor =  UIColor(hex: "#F7F8FCff")!
 //        cell.imageView?.
-        
-        
-        
 //        cell.textLabel?.text = categoriesArray[indexPath.row].name
        
       
@@ -91,10 +92,19 @@ class categoryList : UITableViewController  {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
  
+        if(presenterName == "categorySummary") {
+            if  let presenter = presentingViewController as? CategorySummaryViewController {
+                presenter.categoryId = categoriesArray[indexPath.row].id ?? UUID()
+                presenter.lblCategoryName.text = categoriesArray[indexPath.row].name?.glazeCamelCase ?? "not found"
+                presenter.loadExpenses(_monthName: monthName, _year: yearSelected)
+                dismiss(animated: true)
+            }
+        }
+        
         if let presenter = presentingViewController as? AddExpenseViewControlller {
             presenter.categorySelected = categoriesArray[indexPath.row]
             presenter.showSelectedCategory(_category: categoriesArray[indexPath.row])
-            }
+        }
        
         dismiss(animated: true)
     }

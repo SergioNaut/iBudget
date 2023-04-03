@@ -11,32 +11,36 @@ import CoreData
 import LinkPresentation
 import Popover
 import MonthYearPicker
+import JDStatusBarNotification
+
 
 class ExpenseViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
     var expenses : [Expenses] = []
     var expensesSearch : [Expenses] = []
-    private var categoriesArray: [Categories] = []
     var isEdit: Bool = false
     var selectedExpense: Expenses!
-    
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-    let years = Array(1900...2100).map { String($0) }
     var selectedMonth: String?
     var selectedYear: String?
-    let expiryDatePicker = MonthYearWheelPicker()
     var currentTotalExpense = 0.0
     var currrentMonthName = ""
+    var totalBudget = 0.0
+    var pickerDate = Date()
+    private var categoriesArray: [Categories] = []
+    let expiryDatePicker = MonthYearWheelPicker()
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    let years = Array(1900...2100).map { String($0) }
+    
+    @IBOutlet weak var tableView: UITableView! 
     @IBOutlet weak var expenseFilter: UITextField!
     @IBOutlet weak var expenseProgressBar: UIProgressView!
     @IBOutlet weak var calendarIcon: UIImageView!
-    
     @IBOutlet weak var lblMonthSelected: UILabel!
     @IBOutlet weak var lblExpenseTotal: UILabel!
     @IBOutlet weak var lblExpenseSubtitle: UILabel!
     
     override func viewDidLoad() {
+        
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.rowHeight = 65
@@ -52,38 +56,33 @@ class ExpenseViewController: UIViewController {
         calendarIcon.addGestureRecognizer(guestureRecognizer2)
         lblExpenseTotal.text =  String(getTotalAmountForMonth(("").getCurrentLongMonthName,year: CurrentYear()) ?? 0.0)
     }
-    
-    var pickerDate = Date()
+     
     
     @objc func labelClicked(_ sender: Any) {
         let startPoint = CGPoint(x: lblMonthSelected.frame.origin.x+20, y: lblMonthSelected.superview!.frame.origin.y + 58 )
         let aView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width-50, height: 180))
         let popover = Popover()
         let calendar = Calendar.current
-        let currentDate = Date()
-        let sevenMonthsAgo = calendar.date(byAdding: .month, value: -7, to: currentDate)!
-      
+        let currentDate = NSDate()
+        let sevenMonthsAgo = calendar.date(byAdding: .month, value: -7, to: currentDate as Date)!
         let picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 0 / 2), size: CGSize(width: view.bounds.width, height: 216)))
-             picker.minimumDate = sevenMonthsAgo
-             picker.maximumDate = Date()
-          
-             picker.setDate(pickerDate, animated: true)
-             picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
-             
+        picker.minimumDate = sevenMonthsAgo
+        picker.maximumDate = Date()//.removeTimeStamp
+        picker.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
+        picker.locale = Locale.current
+        picker.setDate(pickerDate, animated: true)
         aView.addSubview(picker)
         popover.show(aView, point: startPoint)
+        
     }
-    
-    
-    
     
     @objc func dateChanged(_ picker: MonthYearPickerView) {
         
-        let monthName = months[picker.date.monthIndex() > 11 ? 0 :picker.date.monthIndex()  ]
-        lblMonthSelected.text =  monthName + " " + picker.date.Year()
+        let monthIndx =   picker.date.description.split(separator: "-")[1]
+        let monthName = months[ Int(monthIndx)! - 1 ]
+        lblMonthSelected.text =  monthName + " " + String(picker.SelectedYear)
         currrentMonthName  =  monthName
-        let selectedYear = Int(picker.date.Year()) ?? 0
-        loadExpenses(_monthName: monthName, _year: selectedYear)
+        loadExpenses(_monthName: monthName, _year: picker.SelectedYear)
         pickerDate = picker.date
         setTotals()
     }
@@ -100,8 +99,6 @@ class ExpenseViewController: UIViewController {
         self.performSegue(withIdentifier: "expSummary", sender: sender)
     }
     
-    
- 
     @IBAction func filterExpenses(_ sender: UITextField) {
           
         guard let searchText = sender.text  else {return }
@@ -119,35 +116,27 @@ class ExpenseViewController: UIViewController {
             } catch {
                 print ("error fetching data: \(error)")
             }
-
-        
         // let progressBar = UIProgressView(progressViewStyle: .default)
         expenseProgressBar.setProgress(0.0, animated: false) // Set initial progress value to 0
        
         
         let total =  getTotalAmountForMonth(currrentMonthName,year: CurrentYear()) ?? 0.0
         let maxValue = Float(totalBudget)
-        
-        
+         
         if(total > totalBudget) {
             expenseProgressBar.progressTintColor = .red
         } else {
-            
             expenseProgressBar.progressTintColor = .systemTeal
         }
-        
-        
+    
         let progressValue = total > totalBudget ? totalBudget: total
-        
         expenseProgressBar.setProgress(Float(progressValue) / maxValue, animated: true) // Set maximum progress value
         currentTotalExpense = total
         lblExpenseTotal.text = "$\(total.abbreviateNumber())"
         lblExpenseTotal.countAnimation(upto: total)
-
-        
     }
     
-    var totalBudget = 0.0
+    
      
     //load the view each time we are at this screen
     override func viewDidAppear(_ animated: Bool) {
@@ -168,8 +157,7 @@ class ExpenseViewController: UIViewController {
              secondView.totalExpense = currentTotalExpense
          }
     }
-    func CurrentYear()->Int
-    {
+    func CurrentYear()->Int  {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
@@ -209,7 +197,7 @@ class ExpenseViewController: UIViewController {
             let totalAmount = objects.compactMap { $0 as? NSManagedObject }
                 .compactMap { $0.value(forKey: "amount") as? Double }
                 .reduce(0, +)
-            print(totalAmount)
+           
             return totalAmount
         } catch {
             print("Error fetching expenses: \(error)")
@@ -267,9 +255,20 @@ class ExpenseViewController: UIViewController {
         setTotals()
     }
     
+    
+    
     func deleteExpenses(contextIndx : Int) {
-         getContext().delete(expenses[contextIndx])
-         setTotals()
+        
+        let selectedItemId =  expenses[contextIndx].id
+        guard let expObject = expenses.first(where: {$0.id ==  selectedItemId}) else { return  }
+        guard let exIndx =  expenses.firstIndex(where: {$0.id ==  selectedItemId}) else { return  }
+        
+        expenses.remove(at: contextIndx)
+        expensesSearch.remove(at: exIndx)
+        let tmpArr  = expensesSearch.filter { $0.name != nil }
+        expensesSearch = tmpArr
+        getContext().delete(expObject)
+        setTotals()
     }
     
     func filterContentForSearchText(searchText: String) {
@@ -277,52 +276,55 @@ class ExpenseViewController: UIViewController {
         if(searchText == "") {
              expenses = expensesSearch
         }else{
-            expenses = expensesSearch .filter { $0.name!.lowercased().contains(searchText.lowercased())
+            print("After delete \(expensesSearch.count)")
+            
+            expenses = expensesSearch.filter {
+                
+                $0.name != nil && $0.name!.lowercased().contains(searchText.lowercased())
+                
             }
         }
         self.tableView.reloadData()
     }
     
-    func shareExpense(expenseRecord: Expenses)
-    {
+    func shareExpense(expenseRecord: Expenses) {
         
         let title = "IBudget (Share Expense)"
-        //let text = "Some Text"
-     
-        
-        
         let text = "Hello \(UserDefaults().string(forKey: "fullname")!) is sharing this expense with  you: "
-        
-        
         let expenseDetails = "\(expenseRecord.name ?? "") $\(expenseRecord.amount)"
-        
         // set up activity view controller
-        let textToShare: [Any] = [
-            MyActivityItemSource(title: title, text: text + expenseDetails)
-        ]
-       
-        
-        
-        
-        //let objectsToShare: [Any] = [textToShare, expenseDetails]
-        
+        let textToShare: [Any] = [MyActivityItemSource(title: title, text: text + expenseDetails)]
         let activityVC = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-        
-        //let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        
         activityVC.title = "Share Expense"
         activityVC.popoverPresentationController?.sourceView = self.view
         activityVC.popoverPresentationController?.barButtonItem?.title  = "Share Expense" 
         self.present(activityVC, animated: true, completion: nil)
-        
     }
 }
 
-
-extension ExpenseViewController: UITableViewDelegate {
+extension ExpenseViewController {
+    func showSuccessMsg(MsgTitle : String ){
+   
+        let image = UIImageView(image: UIImage(systemName: "trash")?.withTintColor(.red, renderingMode: .alwaysOriginal))
+        NotificationPresenter.shared().present(title: MsgTitle, subtitle: "", includedStyle: .dark)
+        NotificationPresenter.shared().displayLeftView(image)
+        NotificationPresenter.shared().dismiss(afterDelay: 2)
+    }
+    
+    func showErrorMsg(title: String, msg: String) {
+            let image = UIImage(named: "logo")
+            let imageView = UIImageView(image: image)
+            imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+            NotificationPresenter.shared().present(title: title, subtitle: msg, includedStyle: .error)
+            NotificationPresenter.shared().dismiss(afterDelay: 5)
+        
+    }
+    
 }
-
-extension ExpenseViewController: UITableViewDataSource {
+ 
+extension ExpenseViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return expenses.count
     }
@@ -330,7 +332,11 @@ extension ExpenseViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
     
+        
         let  ExpCategoryName = expenses[indexPath.row].categoryName
+        if(ExpCategoryName == nil ) {
+            return cell
+        }
         let categoryElem  = categoriesArray.first { $0.name! == ExpCategoryName }
         
         cell.categoryImage.image = UIImage(systemName: categoryElem!.icon!)
@@ -362,32 +368,27 @@ extension ExpenseViewController: UITableViewDataSource {
             actionPerformed(true)
         }
         edit.backgroundColor = .systemTeal
-        
         // share action
         let share = UIContextualAction(style: .normal, title: "Share") { [weak self] (action, view, completionHandler) in
             self!.shareExpense(expenseRecord:self!.expenses[indexPath.row])
             completionHandler(true)
         }
         share.backgroundColor = .systemGreen
-        
-        
-        
         return UISwipeActionsConfiguration(actions: [edit,share])
     }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
           if editingStyle == .delete {
-              
-              
               let alert = UIAlertController(title: "Delete Confirmation", message: "Are you sure you want to delete this expense?", preferredStyle: .alert)
               alert.addAction(UIAlertAction(title: NSLocalizedString("Delete", comment: "Default action"), style: .default, handler: { _ in
                   self.deleteExpenses(contextIndx: indexPath.row)
-                  self.expenses.remove(at: indexPath.row)
                   AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
                   tableView.deleteRows(at: [indexPath], with: .fade)
+                  self.showSuccessMsg(MsgTitle: "Expense deleted successfully")
+                  tableView.reloadData()
               }))
               
               alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Ignore"), style: .cancel, handler: { _ in
-                
               }))
               self.present(alert, animated: true, completion: nil)
           }
@@ -422,8 +423,6 @@ class MyActivityItemSource: NSObject, UIActivityItemSource {
         let metadata = LPLinkMetadata()
         metadata.title = title
         metadata.iconProvider = NSItemProvider(object: UIImage(named: "logo")!)
-        //This is a bit ugly, though I could not find other ways to show text content below title.
-      
         metadata.url = URL(fileURLWithPath: text)
         return metadata
     }

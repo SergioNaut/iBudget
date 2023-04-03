@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import JDStatusBarNotification
 
 class CategoryViewController: UIViewController {
     
@@ -33,6 +34,12 @@ class CategoryViewController: UIViewController {
             let destinationVC = segue.destination as? AddCategoryViewController
             destinationVC?.isEdit = isEdit
             destinationVC?.editCategoryItem = selectedCategory
+        }else if segue.identifier == "categoryExpense" {
+            let destinationVC = segue.destination as? CategorySummaryViewController
+            let object = sender as! [String: Any?]
+            destinationVC?.categoryName = object["categoryName"] as? String ?? ""
+            destinationVC?.categoryId = object["categoryId"] as? UUID ?? UUID()
+            //destinationVC?.editCategoryItem = selectedCategory
         }
     }
     
@@ -84,13 +91,40 @@ struct CategoryValues {
 
 //Extension for TableView
 extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    func showSuccessMsg(MsgTitle : String ){
+        
+        let image = UIImageView(image: UIImage(systemName: "trash.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal))
+        NotificationPresenter.shared().present(title: MsgTitle, subtitle: "", includedStyle: .dark)
+        NotificationPresenter.shared().displayLeftView(image)
+        NotificationPresenter.shared().dismiss(afterDelay: 2)
+    }
+        
+    func showErrorMsg(title: String, msg: String){
+        
+        let image = UIImage(named: "logo")
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+        NotificationPresenter.shared().present(title: title, subtitle: msg, includedStyle: .error)
+        //            NotificationPresenter.shared().displayLeftView(imageView)
+        NotificationPresenter.shared().dismiss(afterDelay: 5)
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //returns table size
         return categoriesArray.count
     }
     
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = categoriesArray[indexPath.row]
+        let categoryName  = (item.name?.lowercased())!
         tableView.deselectRow(at: indexPath, animated: true)
+        let sender : [String: Any?] = ["categoryName": categoryName,"categoryId":item.id]
+        performSegue(withIdentifier: "categoryExpense", sender: sender)
     }
     
     func deleteCategory(index: Int){
@@ -110,6 +144,7 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
 //                return UISwipeActionsConfiguration(actions: [])
 //            }else {
 //                CanActionPerformed = true
+//
 //
 //            }
         
@@ -197,6 +232,9 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
                           AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
                           tableView.deleteRows(at: [indexPath], with: .fade)
                     
+                          self.showSuccessMsg(MsgTitle: "Category deleted successfully!")
+                          
+                          
                           self.dismiss(animated: true)
                       }
                      

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 import ChartProgressBar
+import LocalAuthentication
 
 
 
@@ -22,23 +23,25 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var chart: ChartProgressBar!
     @IBOutlet weak var viewAllButton: UIButton!
     @IBOutlet weak var last7MonthWindow: UILabel!
-    
     @IBOutlet weak var totalBudgetlabel: UILabel!
     @IBOutlet weak var lblCurrentMonthTotalExpenselabel: UILabel!
+    var firstLoad = true
     var data: [BarData] = []
     var last7Months: [MonthYear] = []
     var totalSavedBuget: Double = 0
-    
+    var isSecured  = false
     private var categoriesArray : [Categories] = []
     private var groupedCategoryList: [ExpenseStruct] = []
-    
+    private var userfullname  = "Hi, -"
     override func viewDidLoad() {
+ 
         super.viewDidLoad()
+       // authenticateUser()
         lblCurrentMonthTotalExpenselabel.text =  "Total Expenses " + "(" + ("").getCurrentShortMonth + ")"
-       
         totalBudgetlabel.text = "Total Budget " + "(" + ("").getCurrentShortMonth + ")"
         tableView.rowHeight = 60
         viewAllButton.titleLabel?.font = UIFont(name: "Avenir Medium", size: 14)
+        
     }
 
     func getLast7Months() {
@@ -54,11 +57,7 @@ class DashboardViewController: UIViewController {
                 last7Months.append(monthYear)
             }
         setBarChart()
-        print(last7Months)
-        print(
-            getTotalAmountForMonth(last7Months[1].month, year: last7Months[1].year)!
-        )
-    }
+     }
     
     func setBarChart(){
         var greatestExpense = 0.0
@@ -80,7 +79,8 @@ class DashboardViewController: UIViewController {
         }
         
         
-        
+         
+
         
         chart.data = data
 //        chart.barsCanBeClick = true
@@ -133,6 +133,7 @@ class DashboardViewController: UIViewController {
     }
 
     
+    
     func getTotalAmountForMonth(_ monthName: String, year: Int) -> Double? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Expenses")
 
@@ -167,14 +168,19 @@ class DashboardViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.rowHeight = 65
-
+        userName.text = ""
         // Do any additional setup after loading the view.
         loadValues()
         getLast7Months()
         chart.removeClickedBar()
+//        let isLocked = UserDefaults().bool(forKey: "Locked")
+//          if isLocked && isSecured {
+//              authenticateUser()
+//          }
     }
     
     @IBAction func onViewAllPressed(_ sender: Any) {
@@ -201,19 +207,23 @@ class DashboardViewController: UIViewController {
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest ()
             do {
                 let exps = try getContext().fetch(request)
-    
+                
                 for exp in exps{
-                    userName.text = "Hi, \(exp.fullName ?? "-")"
+                    userfullname =   "Hi, \(exp.fullName ?? "-")"
                     let totalBudgett = NumberFormatter.formatDecimal(exp.budget as! Double)
                     totalBudget.text = "$ \(totalBudgett ?? "0")"
-                    totalSavedBuget = exp.budget as! Double
-
+                    isSecured = exp.secured
                 }
     
             } catch {
                 print ("error fetching data: \(error)")
             }
-        
+        if(firstLoad) {
+            userName.typeOn(string:userfullname )
+            firstLoad = false
+        } else {
+            userName.text = userfullname
+        }
         let request1: NSFetchRequest<Expenses> = Expenses.fetchRequest()
             do {
                 let items = try getContext().fetch(request1)
@@ -285,8 +295,7 @@ extension DashboardViewController: UITableViewDelegate {
 
 extension DashboardViewController: ChartProgressBarDelegate {
     func ChartProgressBar(_ chartProgressBar: ChartProgressBar, didSelectRowAt rowIndex: Int) {
-        print(rowIndex)
-    }
+     }
 }
 
 struct ExpenseStruct {

@@ -7,7 +7,8 @@
 
 import Foundation
 import UIKit
-
+import CoreData
+ 
 extension UIImage {
   func resized(to newSize: CGSize) -> UIImage? {
     UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
@@ -31,85 +32,118 @@ extension UIViewController {
 }
 
 //MARK:- IBInspectable
-//extension UIView {
-//    @IBInspectable var cornerRadius: CGFloat {
-//        get {
-//            return layer.cornerRadius
-//        }
-//        set {
-//            layer.cornerRadius = newValue
-//            layer.masksToBounds = newValue > 0
-//        }
-//    }
-//
-//    @IBInspectable var borderWidth: CGFloat {
-//        get {
-//            return layer.borderWidth
-//        }
-//        set {
-//            layer.borderWidth = newValue
-//        }
-//    }
-//
-//    @IBInspectable var borderColor: UIColor? {
-//        get {
-//            return UIColor(cgColor: layer.borderColor!)
-//        }
-//        set {
-//            layer.borderColor = newValue?.cgColor
-//        }
-//    }
-//
-//    @IBInspectable
-//    var shadowRadius: CGFloat {
-//        get {
-//            return layer.shadowRadius
-//        }
-//        set {
-//            layer.masksToBounds = false
-//            layer.shadowRadius = newValue
-//        }
-//    }
-//
-//    @IBInspectable
-//    var shadowOpacity: Float {
-//        get {
-//            return layer.shadowOpacity
-//        }
-//        set {
-//            layer.masksToBounds = false
-//            layer.shadowOpacity = newValue
-//        }
-//    }
-//
-//    @IBInspectable
-//    var shadowOffset: CGSize {
-//        get {
-//            return layer.shadowOffset
-//        }
-//        set {
-//            layer.masksToBounds = false
-//            layer.shadowOffset = newValue
-//        }
-//    }
-//
-//    @IBInspectable
-//    var shadowColor: UIColor? {
-//        get {
-//            if let color = layer.shadowColor {
-//                return UIColor(cgColor: color)
-//            }
-//            return nil
-//        }
-//        set {
-//            if let color = newValue {
-//                layer.shadowColor = color.cgColor
-//            } else {
-//                layer.shadowColor = nil
-//            }
-//        }
-//    }
-//}
+extension UIView {
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            return UIColor(cgColor: layer.borderColor!)
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+
+    @IBInspectable
+    var shadowRadius: CGFloat {
+        get {
+            return layer.shadowRadius
+        }
+        set {
+            layer.masksToBounds = false
+            layer.shadowRadius = newValue
+        }
+    }
+
+    @IBInspectable
+    var shadowOpacity: Float {
+        get {
+            return layer.shadowOpacity
+        }
+        set {
+            layer.masksToBounds = false
+            layer.shadowOpacity = newValue
+        }
+    }
+
+    @IBInspectable
+    var shadowOffset: CGSize {
+        get {
+            return layer.shadowOffset
+        }
+        set {
+            layer.masksToBounds = true
+            layer.shadowOffset = newValue
+        }
+    }
+
+    @IBInspectable
+    var shadowColor: UIColor? {
+        get {
+            if let color = layer.shadowColor {
+                return UIColor(cgColor: color)
+            }
+            return nil
+        }
+        set {
+            if let color = newValue {
+                layer.shadowColor = color.cgColor
+            } else {
+                layer.shadowColor = nil
+            }
+        }
+    }
+}
+extension Date {
+    public var removeTimeStamp : Date? {
+       guard let date = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month, .day], from: self)) else {
+        return nil
+       }
+       return date
+   }
+}
+
+extension UILabel {
+    func typeOn(string: String) {
+        let characterArray =  string.map(String.init)
+        var characterIndex = 0
+        Timer.scheduledTimer(withTimeInterval: 0.15, repeats: true) { (timer) in
+            if characterArray[characterIndex] != "$" {
+                while characterArray[characterIndex] == " " {
+                    self.text! += " "
+                    characterIndex += 1
+                    if characterIndex == characterArray.count {
+                        timer.invalidate()
+                        return
+                    }
+                }
+                self.text! += characterArray[characterIndex]
+            }
+            characterIndex += 1
+            if characterIndex == characterArray.count {
+                timer.invalidate()
+            }
+        }
+    }
+}
+
 extension Int {
     var abbreviated: String {
         let formatter = NumberFormatter()
@@ -234,6 +268,15 @@ extension Date {
             df.setLocalizedDateFormatFromTemplate("dd MMM yyyy")
             return df.string(from: self)
     }
+    
+    func customfullDate2() -> String {
+        
+            let df = DateFormatter()
+            df.locale = Locale.current
+            df.dateFormat = "MMMM yyyy"
+            return df.string(from: self)
+    }
+    
 }
 
 extension Date {
@@ -471,6 +514,11 @@ extension Double {
     }
 }
 
+func getContext()->NSManagedObjectContext {
+    let context  = AppDelegate.sharedAppDelegate.coreDataStack.getCoreDataContext()!
+    return context
+}
+
 extension CustomTabBarController  {
     
     func openAddViewController() {
@@ -512,6 +560,25 @@ extension NumberFormatter {
         } else {
             return nil
         }
+    }
+ }
+
+extension Bundle {
+
+    var appName: String {
+        return infoDictionary?["CFBundleName"] as! String
+    }
+
+    var bundleId: String {
+        return bundleIdentifier!
+    }
+
+    var versionNumber: String {
+        return infoDictionary?["CFBundleShortVersionString"] as! String
+    }
+
+    var buildNumber: String {
+        return infoDictionary?["CFBundleVersion"] as! String
     }
 
 }

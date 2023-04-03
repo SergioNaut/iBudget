@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import JDStatusBarNotification
 
 class AddCategoryViewController: UIViewController {
 
@@ -209,6 +210,9 @@ class AddCategoryViewController: UIViewController {
                 editedCategory.icon = choosenIconName
           
                 AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
+                
+                showSuccessMsg(MsgTitle: "Category edited successfully")
+                
                 dismiss(animated: true)
             }
         } catch {
@@ -233,6 +237,8 @@ class AddCategoryViewController: UIViewController {
                 // create the alert
                 let alert = UIAlertController(title: "Duplicate Category!", message: "A category exists with this name already. Please enter a unique category name.", preferredStyle: UIAlertController.Style.alert)
                 
+                
+                
                 // add an action (button)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
                     return
@@ -252,7 +258,11 @@ class AddCategoryViewController: UIViewController {
                 
                 AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
                 self.dismiss(animated: true)
+                
+                showSuccessMsg(MsgTitle: "Category saved successfully")
+
             }
+            
            
                 
           } catch {
@@ -278,7 +288,13 @@ extension AddCategoryViewController : UICollectionViewDataSource, UICollectionVi
         icons.count-1
     }
     
-    
+    func showSuccessMsg(MsgTitle : String ){
+        
+        let image = UIImageView(image: UIImage(systemName: "hand.thumbsup.circle.fill")?.withTintColor(.orange, renderingMode: .alwaysOriginal))
+        NotificationPresenter.shared().present(title: MsgTitle, subtitle: "", includedStyle: .dark)
+        NotificationPresenter.shared().displayLeftView(image)
+        NotificationPresenter.shared().dismiss(afterDelay: 2)
+    }
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
