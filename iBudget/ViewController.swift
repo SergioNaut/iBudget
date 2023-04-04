@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-
+import AVFAudio
 
 
 
@@ -17,16 +17,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var budgetVw: UIView!
     @IBOutlet weak var fullnameVw: UIView!
 
+    @IBOutlet weak var lblGreeting: UILabel!
     @IBOutlet weak var monthlyincomeVw: UIView!
     
     var defaultBorderColor : CGColor!
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+//        lblGreeting.typeOn(string: "To get started with iBudget please fill out the details requested below to kick things off !")
+    }
     
+    var completeEffect: AVAudioPlayer?
+
     
-    
+    func playSound() {
+        // Load a local sound file
+        let path = Bundle.main.path(forResource: "success.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            completeEffect = try AVAudioPlayer(contentsOf: url)
+            completeEffect?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         getUserInfo()
         defaultBorderColor = fullnameVw.layer.borderColor
@@ -140,10 +159,12 @@ class ViewController: UIViewController {
             budget1.name = "Food"
             budget1.categoryId = category.id
             budget1.categoryName = category.name
-            budget1.amount = 600
+            budget1.amount = 600.00
             let calendar = Calendar.current
             if let lastMonth = calendar.date(byAdding: .month, value: -1, to: Date()){
-                budget1.created = lastMonth
+                 
+                budget1.created = lastMonth.removeTimeStamp
+                 
             }
             
             let budget2 = Expenses(context: getContext())
@@ -151,9 +172,9 @@ class ViewController: UIViewController {
             budget2.name = "Rent"
             budget2.categoryId = category2.id
             budget2.categoryName = category2.name
-            budget2.amount = 900
+            budget2.amount = 900.0
             if let last2Month = calendar.date(byAdding: .month, value: -2, to: Date()){
-                budget2.created = last2Month
+                budget2.created = last2Month.removeTimeStamp
             }
             
             
@@ -162,9 +183,9 @@ class ViewController: UIViewController {
             budget3.name = "Gas"
             budget3.categoryId = category3.id
             budget3.categoryName = category3.name
-            budget3.amount = 800
+            budget3.amount = 800.0
             if let last3Month = calendar.date(byAdding: .month, value: -3, to: Date()){
-                budget3.created = last3Month
+                budget3.created = last3Month.removeTimeStamp
             }
             
             
@@ -173,9 +194,9 @@ class ViewController: UIViewController {
             budget4.name = "Electricity"
             budget4.categoryId = category4.id
             budget4.categoryName = category4.name
-            budget4.amount = 500
+            budget4.amount = 500.00
             if let last4Month = calendar.date(byAdding: .month, value: -4, to: Date()){
-                budget4.created = last4Month
+                budget4.created = last4Month.removeTimeStamp
             }
             
             let budget5 = Expenses(context: getContext())
@@ -183,14 +204,29 @@ class ViewController: UIViewController {
             budget5.name = "Doctor"
             budget5.categoryId = category5.id
             budget5.categoryName = category5.name
-            budget5.amount = 300
+            budget5.amount = 300.00
             if let last5Month = calendar.date(byAdding: .month, value: -5, to: Date()){
-                budget5.created = last5Month
-            }        
+                budget5.created = last5Month.removeTimeStamp
+            }
+            
+            let budget6 = Expenses(context: getContext())
+            budget6.id = UUID()
+            budget6.name = "Doctor"
+            budget6.categoryId = category5.id
+            budget6.categoryName = category5.name
+            budget6.amount = 200.00
+            if let last6Month = calendar.date(byAdding: .month, value: -6, to: Date()){
+                budget6.created = last6Month.removeTimeStamp
+            }
+      
         }
         self.saveAll()
-       
-        navigateToMainView()
+        self.playSound()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                // do stuff 42 seconds later
+            self.navigateToMainView()
+        }
+      
       
  
     }

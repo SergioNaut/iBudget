@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 import JDStatusBarNotification
 import CoreData
+import LocalAuthentication
+import AVFAudio
 
 class SettingViewController: UITableViewController {
     
@@ -24,8 +26,14 @@ class SettingViewController: UITableViewController {
     }
     @IBOutlet weak var shareAppSelector: UIView!
     
+    @IBOutlet weak var secureContent: UISwitch!
+    
+    @IBOutlet weak var appVersion: UILabel!
+    
+    @IBOutlet weak var appBuildNumber: UILabel!
     var userSavedName = ""
     var userSavedBudget = 0.0, userSavedIncome = 0.0
+    var userSavedSecurityEnabled = false
     
     override func viewDidLoad() {
         tableView.rowHeight = 60
@@ -35,7 +43,8 @@ class SettingViewController: UITableViewController {
          
         let guestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openDeveloperPopup(_:)))
                 onDevelopersPressed.addGestureRecognizer(guestureRecognizer)
-        
+        appVersion.text = "\(Bundle.main.versionNumber)"
+        appBuildNumber.text="\(Bundle.main.buildNumber)"
         let shareAppRecognizer = UITapGestureRecognizer(target: self, action: #selector(shareApp(_:)))
         shareAppSelector.addGestureRecognizer(shareAppRecognizer)
         getUserInfo()
@@ -65,6 +74,54 @@ class SettingViewController: UITableViewController {
             self.present(activityVC, animated: true, completion: nil)
     }
     
+    @IBAction func securityToggled(_ sender: Any) {
+        
+        if secureContent.isOn {
+            authenticateUser() 
+        }else {
+            UserDefaults().set(false, forKey: "secured")
+            self.showSuccessMsg(msgTitle: "Biometric Access disabled!", imgName: "lock.open.fill")
+            saveUserInfo()
+        }
+       
+    }
+    
+    func authenticateUser() {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error:  &error) {
+            let reason = "identify yourself !"
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success,
+                authenticationError in
+                DispatchQueue.main.async {
+                    if success {
+                        self?.saveUserInfo()
+                        self?.showSuccessMsg(msgTitle: "Biometric access enabled", imgName: "lock.fill")
+                        self?.secureContent.isOn = true
+                        self?.playSound()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                            self?.dismiss(animated: true, completion: nil)
+                        }
+                        UserDefaults().set(true, forKey: "secured")
+                        
+                        
+                    }else{
+                        //error
+                        let ac = UIAlertController(title: "Authentication failed", message: "user verification failed; please try again.", preferredStyle: .alert)
+                        ac.addAction(UIAlertAction(title: "OK", style: .default))
+                        self?.present(ac, animated: true)
+                        UserDefaults().set(false, forKey: "secured")
+                        self?.secureContent.isOn = false
+                        self?.showSuccessMsg(msgTitle: "Biometric access not enabled !", imgName: "xmark.circle")
+                    }
+                }
+                
+            }
+            
+        }
+    }
+    
     func getContext()->NSManagedObjectContext{
          
         let context  = AppDelegate.sharedAppDelegate.coreDataStack.getCoreDataContext()!
@@ -72,7 +129,23 @@ class SettingViewController: UITableViewController {
         return context
     }
     
-    func getUserInfo(){
+    var completeEffect: AVAudioPlayer?
+
+    
+    func playSound() {
+        // Load a local sound file
+        let path = Bundle.main.path(forResource: "click.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            completeEffect = try AVAudioPlayer(contentsOf: url)
+            completeEffect?.play()
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
+    func getUserInfo() {
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest ()
             do {
                 let exps = try getContext().fetch(request)
@@ -84,19 +157,22 @@ class SettingViewController: UITableViewController {
                     userSavedIncome = exp.income as! Double
                     userBudget.text = formatDouble(exp.budget as! Double)
                     userIncome.text = formatDouble(exp.income as! Double)
+                    userSavedSecurityEnabled =  exp.secured
+                    secureContent.isOn = exp.secured
                 }
             } catch {
                 print ("error fetching data: \(error)")
             }
     }
     
-    func showSuccessMsg(){
-        let image = UIImage(named: "logo")
-        let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-
-        NotificationPresenter.shared().present(title: "User info saved successfully!", subtitle: "", includedStyle: .success)
-//        NotificationPresenter.shared().displayLeftView(imageView)
+    func showSuccessMsg(msgTitle : String,imgName : String ){
+        NotificationPresenter.shared().present(title: msgTitle, subtitle: "", includedStyle: .dark)
+        if(!imgName.isEmpty)
+        { 
+            let imageView = UIImageView(image: UIImage(systemName: imgName)?.withTintColor(.orange, renderingMode: .alwaysOriginal))
+            imageView.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+            NotificationPresenter.shared().displayLeftView(imageView)
+        }
         NotificationPresenter.shared().dismiss(afterDelay: 3)
     }
     
@@ -126,13 +202,14 @@ class SettingViewController: UITableViewController {
 
 //        Get users income
         let income = NSDecimalNumber(string: userIncome.text == "" ? "0" : userIncome.text)
+        
         let tmp_income = Double(truncating: income)
         
 //        Get users budget
         let budget = NSDecimalNumber(string: userBudget.text == "" ? "0" : userBudget.text)
         let tmp_budget = Double(truncating: budget)
         
-        if(fullname == userSavedName && tmp_budget == userSavedBudget && tmp_income == userSavedIncome){
+        if(fullname == userSavedName && tmp_budget == userSavedBudget && tmp_income == userSavedIncome && userSavedSecurityEnabled == secureContent.isOn ){
             return
         }
          
@@ -162,14 +239,17 @@ class SettingViewController: UITableViewController {
             return
         }
         
+        userSavedSecurityEnabled = secureContent.isOn
+        
         let userinfo = UserInfo(context: getContext())
         userinfo.fullName = fullname.glazeCamelCase
         userinfo.income =  income
         userinfo.id = UUID()
         userinfo.budget = budget
+        userinfo.secured = secureContent.isOn
         UserDefaults().setValue(fullname.glazeCamelCase, forKey: "fullname")
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
-        showSuccessMsg()
+        showSuccessMsg(msgTitle: "User info saved successfully!", imgName: "hand.thumbsup.fill")
         getUserInfo()
     }
     
@@ -191,11 +271,14 @@ class SettingViewController: UITableViewController {
     
     @objc func openDeveloperPopup(_ sender: Any){
         //help page open
+        performSegue(withIdentifier: "goToHelp", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
-//            let destinationVC = segue.destination as? AddExpenseViewControlller
+        if segue.identifier == "goToHelp"{
+            let destinationVC = segue.destination as? DeveloperViewController
+        }
            
     }
     
@@ -225,7 +308,6 @@ class SettingViewController: UITableViewController {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let mainTabBarController = storyboard.instantiateViewController(identifier: "userOnboarding") as! ViewController
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(mainTabBarController)
-
                 UIApplication.shared.windows.first?.rootViewController?.dismiss(animated: false, completion: nil)
             }
         }
@@ -243,7 +325,8 @@ class SettingViewController: UITableViewController {
 
     func resetAllRecords(in entity : String) 
         {
-
+            UserDefaults().set(false, forKey: "locked")
+            UserDefaults().set(false, forKey: "secured")
             let context = ( UIApplication.shared.delegate as! AppDelegate ).persistentContainer.viewContext
             let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)

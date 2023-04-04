@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 import CoreData
-
-
+ 
 
 class categoryList : UITableViewController  {
     private var categoriesArray: [Categories] = []
-    
-    
+    public var presenterName = ""
+    public var monthName = ""
+    public var yearSelected = 0
     override func viewDidLoad() {
         loadValues()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -43,12 +43,16 @@ class categoryList : UITableViewController  {
         return categoriesArray.count
     }
     
+    
+  
+     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         let containerView = UIView(frame: CGRect(x: 15, y: 9, width: 42, height: 40))
         containerView.backgroundColor = UIColor(hex: "#F7F8FCff")
-        containerView.cornerRadius = 8
+//        containerView.cornerRadius = 8
 
         let imageView = UIImageView(frame: CGRect(x: 6, y: 2, width: 30, height: 37))
         imageView.contentMode = .scaleAspectFit
@@ -78,9 +82,6 @@ class categoryList : UITableViewController  {
 //        cell.imageView?.image = cellImg//!.withTintColor(.systemIndigo)
 //        cell.imageView?.backgroundColor =  UIColor(hex: "#F7F8FCff")!
 //        cell.imageView?.
-        
-        
-        
 //        cell.textLabel?.text = categoriesArray[indexPath.row].name
        
       
@@ -91,10 +92,23 @@ class categoryList : UITableViewController  {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
  
+        if(presenterName == "categorySummary") {
+            if  let presenter = presentingViewController as? CategorySummaryViewController {
+                presenter.categoryId = categoriesArray[indexPath.row].id ?? UUID()
+                presenter.lblCategoryName.text = categoriesArray[indexPath.row].name?.glazeCamelCase ?? "not found"
+                
+                let monthYear = presenter.lblMonthSelected.text
+                let year = Int(monthYear?.split(separator: " ")[1] ?? "0")
+                presenter.loadExpenses(_monthName: String((monthYear?.split(separator: " ")[0])!), _year: year!)
+                
+                dismiss(animated: true)
+            }
+        }
+        
         if let presenter = presentingViewController as? AddExpenseViewControlller {
             presenter.categorySelected = categoriesArray[indexPath.row]
             presenter.showSelectedCategory(_category: categoriesArray[indexPath.row])
-            }
+        }
        
         dismiss(animated: true)
     }

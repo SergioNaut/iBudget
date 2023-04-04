@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 import ChartProgressBar
+import LocalAuthentication
 
 
 
@@ -22,23 +23,25 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var chart: ChartProgressBar!
     @IBOutlet weak var viewAllButton: UIButton!
     @IBOutlet weak var last7MonthWindow: UILabel!
-    
     @IBOutlet weak var totalBudgetlabel: UILabel!
     @IBOutlet weak var lblCurrentMonthTotalExpenselabel: UILabel!
+    var firstLoad = true
     var data: [BarData] = []
     var last7Months: [MonthYear] = []
     var totalSavedBuget: Double = 0
-    
+    var isSecured  = false
     private var categoriesArray : [Categories] = []
     private var groupedCategoryList: [ExpenseStruct] = []
-    
+    private var userfullname  = "Hi, -"
     override func viewDidLoad() {
+ 
         super.viewDidLoad()
+       // authenticateUser()
         lblCurrentMonthTotalExpenselabel.text =  "Total Expenses " + "(" + ("").getCurrentShortMonth + ")"
-       
         totalBudgetlabel.text = "Total Budget " + "(" + ("").getCurrentShortMonth + ")"
         tableView.rowHeight = 60
         viewAllButton.titleLabel?.font = UIFont(name: "Avenir Medium", size: 14)
+        
     }
 
     func getLast7Months() {
@@ -54,11 +57,7 @@ class DashboardViewController: UIViewController {
                 last7Months.append(monthYear)
             }
         setBarChart()
-        print(last7Months)
-        print(
-            getTotalAmountForMonth(last7Months[1].month, year: last7Months[1].year)!
-        )
-    }
+     }
     
     func setBarChart(){
         var greatestExpense = 0.0
@@ -80,11 +79,14 @@ class DashboardViewController: UIViewController {
         }
         
         
-        
+         
+
         
         chart.data = data
 //        chart.barsCanBeClick = true
         chart.maxValue = Float( totalSavedBuget / 100 )
+        print(totalSavedBuget)
+        
         chart.progressColor =  UIColor(hex: "#FE7685ff")!
         chart.barTitleColor = UIColor(hex: "#212121ff")!
         chart.barTitleSelectedColor = UIColor(hex: "#FE7685ff")!
@@ -100,9 +102,15 @@ class DashboardViewController: UIViewController {
     }
     
     func setTotalExpenseAndCalendar(){
+        let substring = data.last!.pinText.dropFirst(2)
         
-        totalIncome.text = data.last?.pinText
-        
+//        if let originalString = data.last!.pinText, data.last!.pinText.count > 2 {
+//            let substring = String(originalString.dropFirst(2))
+//            print(substring) // Output: "llo, world!"
+//        }
+        let totalBudgett = NumberFormatter.formatString(String(substring))
+//
+        totalIncome.text = "$ \(totalBudgett ?? "0")"
         UserDefaults(suiteName:"com.group8.iBudget.ibudgetedWidget")!.set(totalIncome.text, forKey: "totalExpense")
         UserDefaults(suiteName:"com.group8.iBudget.ibudgetedWidget")!.set(totalBudget.text, forKey: "Budget")
         
@@ -126,6 +134,7 @@ class DashboardViewController: UIViewController {
         return day
     }
 
+    
     
     func getTotalAmountForMonth(_ monthName: String, year: Int) -> Double? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Expenses")
@@ -161,14 +170,19 @@ class DashboardViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        
         tableView.dataSource = self
         tableView.delegate = self
         self.tableView.rowHeight = 65
-
+        userName.text = ""
         // Do any additional setup after loading the view.
         loadValues()
         getLast7Months()
         chart.removeClickedBar()
+//        let isLocked = UserDefaults().bool(forKey: "Locked")
+//          if isLocked && isSecured {
+//              authenticateUser()
+//          }
     }
     
     @IBAction func onViewAllPressed(_ sender: Any) {
@@ -195,17 +209,24 @@ class DashboardViewController: UIViewController {
         let request: NSFetchRequest<UserInfo> = UserInfo.fetchRequest ()
             do {
                 let exps = try getContext().fetch(request)
-    
+                
                 for exp in exps{
-                    userName.text = "Hi, \(exp.fullName ?? "-")"
-                    totalBudget.text = "$ \(exp.budget ?? 0)"
+                    userfullname =   "Hi, \(exp.fullName ?? "-")"
+                    let totalBudgett = NumberFormatter.formatDecimal(exp.budget as! Double)
+                    totalBudget.text = "$ \(totalBudgett ?? "0")"
                     totalSavedBuget = exp.budget as! Double
+                    isSecured = exp.secured
                 }
     
             } catch {
                 print ("error fetching data: \(error)")
             }
-        
+        if(firstLoad) {
+            userName.typeOn(string:userfullname )
+            firstLoad = false
+        } else {
+            userName.text = userfullname
+        }
         let request1: NSFetchRequest<Expenses> = Expenses.fetchRequest()
             do {
                 let items = try getContext().fetch(request1)
@@ -250,20 +271,19 @@ extension DashboardViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashboardCell", for: indexPath) as! DashboardCell
         
         let ExpCategoryName = groupedCategoryList[indexPath.row].categoryName
-        
-     
-        
         let categoryElem  = categoriesArray.first { $0.name! == ExpCategoryName }
         
         cell.categoryImage.image = UIImage(systemName: (categoryElem?.icon)!)
         cell.categoryName.text = groupedCategoryList[indexPath.row].categoryName
-        let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-
-        if let formattedString = formatter.string(from: groupedCategoryList[indexPath.row].amount as NSDecimalNumber) {
-            cell.totalPrice.text = "$\(formattedString)"
-        }
+//        let formatter = NumberFormatter()
+//        formatter.minimumFractionDigits = 2
+//        formatter.maximumFractionDigits = 2
+//
+//        if let formattedString = formatter.string(from: groupedCategoryList[indexPath.row].amount as NSDecimalNumber) {
+//            cell.totalPrice.text = "$\(formattedString)"
+//        }
+//        
+        cell.totalPrice.text = NumberFormatter.formatDecimal(Double(truncating: groupedCategoryList[indexPath.row].amount as NSDecimalNumber))
         return cell
     }
 
@@ -275,8 +295,7 @@ extension DashboardViewController: UITableViewDelegate {
 
 extension DashboardViewController: ChartProgressBarDelegate {
     func ChartProgressBar(_ chartProgressBar: ChartProgressBar, didSelectRowAt rowIndex: Int) {
-        print(rowIndex)
-    }
+     }
 }
 
 struct ExpenseStruct {

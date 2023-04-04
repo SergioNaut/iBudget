@@ -3,7 +3,6 @@ import UIKit
 
 public class ChartProgressBar: UIView {
 	
-    
 	public var data: [BarData]?
 	public var barWidth: Float = 15
 	public var barHeight: Float = 180
@@ -88,7 +87,9 @@ public class ChartProgressBar: UIView {
 			bar.initBar()
 			bar.setBackColor(emptyColor)
 			bar.setProgressColor(progressColor)
-            
+            if maxValue < 1 {
+                maxValue  = 10
+            }
 			bar.setProgressValue(CGFloat(barData.barValue), threshold: CGFloat(maxValue))
 			
 			if barsCanBeClick {

@@ -133,7 +133,7 @@
 		7C40EA145BD9A8ED78A61C8025DDF832 /* UIApplication+JDSB_MainWindow.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+JDSB_MainWindow.h"; path = "JDStatusBarNotification/Private/UIApplication+JDSB_MainWindow.h"; sourceTree = "<group>"; };
 		7CA46F9C45764D3D48AF0C50D4596949 /* Popover-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Popover-Info.plist"; sourceTree = "<group>"; };
 		7D6CECB11D0941B0FBB256BDE4294D92 /* JDStatusBarNotification-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JDStatusBarNotification-dummy.m"; sourceTree = "<group>"; };
-		819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChartProgressBar; path = ChartProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChartProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8485366100FE928FECF0DE97A3815381 /* ChartProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChartProgressBar-prefix.pch"; sourceTree = "<group>"; };
 		882A8FF717B1F08DC67E8D4490263663 /* JDSystemStatusBarHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JDSystemStatusBarHelpers.m; path = JDStatusBarNotification/Private/JDSystemStatusBarHelpers.m; sourceTree = "<group>"; };
 		8956F72F7D05BCE049FFCEB3FC6B6EF4 /* ChartProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChartProgressBar-dummy.m"; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		9025DD9DFBC819155D0DD307916CB963 /* ChartProgressBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChartProgressBar.debug.xcconfig; sourceTree = "<group>"; };
 		94786D4FD72826F3E055A130AF4B1D63 /* MonthYearPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MonthYearPickerView.swift; path = Sources/MonthYearPicker/MonthYearPickerView.swift; sourceTree = "<group>"; };
 		966CF2C3345A08D072A60FEE156D1C31 /* ChartProgressBarDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChartProgressBarDelegate.swift; path = "ChartProgressBar-ios/Classes/ChartProgressBarDelegate.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E3C5E09EC36DC47D5B5603A2367B16B /* MonthYearPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MonthYearPicker-dummy.m"; sourceTree = "<group>"; };
 		9F6DB066B11F9235780713F98CED8846 /* DatePickerDialog-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DatePickerDialog-Info.plist"; sourceTree = "<group>"; };
 		A0905F4CF1526FA56F14D14A1519AD46 /* DatePickerDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DatePickerDialog-umbrella.h"; sourceTree = "<group>"; };
@@ -249,7 +249,6 @@
 				E1B278BD08FC8D95DA79CF8CD62DCFDE /* UIColor+Ext.swift */,
 				C25EF44AEE56BB74FE6B50B1F1116885 /* Support Files */,
 			);
-			name = DatePickerDialog;
 			path = DatePickerDialog;
 			sourceTree = "<group>";
 		};
@@ -289,7 +288,6 @@
 				B0FD381AF09244BD03A057ECA42CC7D4 /* Popover.swift */,
 				2AE3C648149B874CA07656F33334B62F /* Support Files */,
 			);
-			name = Popover;
 			path = Popover;
 			sourceTree = "<group>";
 		};
@@ -365,7 +363,6 @@
 				2485D9423A301DCCE98205DCF5365664 /* UIApplication+JDSB_MainWindow.m */,
 				450C32AC01E0D1B3760E98E63FCF4F55 /* Support Files */,
 			);
-			name = JDStatusBarNotification;
 			path = JDStatusBarNotification;
 			sourceTree = "<group>";
 		};
@@ -375,7 +372,6 @@
 				94786D4FD72826F3E055A130AF4B1D63 /* MonthYearPickerView.swift */,
 				2B762E1CE166298A93DFED8FE8E7AC5A /* Support Files */,
 			);
-			name = MonthYearPicker;
 			path = MonthYearPicker;
 			sourceTree = "<group>";
 		};
@@ -388,7 +384,6 @@
 				966CF2C3345A08D072A60FEE156D1C31 /* ChartProgressBarDelegate.swift */,
 				8446A37AB88CE4FF4C79D889BBE469D0 /* Support Files */,
 			);
-			name = ChartProgressBar;
 			path = ChartProgressBar;
 			sourceTree = "<group>";
 		};
@@ -438,7 +433,7 @@
 		E5E0EADAC0378418837C5392FFF059C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */,
+				819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar.framework */,
 				0969EB51C1E293C173141D48DC24C3B8 /* DatePickerDialog */,
 				F2F51A76CEBA43C420F8F841CF2645DE /* JDStatusBarNotification */,
 				701FD8ACF5CB517E4B210C55293BE900 /* MonthYearPicker */,
@@ -617,7 +612,7 @@
 			);
 			name = ChartProgressBar;
 			productName = ChartProgressBar;
-			productReference = 819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar */;
+			productReference = 819FC01E410D1A9D8CAA1BB92C076A33 /* ChartProgressBar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EB07D88E59040F928F73F9A46CA65C69 /* JDStatusBarNotification */ = {
@@ -833,7 +828,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MonthYearPicker/MonthYearPicker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MonthYearPicker/MonthYearPicker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -902,7 +897,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ChartProgressBar/ChartProgressBar-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ChartProgressBar/ChartProgressBar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -974,7 +969,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Popover/Popover-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Popover/Popover-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1009,7 +1004,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DatePickerDialog/DatePickerDialog-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DatePickerDialog/DatePickerDialog-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1209,7 +1204,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Popover/Popover-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Popover/Popover-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1243,7 +1238,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/DatePickerDialog/DatePickerDialog-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/DatePickerDialog/DatePickerDialog-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1277,7 +1272,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/ChartProgressBar/ChartProgressBar-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/ChartProgressBar/ChartProgressBar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1312,7 +1307,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MonthYearPicker/MonthYearPicker-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MonthYearPicker/MonthYearPicker-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
